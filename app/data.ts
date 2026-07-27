@@ -15,7 +15,6 @@ export const sections = [
   { id: "iso", title: "인증" },
   { id: "awards", title: "수상 이력" },
   { id: "press", title: "홍보 기사" },
-  { id: "contact", title: "감사합니다" },
 ] as const;
 
-export const navigation = sections.filter((_, index) => [1, 2, 3, 4, 6, 7, 9, 10, 12, 15, 16].includes(index));
+export const navigation = sections.filter((_, index) => [1, 2, 3, 4, 6, 7, 9, 10, 12, 15].includes(index));
