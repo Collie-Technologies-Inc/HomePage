@@ -73,6 +73,63 @@ export default function Page() {
       </section>
       {sections.slice(1).map((section, index) => (
         <Fragment key={section.id}>
+          {section.id === "company" && (
+            <section className="company-overview" id="company" aria-label="기업 현황">
+              <div className="company-overview-inner">
+                <div className="company-overview-heading">
+                  <h2>기업 현황</h2>
+                  <p>“IT &amp; Sports 융합 서비스”를 개발, 일상에서 보다 쉽고 편리하게 다양한 스포츠를 즐길 수 있도록 하기 위해 2021년 설립</p>
+                </div>
+                <div className="company-overview-layout">
+                  <dl className="company-facts">
+                    <div><dt>기업명</dt><dd>주식회사 콜리테크놀로지</dd></div>
+                    <div><dt>대표자명</dt><dd>박인환</dd></div>
+                    <div><dt>기업형태</dt><dd>법인사업자</dd></div>
+                    <div><dt>임직원 수</dt><dd>3명 (2026.07.27 현재)</dd></div>
+                    <div><dt>주요 아이템</dt><dd>Physical AI (Robot Caddie) 기반 골프장 AX 관제 솔루션,<br />퍼팅 시뮬레이터, L.A.B. Putter, Stewart Trolley</dd></div>
+                    <div><dt>설립일</dt><dd>2021.03.15</dd></div>
+                    <div><dt>자본금</dt><dd>₩56,250,000</dd></div>
+                    <div><dt>본점 소재지</dt><dd>경기도 안산시 상록구 한양대학로 55<br />한양대학교 벤처창업관(창업보육센터) 604호</dd></div>
+                  </dl>
+                  <div className="company-history" aria-label="연혁">
+                    <h3>연혁</h3>
+                    <div className="company-history-columns">
+                      <div>
+                        <h4>2021-2022</h4>
+                        <ul>
+                          <li><time>2021.03</time><span>주식회사 콜리테크놀로지 설립</span></li>
+                          <li><time>2021.05</time><span>청봉 제1호 개인투자조합 1억 투자 유치</span></li>
+                          <li><time>2021.11</time><span>한양대학교 에리카 창업보육센터 사업장 이전</span></li>
+                          <li><time>2021.12</time><span>중진공 정책자금 1억 약정</span></li>
+                          <li><time>2022.03</time><span>기술보증기금 투자옵션부 보증 2억 약정</span></li>
+                          <li><time>2022.03</time><span>벤처기업확인 (투자유형)</span></li>
+                          <li><time>2022.05</time><span>스포츠 엑셀러레이팅 프로그램 상상이비즈 협약</span></li>
+                          <li><time>2022.05</time><span>산업통상자원부 중견기업 상생혁신산업 과제 협약</span></li>
+                          <li><time>2022.05</time><span>㈜콜리테크놀로지 연구소 기업부설연구소 인정</span></li>
+                          <li><time>2022.08</time><span>위치정보 우수 비즈니스 모델 발굴 프로젝트 공모 당선</span></li>
+                          <li><time>2022.11</time><span>호반혁신기술 공모전 “우수상” 수상</span></li>
+                          <li><time>2022.12</time><span>한양대학교 ERICA 제3회 해동창업경진대회 “대상” 수상</span></li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4>2023-2025</h4>
+                        <ul>
+                          <li><time>2023.03</time><span>2020뉴스포츠그로쓰 사모투자 5억 투자 유치</span></li>
+                          <li><time>2023.08</time><span>2024년 성장단계 스케일업 기술 사업화 선정</span></li>
+                          <li><time>2023.12</time><span>위치정보 우수 비즈니스 모델 발굴 “장려상” 수상</span></li>
+                          <li><time>2024.07</time><span>초정밀 GPS 사물인지 인공지능로봇캐디 워킹목업</span></li>
+                          <li><time>2025.03</time><span>벤처기업확인 (연구개발유형)</span></li>
+                          <li><time>2025.04</time><span>기업부설연구소 인정</span></li>
+                          <li><time>2025.10</time><span>신용보증기금 3억 약정 (2억기보 대출 상환)</span></li>
+                          <li><time>2025.11</time><span>디지털 퍼팅 연습기 시제품 개발 완료 양산준비 중</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
           {section.id === "robot-caddie" && (
             <>
             <section className="pdf-page ax-control-page" id="ax-control" aria-label="사업 개요 및 핵심 요약 - 골프장 AX 관제 Solution">
@@ -177,6 +234,72 @@ export default function Page() {
             </section>
             </>
           )}
+          {section.id === "putting-simulator" && (
+            <>
+            <section className="digital-putting-intro" id="putting-simulator" aria-label="Digital Putting 연습기">
+              <div className="digital-putting-content">
+                <p className="digital-putting-kicker">Digital Putting 연습기</p>
+                <ul>
+                  <li>
+                    <strong>그린의 빠르기(Stimpmeter)</strong>와 <strong>마찰력 계수</strong>를 환경 변수로 설정하고,
+                    <strong> 세로 1400 mm, 가로 330 mm의 Compact한 Mat</strong>에서 Putting을 하면,
+                    ㈜콜리테크놀로지가 개발한 <strong>골프 공 감지 센서와 방향 감지 센서</strong>가 골프 공의 움직임을 파악하여,
+                    골프 공의 위치, 속도, 방향을 골프 Dynamics에 의하여 정확하게 분석하여, <strong>최대 25 m</strong>까지의 Putting 연습을 할 수 있다.
+                  </li>
+                  <li>평면뿐 아니라, 경사, 굴곡이 있는 그린까지 연습할 수 있으며, 두 사람이 Putting 대결 게임도 가능하다.</li>
+                  <li>스마트 폰의 App과 Bluetooth로 연결하면, <strong>실제 그린의 모습을 TV화면으로 보면서 연습</strong>할 수 있다.</li>
+                </ul>
+              </div>
+              <div className="digital-putting-visual">
+                <Image
+                  src="/assets/digital-putting-practice.png"
+                  alt="mini green Digital Putting 연습기와 골프 공 감지 센서 및 방향 감지 센서"
+                  width={1484}
+                  height={408}
+                  loading="lazy"
+                  sizes="100vw"
+                />
+              </div>
+            </section>
+            <section className="digital-putting-design" id="putting-design" aria-label="Digital Putting 연습기 디자인">
+              <div className="digital-putting-design-inner">
+                <h2>디자인</h2>
+                <div className="digital-putting-design-grid" aria-label="Digital Putting 연습기 디자인 이미지">
+                  <div className="putting-design-photo putting-design-photo-1" role="img" aria-label="디스플레이와 함께 구성된 Digital Putting 연습기" />
+                  <div className="putting-design-photo putting-design-photo-2" role="img" aria-label="Digital Putting 연습기 본체와 센서" />
+                  <div className="putting-design-photo putting-design-photo-3" role="img" aria-label="Digital Putting 연습기 후면 연결부" />
+                  <div className="putting-design-photo putting-design-photo-4" role="img" aria-label="퍼팅 매트와 결합된 Digital Putting 연습기 전체 디자인" />
+                </div>
+              </div>
+            </section>
+            <section className="digital-putting-ui" id="putting-device-ui" aria-label="Device User Interface">
+              <div className="digital-putting-ui-inner">
+                <h2>Device User Interface</h2>
+                <div className="digital-putting-ui-grid" aria-label="Digital Putting 연습기 사용자 인터페이스">
+                  <div className="putting-ui-screen putting-ui-screen-1" role="img" aria-label="mini green 시작 화면" />
+                  <div className="putting-ui-screen putting-ui-screen-2" role="img" aria-label="그린 스피드 설정 화면" />
+                  <div className="putting-ui-screen putting-ui-screen-3" role="img" aria-label="연습 및 게임 모드 선택 화면" />
+                  <div className="putting-ui-screen putting-ui-screen-4" role="img" aria-label="경사 설정 화면" />
+                  <div className="putting-ui-screen putting-ui-screen-5" role="img" aria-label="퍼팅 준비 화면" />
+                  <div className="putting-ui-screen putting-ui-screen-6" role="img" aria-label="퍼팅 결과 화면" />
+                </div>
+              </div>
+            </section>
+            <section className="digital-putting-app-ui" id="putting-app-ui" aria-label="App User Interface">
+              <div className="digital-putting-app-ui-inner">
+                <h2>App User Interface</h2>
+                <div className="digital-putting-app-ui-grid" aria-label="Digital Putting 연습기 애플리케이션 화면">
+                  <div className="putting-app-screen putting-app-screen-1" role="img" aria-label="mini green 애플리케이션 시작 화면" />
+                  <div className="putting-app-screen putting-app-screen-2" role="img" aria-label="mini green 연습 및 게임 모드 선택 화면" />
+                  <div className="putting-app-screen putting-app-screen-3" role="img" aria-label="평지 퍼팅 연습 화면" />
+                  <div className="putting-app-screen putting-app-screen-4" role="img" aria-label="경사 퍼팅 연습 화면" />
+                  <div className="putting-app-screen putting-app-screen-5" role="img" aria-label="퍼팅 대결 모드 화면" />
+                  <div className="putting-app-screen putting-app-screen-6" role="img" aria-label="mini green 애플리케이션 설정 화면" />
+                </div>
+              </div>
+            </section>
+            </>
+          )}
           {section.id === "press" ? (
             <section className="press-page" id="press" aria-label="홍보 기사">
               <div className="press-heading">
@@ -204,21 +327,20 @@ export default function Page() {
                       />
                     </div>
                     <div className="press-card-body">
+                      <h3>{article.title}</h3>
                       <div className="press-card-meta">
                         <strong>{article.source}</strong>
                         <time>{article.date}</time>
                       </div>
-                      <h3>{article.title}</h3>
-                      <span className="press-card-link">기사 원문 보기 <b aria-hidden="true">↗</b></span>
                     </div>
                   </a>
                 ))}
               </div>
             </section>
-          ) : (
+          ) : section.id !== "company" && section.id !== "history" && section.id !== "robot-caddie" && section.id !== "putting-simulator" && section.id !== "analyzers" && section.id !== "sales" ? (
             <section className="pdf-page" id={section.id} aria-label={section.title}>
               <Image
-                src={`/assets/pages/page-${String(index + 2).padStart(2, "0")}.webp`}
+                src={`/assets/pages/page-${String((section.id === "people" ? 8 : section.id === "organization" ? 9 : section.id === "technology" ? 10 : section.id === "ip-list" ? 11 : section.id === "ip" ? 12 : section.id === "venture" ? 13 : section.id === "iso" ? 14 : section.id === "awards" ? 15 : index + 2)).padStart(2, "0")}.webp`}
                 alt={`${section.title} - 주식회사 콜리테크놀로지 회사소개서 ${index + 2}페이지`}
                 width={1754}
                 height={1240}
@@ -226,7 +348,7 @@ export default function Page() {
                 sizes="100vw"
               />
             </section>
-          )}
+          ) : null}
         </Fragment>
       ))}
     </div>
