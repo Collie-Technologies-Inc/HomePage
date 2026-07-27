@@ -77,7 +77,7 @@ export default function Page() {
             <section className="company-overview" id="company" aria-label="기업 현황">
               <div className="company-overview-inner">
                 <div className="company-overview-heading">
-                  <h2>기업 현황</h2>
+                  <h2 className="page-title">기업 현황</h2>
                   <p>“IT &amp; Sports 융합 서비스”를 개발, 일상에서 보다 쉽고 편리하게 다양한 스포츠를 즐길 수 있도록 하기 위해 2021년 설립</p>
                 </div>
                 <div className="company-overview-layout">
@@ -86,7 +86,7 @@ export default function Page() {
                     <div><dt>대표자명</dt><dd>박인환</dd></div>
                     <div><dt>기업형태</dt><dd>법인사업자</dd></div>
                     <div><dt>임직원 수</dt><dd>3명 (2026.07.27 현재)</dd></div>
-                    <div><dt>주요 아이템</dt><dd>Physical AI (Robot Caddie) 기반 골프장 AX 관제 솔루션,<br />퍼팅 시뮬레이터, L.A.B. Putter, Stewart Trolley</dd></div>
+                    <div><dt>주요 아이템</dt><dd>Physical AI Robot Caddie<br />기반 골프장 AX 관제 솔루션,<br />퍼팅 시뮬레이터, L.A.B. Putter, Stewart Trolley</dd></div>
                     <div><dt>설립일</dt><dd>2021.03.15</dd></div>
                     <div><dt>자본금</dt><dd>₩56,250,000</dd></div>
                     <div><dt>본점 소재지</dt><dd>경기도 안산시 상록구 한양대학로 55<br />한양대학교 벤처창업관(창업보육센터) 604호</dd></div>
@@ -132,18 +132,19 @@ export default function Page() {
           )}
           {section.id === "robot-caddie" && (
             <>
-            <section className="pdf-page ax-control-page" id="ax-control" aria-label="사업 개요 및 핵심 요약 - 골프장 AX 관제 Solution">
+            <section className="pdf-page ax-control-page" id="ax-control" aria-label="Physical AI Robot Caddie 기반 골프 AX Solution">
               <Image
                 src="/assets/ax-control-system.webp"
-                alt="Physical AI Robot Caddie 기반 골프장 AX 관제 Solution Architecture"
+                alt="Physical AI Robot Caddie 기반 골프 AX Solution"
                 width={1280}
                 height={720}
                 loading="lazy"
                 sizes="100vw"
               />
-              <div className="ax-control-title">
-                Physical AI Robot Caddie 기반 골프장 AX 관제 Solution Architecture
-              </div>
+              <div className="pdf-title-mask" aria-hidden="true" />
+              <h2 className="pdf-rebuilt-title page-title ax-control-rebuilt-title">
+                Physical AI Robot Caddie 기반 골프 AX Solution
+              </h2>
               <div className="ax-control-caption">
                 Physical AI Robot Caddie 기반 골프장 AX 관제 Solution Architecture
               </div>
@@ -158,6 +159,8 @@ export default function Page() {
                 loading="lazy"
                 sizes="100vw"
               />
+              <div className="pdf-title-mask" aria-hidden="true" />
+              <h2 className="pdf-rebuilt-title page-title">Physical AI Robot Caddie</h2>
               <div className="ax-detail-line-mask" aria-hidden="true" />
               <div className="ax-detail-caption ax-sensor-caption">
                 Sensor-based Physical AI (Robot Caddie)
@@ -173,6 +176,8 @@ export default function Page() {
                 loading="lazy"
                 sizes="100vw"
               />
+              <div className="pdf-title-mask" aria-hidden="true" />
+              <h2 className="pdf-rebuilt-title page-title">골프장 AX 관제</h2>
               <div className="ax-detail-line-mask" aria-hidden="true" />
               <div className="ax-detail-caption ax-operation-caption">골프장 AX 관제</div>
               <div className="ax-page-number-mask" aria-hidden="true" />
@@ -186,12 +191,14 @@ export default function Page() {
                 loading="lazy"
                 sizes="100vw"
               />
+              <div className="pdf-title-mask" aria-hidden="true" />
+              <h2 className="pdf-rebuilt-title page-title">AI 기반 차세대 골프 경험</h2>
               <div className="ax-detail-line-mask" aria-hidden="true" />
               <div className="ax-page-number-mask" aria-hidden="true" />
             </section>
             <section className="field-experience-page" id="field-experience" aria-label="필드 경험">
               <div className="field-experience-copy">
-                <p className="field-experience-kicker">FIELD EXPERIENCE</p>
+                <p className="field-experience-kicker page-title">Field Experience</p>
                 <h2>걷고 싶을 때는 함께 걷고, 이동할 때는 먼저 준비합니다.</h2>
                 <p className="field-experience-description">
                   고령의 시니어 골퍼도 페어웨이에서는 로봇 캐디와 함께 걸으며 플레이하고, 긴 카트길에서는 4인용 승용 카트로 편안하게 이동할 수 있습니다.
@@ -238,7 +245,7 @@ export default function Page() {
             <>
             <section className="digital-putting-intro" id="putting-simulator" aria-label="Digital Putting 연습기">
               <div className="digital-putting-content">
-                <p className="digital-putting-kicker">Digital Putting 연습기</p>
+                <p className="digital-putting-kicker page-title">Digital Putting 연습기</p>
                 <ul>
                   <li>
                     <strong>그린의 빠르기(Stimpmeter)</strong>와 <strong>마찰력 계수</strong>를 환경 변수로 설정하고,
@@ -263,7 +270,7 @@ export default function Page() {
             </section>
             <section className="digital-putting-design" id="putting-design" aria-label="Digital Putting 연습기 디자인">
               <div className="digital-putting-design-inner">
-                <h2>디자인</h2>
+                <h2 className="page-title">디자인</h2>
                 <div className="digital-putting-design-grid" aria-label="Digital Putting 연습기 디자인 이미지">
                   <div className="putting-design-photo putting-design-photo-1" role="img" aria-label="디스플레이와 함께 구성된 Digital Putting 연습기" />
                   <div className="putting-design-photo putting-design-photo-2" role="img" aria-label="Digital Putting 연습기 본체와 센서" />
@@ -274,7 +281,7 @@ export default function Page() {
             </section>
             <section className="digital-putting-ui" id="putting-device-ui" aria-label="Device User Interface">
               <div className="digital-putting-ui-inner">
-                <h2>Device User Interface</h2>
+                <h2 className="page-title">Device User Interface</h2>
                 <div className="digital-putting-ui-grid" aria-label="Digital Putting 연습기 사용자 인터페이스">
                   <div className="putting-ui-screen putting-ui-screen-1" role="img" aria-label="mini green 시작 화면" />
                   <div className="putting-ui-screen putting-ui-screen-2" role="img" aria-label="그린 스피드 설정 화면" />
@@ -287,7 +294,7 @@ export default function Page() {
             </section>
             <section className="digital-putting-app-ui" id="putting-app-ui" aria-label="App User Interface">
               <div className="digital-putting-app-ui-inner">
-                <h2>App User Interface</h2>
+                <h2 className="page-title">App User Interface</h2>
                 <div className="digital-putting-app-ui-grid" aria-label="Digital Putting 연습기 애플리케이션 화면">
                   <div className="putting-app-screen putting-app-screen-1" role="img" aria-label="mini green 애플리케이션 시작 화면" />
                   <div className="putting-app-screen putting-app-screen-2" role="img" aria-label="mini green 연습 및 게임 모드 선택 화면" />
@@ -303,8 +310,7 @@ export default function Page() {
           {section.id === "press" ? (
             <section className="press-page" id="press" aria-label="홍보 기사">
               <div className="press-heading">
-                <p>COLLIE IN THE NEWS</p>
-                <h2>홍보 기사</h2>
+                <p className="page-title">Collie Technologies Inc. in the News</p>
                 <span>콜리테크놀로지의 기술과 성장을 소개한 주요 보도입니다.</span>
               </div>
               <div className="press-grid">
@@ -338,7 +344,7 @@ export default function Page() {
               </div>
             </section>
           ) : section.id !== "company" && section.id !== "history" && section.id !== "robot-caddie" && section.id !== "putting-simulator" && section.id !== "analyzers" && section.id !== "sales" ? (
-            <section className="pdf-page" id={section.id} aria-label={section.title}>
+            <section className="pdf-page pdf-source-page" id={section.id} aria-label={section.title}>
               <Image
                 src={`/assets/pages/page-${String((section.id === "people" ? 8 : section.id === "organization" ? 9 : section.id === "technology" ? 10 : section.id === "ip-list" ? 11 : section.id === "ip" ? 12 : section.id === "venture" ? 13 : section.id === "iso" ? 14 : section.id === "awards" ? 15 : index + 2)).padStart(2, "0")}.webp`}
                 alt={`${section.title} - 주식회사 콜리테크놀로지 회사소개서 ${index + 2}페이지`}
@@ -347,6 +353,8 @@ export default function Page() {
                 loading="lazy"
                 sizes="100vw"
               />
+              <div className="pdf-title-mask" aria-hidden="true" />
+              <h2 className="pdf-rebuilt-title page-title">{section.title}</h2>
             </section>
           ) : null}
         </Fragment>
