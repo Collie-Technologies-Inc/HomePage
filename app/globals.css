@@ -33,7 +33,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .hero-product-image { position: absolute; inset: 0; }
 .hero-product-image img { object-fit: cover; object-position: center; }
 .hero-product-label { position: absolute; left: auto; right: 4%; top: 7%; bottom: auto; padding: 10px 12px; display: flex; align-items: flex-start; gap: 10px; color: white; background: rgba(16,34,52,.82); backdrop-filter: blur(8px); }
-.robot-product .hero-product-label,
+.robot-product .hero-product-label { left: 50% !important; right: auto !important; top: 18px !important; bottom: auto !important; transform: translateX(-50%); }
 .putting-product .hero-product-label { left: 18px !important; right: auto !important; top: auto !important; bottom: 18px !important; }
 .hero-product-label span { color: #4e8f55; font-size: 11px; font-weight: 800; }
 .hero-product-label strong { font-size: 15px; line-height: 1.35; }
