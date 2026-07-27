@@ -5,10 +5,10 @@
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretendard, "Noto Sans KR", sans-serif; }
 .page-title {
-  margin-top: 0 !important;
+  margin: 0 0 1em !important;
   color: #090b0d !important;
   font-family: "Noto Sans KR", sans-serif !important;
-  font-size: clamp(34px, 3.7vw, 58px) !important;
+  font-size: clamp(22px, 3vw, 46px) !important;
   font-weight: 900 !important;
   line-height: 1.15 !important;
   letter-spacing: -.045em !important;
@@ -55,7 +55,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   top: 2.2%;
   left: 3.4%;
   width: 93.2%;
-  height: 10.8%;
+  height: clamp(52px, 7vw, 107px);
   background: #fff;
 }
 .pdf-rebuilt-title {
@@ -64,7 +64,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   top: 3.2%;
   left: 4.2%;
   max-width: 88%;
-  margin-bottom: 0 !important;
+  margin-bottom: 1em !important;
 }
 .ax-control-page .pdf-title-mask,
 .ax-detail-page .pdf-title-mask { background: #edf3f1; }
@@ -72,7 +72,6 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .ax-detail-page .pdf-rebuilt-title { top: 3.2%; left: 4.2%; }
 .ax-control-page .ax-control-rebuilt-title {
   max-width: none;
-  font-size: clamp(22px, 3vw, 46px) !important;
   white-space: nowrap;
 }
 .ax-control-page {
