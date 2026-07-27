@@ -28,7 +28,7 @@ export default function Page() {
           </article>
           <article className="hero-product putting-product">
             <div className="hero-product-image"><Image src="/assets/hero-digital-putting.png" alt="mini green Digital Putting 연습기" fill priority sizes="(max-width: 860px) 100vw, 54vw" /></div>
-            <div className="hero-product-label" style={{ left: 18, right: "auto", top: "auto", bottom: 18 }}><span>02</span><strong>mini green<br />Digital Putting</strong></div>
+            <div className="hero-product-label"><span>02</span><strong>mini green<br />Digital Putting</strong></div>
           </article>
         </div>
       </section>
