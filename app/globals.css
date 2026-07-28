@@ -736,6 +736,16 @@ footer a { color: white; text-decoration: none; }
   .ax-control-page .ax-control-rebuilt-title {
     max-width: 91%;
   }
+  .ax-sensor-caption,
+  .ax-operation-caption {
+    left: 6.5%;
+    width: 39.5%;
+    padding: 0 2px;
+    overflow: hidden;
+    font-size: clamp(7px, 1.85vw, 9px);
+    line-height: 1;
+    white-space: nowrap;
+  }
   .field-experience-copy h2,
   .digital-putting-design h2,
   .digital-putting-ui h2,
