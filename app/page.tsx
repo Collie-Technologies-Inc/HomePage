@@ -218,7 +218,7 @@ export default function Page() {
               <h2 className="pdf-rebuilt-title page-title">Physical AI Robot Caddie</h2>
               <div className="ax-detail-line-mask" aria-hidden="true" />
               <div className="ax-detail-caption ax-sensor-caption">
-                Sensor-based Physical AI (Robot Caddie)
+                Sensor-based Physical AI Robot Caddie
               </div>
               <div className="ax-page-number-mask" aria-hidden="true" />
             </section>
