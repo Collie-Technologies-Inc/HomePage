@@ -11,7 +11,7 @@ export function Header() {
   return (
     <header className="site-header">
       <a className="brand" href="#cover" aria-label="(주)콜리테크놀로지 처음으로">
-        <Image src="/assets/logo.jpg" alt="Collie Technologies" width={156} height={54} priority />
+        <Image src="/assets/logo.jpg" alt="Collie Technologies" width={156} height={54} priority unoptimized />
       </a>
       <details className="header-menu">
         <summary className="menu-button">메뉴</summary>

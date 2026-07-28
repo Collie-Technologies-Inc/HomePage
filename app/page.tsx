@@ -81,11 +81,11 @@ export default function Page() {
         </div>
         <div className="hero-visual">
           <article className="hero-product robot-product">
-            <div className="hero-product-image"><Image src="/assets/hero-robot-caddie.png" alt="Physical AI Robot Caddie 기반 골프장 AX Solution" fill priority sizes="(max-width: 860px) 100vw, 54vw" /></div>
+            <div className="hero-product-image"><Image src="/assets/hero-robot-caddie.png" alt="Physical AI Robot Caddie 기반 골프장 AX Solution" fill priority sizes="(max-width: 860px) 100vw, 54vw" unoptimized /></div>
             <div className="hero-product-label"><span>01</span><strong>Physical AI Robot Caddie<br />Golf Course AX Solution</strong></div>
           </article>
           <article className="hero-product putting-product">
-            <div className="hero-product-image"><Image src="/assets/hero-digital-putting.png" alt="mini green Digital Putting 연습기" fill priority sizes="(max-width: 860px) 100vw, 54vw" /></div>
+            <div className="hero-product-image"><Image src="/assets/hero-digital-putting.png" alt="mini green Digital Putting 연습기" fill priority sizes="(max-width: 860px) 100vw, 54vw" unoptimized /></div>
             <div className="hero-product-label"><span>02</span><strong>mini green<br />Digital Putting</strong></div>
           </article>
         </div>
@@ -109,6 +109,7 @@ export default function Page() {
             <aside className="ceo-message-profile" aria-label="박인환 대표이사">
               <div className="ceo-message-photo">
                 <Image
+                  unoptimized
                   src="/assets/ceo-park-inhwan.jpg"
                   alt="(주)콜리테크놀로지 대표이사 박인환"
                   fill
@@ -117,7 +118,7 @@ export default function Page() {
               </div>
               <div className="ceo-message-signoff">
                 <strong>(주)콜리테크놀로지 대표이사 박인환</strong>
-                <Image src="/assets/ceo-signature.png" alt="박인환 대표이사 자필 서명" width={630} height={340} />
+                <Image src="/assets/ceo-signature.png" alt="박인환 대표이사 자필 서명" width={630} height={340} unoptimized />
               </div>
             </aside>
           </div>
@@ -186,6 +187,7 @@ export default function Page() {
             <>
             <section className="pdf-page ax-control-page" id="ax-control" aria-label="Physical AI Robot Caddie 기반 골프 AX Solution">
               <Image
+                unoptimized
                 src="/assets/ax-control-system.webp"
                 alt="Physical AI Robot Caddie 기반 골프 AX Solution"
                 width={1280}
@@ -204,6 +206,7 @@ export default function Page() {
             </section>
             <section className="pdf-page ax-detail-page" id="ax-sensor" aria-label="Sensor-based Physical AI Robot Caddie">
               <Image
+                unoptimized
                 src="/assets/ax-sensor-physical-ai.jpg"
                 alt="Sensor-based Physical AI Robot Caddie"
                 width={1280}
@@ -221,6 +224,7 @@ export default function Page() {
             </section>
             <section className="pdf-page ax-detail-page" id="ax-operation" aria-label="골프장 AX 관제">
               <Image
+                unoptimized
                 src="/assets/ax-golf-course-control.jpg"
                 alt="골프장 AX 관제"
                 width={1280}
@@ -236,6 +240,7 @@ export default function Page() {
             </section>
             <section className="pdf-page ax-detail-page" id="ax-experience" aria-label="AI 기반 차세대 골프 경험">
               <Image
+                unoptimized
                 src="/assets/ax-ai-golf-experience.jpg"
                 alt="AI 기반 차세대 골프 경험"
                 width={1280}
@@ -273,6 +278,7 @@ export default function Page() {
               <div className="field-experience-photo">
                 <div className="field-experience-photo-item">
                   <Image
+                    unoptimized
                     src="/assets/field-experience-walking.png"
                     alt="페어웨이에서 골퍼와 함께 이동하는 로봇 캐디"
                     fill
@@ -282,6 +288,7 @@ export default function Page() {
                 </div>
                 <div className="field-experience-photo-item">
                   <Image
+                    unoptimized
                     src="/assets/field-experience-golf-course.png"
                     alt="골프장의 로봇 캐디와 4인용 승용 카트"
                     fill
@@ -311,6 +318,7 @@ export default function Page() {
               </div>
               <div className="digital-putting-visual">
                 <Image
+                  unoptimized
                   src="/assets/digital-putting-practice.png"
                   alt="mini green Digital Putting 연습기와 골프 공 감지 센서 및 방향 감지 센서"
                   width={1484}
@@ -409,6 +417,7 @@ export default function Page() {
                   >
                     <div className={`press-card-image${article.source === "정책브리핑" ? " press-card-image--logo" : ""}`}>
                       <Image
+                        unoptimized
                         src={article.image}
                         alt=""
                         fill
