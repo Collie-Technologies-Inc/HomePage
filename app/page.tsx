@@ -6,7 +6,7 @@ const pressArticles = [
   {
     source: "전자신문",
     date: "2023.12.13",
-    title: "[유니콘 원포인트⑧] '골프를 넘어 일상 AI캐디를 빚는 이들' 콜리테크놀로지",
+    title: "[유니콘 원포인트⑧] '골프를 넘어 일상 AI캐디를 빚는 이들' (주)콜리테크놀로지",
     href: "https://www.etnews.com/20231213000107",
     image: "/assets/news/unicorn-etnews.jpg",
   },
@@ -34,21 +34,40 @@ const pressArticles = [
   {
     source: "전자신문",
     date: "2022.12.01",
-    title: "[2022 호반혁신기술공모전] 우수상에 콜리테크놀로지",
+    title: "[2022 호반혁신기술공모전] 우수상에 (주)콜리테크놀로지",
     href: "https://www.etnews.com/20221130000300",
     image: "/assets/news/hoban-award.jpg",
   },
 ] as const;
 
+const intellectualPropertyRows = [
+  ["국내 특허", "스마트 트롤리의 정밀 추적 제어 기법", "10-2447176", "2022/09/21", "등록 완료", "KOR"],
+  ["국내 특허", "골프 스코어를 제공하는 스마트 트롤리 시스템", "10-2613676", "2023/12/11", "등록 완료", "KOR"],
+  ["국내 특허", "골프 트롤리 이송 카트 및 골프 트롤리 이송 카트 운영 시스템", "10-2777215", "2025/02/28", "등록 완료", "KOR"],
+  ["국내 특허", "정밀 위치 추적이 가능한 추종형 골프 트롤리 및 이를 이용한 스마트 관제 시스템", "10-2776834", "2025/02/28", "등록 완료", "KOR"],
+  ["국내 특허", "골프 트롤리", "10-2913842", "2026/01/13", "등록 완료", "KOR"],
+  ["국내 특허", "자율 주행 및 장애물 회피 기동이 가능한 골프 트롤리", "10-2024-0085127", "2024/06/28", "출원 중", "KOR"],
+  ["국내 특허", "정밀 거리 측정이 가능한 골프 트롤리", "10-2024-0085128", "2024/06/28", "출원 중", "KOR"],
+  ["국내 특허", "골프 퍼팅 연습 장치", "10-2025-0027282", "2025/03/04", "출원 중", "KOR"],
+  ["해외 특허", "Precision Tracking Control Techniques for Smart Trolley", "17994410 (미국)", "2023/10/12", "출원 중", "US"],
+  ["해외 특허", "Precision Tracking Control Techniques for Smart Trolley", "GB2617891 (영국)", "2025/03/26", "등록 완료", "UK"],
+  ["상표권", "제 28류 모터 구동식 골프 트롤리 등 20건", "40-1933731", "2022/11/11", "등록 완료", "KOR"],
+  ["디자인권", "서비스용 로봇", "30-1232013", "2023/09/13", "등록 완료", "KOR"],
+  ["벤처인증", "벤처 기업 확인서", "20250429020014", "2025/05/23", "확인", ""],
+  ["연구소 인정", "기업부설 연구소 인정서", "2022113144", "2025/04/30", "인정", ""],
+  ["인증", "ISO 9001 (품질 경영 시스템)", "QI705423", "2023/12/05", "인증", ""],
+  ["인증", "ISO 14001 (환경 경영 시스템)", "EI395823", "2023/12/05", "인증", ""],
+] as const;
+
 export default function Page() {
   return (
-    <div className="document" aria-label="주식회사 콜리테크놀로지 회사소개서">
-      <section className="home-hero" id="cover" aria-label="주식회사 콜리테크놀로지">
+    <div className="document" aria-label="(주)콜리테크놀로지 회사소개서">
+      <section className="home-hero" id="cover" aria-label="(주)콜리테크놀로지">
         <div className="hero-copy">
           <p className="hero-kicker">PHYSICAL AI · GOLF COURSE AX<br />DIGITAL PUTTING</p>
           <h1>골프장의 운영과 연습을 잇는<br /><em>Smart Golf Solution</em></h1>
           <p className="hero-description">
-            ㈜콜리테크놀로지는 Physical AI Robot Caddie 기반 골프장 AX Solution과 Digital Putting 연습기를 개발합니다.
+            (주)콜리테크놀로지는 Physical AI Robot Caddie 기반 골프장 AX Solution과 Digital Putting 연습기를 개발합니다.
             다중 센서융합·자율주행·클라우드 관제로 골프장 운영을 혁신하고, 디지털 퍼팅 기술로 정밀한 연습 경험을 제공합니다.
           </p>
           <div className="hero-links">
@@ -71,7 +90,28 @@ export default function Page() {
           </article>
         </div>
       </section>
-      {sections.slice(1).map((section, index) => (
+      <section className="ceo-message" id="ceo-message" aria-labelledby="ceo-message-title">
+        <div className="ceo-message-inner">
+          <div className="ceo-message-heading">
+            <p>COLLIE TECHNOLOGIES</p>
+            <h2 className="page-title" id="ceo-message-title">CEO Message</h2>
+          </div>
+          <div className="ceo-message-body">
+            <p>34년간 금성정밀, 삼성전자, LG전자에서 연구개발과 글로벌 제품 사업화를 수행하며 위성통신, 모바일, UWB, 정밀측위, AI 로보틱스 등 첨단 ICT 분야의 핵심 기술을 개발해 왔습니다.</p>
+            <p>이러한 경험을 바탕으로 2021년 <strong>(주)콜리테크놀로지</strong>를 설립하여 <strong>위치기반 데이터 서비스와 Physical AI를 결합한 차세대 로봇 플랫폼</strong>을 개발하고 있습니다.</p>
+            <p>(주)콜리테크놀로지는 골프장만을 위한 회사가 아닙니다. 사람과 로봇, 공간을 연결하는 위치기반 데이터 서비스를 기반으로 다양한 산업에서 활용 가능한 Physical AI 플랫폼을 만들어 가고 있습니다.</p>
+            <p>현재 개발 중인 <strong>Physical AI Robot Caddie</strong>는 RTK-GPS, UWB, AI Vision, Radar, ROS2, 클라우드 기술을 융합하여 사람을 이해하고 공간을 인식하며 자율적으로 움직이는 차세대 AI 로봇입니다. 이를 통해 축적되는 위치 데이터와 행동 데이터는 새로운 디지털 자산이 되어 더욱 지능적인 서비스를 만들어 냅니다.</p>
+            <p>우리는 기술을 만드는 데서 멈추지 않습니다. <strong>AI 로봇과 함께하는 새로운 체험과 즐거움</strong>, 그리고 <strong>SNS를 통해 자연스럽게 공유되는 혁신적인 경험</strong>을 제공하여 MZ세대가 먼저 찾고, 경험하고, 확산시키는 새로운 라이프스타일을 만들어 가고자 합니다.</p>
+            <p><strong>Robot Caddie는 우리의 최종 목적이 아니라, 위치기반 데이터 서비스와 Physical AI 플랫폼을 실현하기 위한 첫 번째 베이스 모델입니다.</strong> 앞으로도 (주)콜리테크놀로지는 사람과 공간을 연결하는 AI 기술을 바탕으로 다양한 산업으로 확장하며, 글로벌 Physical AI 플랫폼 기업으로 성장해 나가겠습니다.</p>
+            <p><strong>감사합니다.</strong></p>
+            <div className="ceo-message-signoff">
+              <strong>(주)콜리테크놀로지 대표이사 박인환</strong>
+              <Image src="/assets/ceo-signature.png" alt="박인환 대표이사 자필 서명" width={630} height={340} />
+            </div>
+          </div>
+        </div>
+      </section>
+      {sections.slice(1).map((section) => (
         <Fragment key={section.id}>
           {section.id === "company" && (
             <section className="company-overview" id="company" aria-label="기업 현황">
@@ -82,7 +122,7 @@ export default function Page() {
                 </div>
                 <div className="company-overview-layout">
                   <dl className="company-facts">
-                    <div><dt>기업명</dt><dd>주식회사 콜리테크놀로지</dd></div>
+                    <div><dt>기업명</dt><dd>(주)콜리테크놀로지</dd></div>
                     <div><dt>대표자명</dt><dd>박인환</dd></div>
                     <div><dt>기업형태</dt><dd>법인사업자</dd></div>
                     <div><dt>임직원 수</dt><dd>3명 (2026.07.27 현재)</dd></div>
@@ -97,7 +137,7 @@ export default function Page() {
                       <div>
                         <h4>2021-2022</h4>
                         <ul>
-                          <li><time>2021.03</time><span>주식회사 콜리테크놀로지 설립</span></li>
+                          <li><time>2021.03</time><span>(주)콜리테크놀로지 설립</span></li>
                           <li><time>2021.05</time><span>청봉 제1호 개인투자조합 1억 투자 유치</span></li>
                           <li><time>2021.11</time><span>한양대학교 에리카 창업보육센터 사업장 이전</span></li>
                           <li><time>2021.12</time><span>중진공 정책자금 1억 약정</span></li>
@@ -105,7 +145,7 @@ export default function Page() {
                           <li><time>2022.03</time><span>벤처기업확인 (투자유형)</span></li>
                           <li><time>2022.05</time><span>스포츠 엑셀러레이팅 프로그램 상상이비즈 협약</span></li>
                           <li><time>2022.05</time><span>산업통상자원부 중견기업 상생혁신산업 과제 협약</span></li>
-                          <li><time>2022.05</time><span>㈜콜리테크놀로지 연구소 기업부설연구소 인정</span></li>
+                          <li><time>2022.05</time><span>(주)콜리테크놀로지 연구소 기업부설연구소 인정</span></li>
                           <li><time>2022.08</time><span>위치정보 우수 비즈니스 모델 발굴 프로젝트 공모 당선</span></li>
                           <li><time>2022.11</time><span>호반혁신기술 공모전 “우수상” 수상</span></li>
                           <li><time>2022.12</time><span>한양대학교 ERICA 제3회 해동창업경진대회 “대상” 수상</span></li>
@@ -250,7 +290,7 @@ export default function Page() {
                   <li>
                     <strong>그린의 빠르기(Stimpmeter)</strong>와 <strong>마찰력 계수</strong>를 환경 변수로 설정하고,
                     <strong> 세로 1400 mm, 가로 330 mm의 Compact한 Mat</strong>에서 Putting을 하면,
-                    ㈜콜리테크놀로지가 개발한 <strong>골프 공 감지 센서와 방향 감지 센서</strong>가 골프 공의 움직임을 파악하여,
+                    (주)콜리테크놀로지가 개발한 <strong>골프 공 감지 센서와 방향 감지 센서</strong>가 골프 공의 움직임을 파악하여,
                     골프 공의 위치, 속도, 방향을 골프 Dynamics에 의하여 정확하게 분석하여, <strong>최대 25 m</strong>까지의 Putting 연습을 할 수 있다.
                   </li>
                   <li>평면뿐 아니라, 경사, 굴곡이 있는 그린까지 연습할 수 있으며, 두 사람이 Putting 대결 게임도 가능하다.</li>
@@ -307,11 +347,43 @@ export default function Page() {
             </section>
             </>
           )}
-          {section.id === "press" ? (
+          {section.id === "ip-list" ? (
+            <section className="ip-overview" id="ip-list" aria-label="지식재산권 인정·인증서">
+              <div className="ip-overview-inner">
+                <h2 className="page-title">지식재산권 인정·인증서</h2>
+                <div className="ip-table-wrap">
+                  <table className="ip-table">
+                    <thead>
+                      <tr>
+                        <th>구분</th>
+                        <th>기술 명칭 / 권리 명칭</th>
+                        <th>출원 / 등록 번호</th>
+                        <th>등록일</th>
+                        <th>상태</th>
+                        <th>국가</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {intellectualPropertyRows.map((row) => (
+                        <tr key={`${row[0]}-${row[2]}`}>
+                          <td>{row[0]}</td>
+                          <td>{row[1]}</td>
+                          <td>{row[2]}</td>
+                          <td>{row[3]}</td>
+                          <td><span className={`ip-status${row[4] === "출원 중" ? " is-pending" : ""}`}>{row[4]}</span></td>
+                          <td>{row[5]}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+          ) : section.id === "press" ? (
             <section className="press-page" id="press" aria-label="홍보 기사">
               <div className="press-heading">
                 <p className="page-title">Collie Technologies Inc. in the News</p>
-                <span>콜리테크놀로지의 기술과 성장을 소개한 주요 보도입니다.</span>
+                <span>(주)콜리테크놀로지의 기술과 성장을 소개한 주요 보도입니다.</span>
               </div>
               <div className="press-grid">
                 {pressArticles.map((article) => (
@@ -342,19 +414,6 @@ export default function Page() {
                   </a>
                 ))}
               </div>
-            </section>
-          ) : section.id !== "company" && section.id !== "history" && section.id !== "robot-caddie" && section.id !== "putting-simulator" && section.id !== "analyzers" && section.id !== "sales" ? (
-            <section className="pdf-page pdf-source-page" id={section.id} aria-label={section.title}>
-              <Image
-                src={`/assets/pages/page-${String((section.id === "people" ? 8 : section.id === "organization" ? 9 : section.id === "technology" ? 10 : section.id === "ip-list" ? 11 : section.id === "ip" ? 12 : section.id === "venture" ? 13 : section.id === "iso" ? 14 : section.id === "awards" ? 15 : index + 2)).padStart(2, "0")}.webp`}
-                alt={`${section.title} - 주식회사 콜리테크놀로지 회사소개서 ${index + 2}페이지`}
-                width={1754}
-                height={1240}
-                loading="lazy"
-                sizes="100vw"
-              />
-              <div className="pdf-title-mask" aria-hidden="true" />
-              <h2 className="pdf-rebuilt-title page-title">{section.title}</h2>
             </section>
           ) : null}
         </Fragment>
