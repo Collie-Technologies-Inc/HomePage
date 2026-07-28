@@ -71,7 +71,7 @@ export default function Page() {
             다중 센서융합·자율주행·클라우드 관제로 골프장 운영을 혁신하고, 디지털 퍼팅 기술로 정밀한 연습 경험을 제공합니다.
           </p>
           <div className="hero-links">
-            <a href="#robot-caddie">Robot Caddie & AX</a>
+            <a href="#ax-control">Robot Caddie & AX</a>
             <a href="#putting-simulator">Digital Putting</a>
           </div>
           <ul className="hero-tech" aria-label="핵심 기술">
@@ -96,18 +96,30 @@ export default function Page() {
             <p>COLLIE TECHNOLOGIES</p>
             <h2 className="page-title" id="ceo-message-title">CEO Message</h2>
           </div>
-          <div className="ceo-message-body">
-            <p>34년간 금성정밀, 삼성전자, LG전자에서 연구개발과 글로벌 제품 사업화를 수행하며 위성통신, 모바일, UWB, 정밀측위, AI 로보틱스 등 첨단 ICT 분야의 핵심 기술을 개발해 왔습니다.</p>
-            <p>이러한 경험을 바탕으로 2021년 <strong>(주)콜리테크놀로지</strong>를 설립하여 <strong>위치기반 데이터 서비스와 Physical AI를 결합한 차세대 로봇 플랫폼</strong>을 개발하고 있습니다.</p>
-            <p>(주)콜리테크놀로지는 골프장만을 위한 회사가 아닙니다. 사람과 로봇, 공간을 연결하는 위치기반 데이터 서비스를 기반으로 다양한 산업에서 활용 가능한 Physical AI 플랫폼을 만들어 가고 있습니다.</p>
-            <p>현재 개발 중인 <strong>Physical AI Robot Caddie</strong>는 RTK-GPS, UWB, AI Vision, Radar, ROS2, 클라우드 기술을 융합하여 사람을 이해하고 공간을 인식하며 자율적으로 움직이는 차세대 AI 로봇입니다. 이를 통해 축적되는 위치 데이터와 행동 데이터는 새로운 디지털 자산이 되어 더욱 지능적인 서비스를 만들어 냅니다.</p>
-            <p>우리는 기술을 만드는 데서 멈추지 않습니다. <strong>AI 로봇과 함께하는 새로운 체험과 즐거움</strong>, 그리고 <strong>SNS를 통해 자연스럽게 공유되는 혁신적인 경험</strong>을 제공하여 MZ세대가 먼저 찾고, 경험하고, 확산시키는 새로운 라이프스타일을 만들어 가고자 합니다.</p>
-            <p><strong>Robot Caddie는 우리의 최종 목적이 아니라, 위치기반 데이터 서비스와 Physical AI 플랫폼을 실현하기 위한 첫 번째 베이스 모델입니다.</strong> 앞으로도 (주)콜리테크놀로지는 사람과 공간을 연결하는 AI 기술을 바탕으로 다양한 산업으로 확장하며, 글로벌 Physical AI 플랫폼 기업으로 성장해 나가겠습니다.</p>
-            <p><strong>감사합니다.</strong></p>
-            <div className="ceo-message-signoff">
-              <strong>(주)콜리테크놀로지 대표이사 박인환</strong>
-              <Image src="/assets/ceo-signature.png" alt="박인환 대표이사 자필 서명" width={630} height={340} />
+          <div className="ceo-message-layout">
+            <div className="ceo-message-body">
+              <p>34년간 금성정밀, 삼성전자, LG전자에서 연구개발과 글로벌 제품 사업화를 수행하며 위성통신, 모바일, UWB, 정밀측위, AI 로보틱스 등 첨단 ICT 분야의 핵심 기술을 개발해 왔습니다.</p>
+              <p>이러한 경험을 바탕으로 2021년 <strong>(주)콜리테크놀로지</strong>를 설립하여 <strong>위치기반 데이터 서비스와 Physical AI를 결합한 차세대 로봇 플랫폼</strong>을 개발하고 있습니다.</p>
+              <p>(주)콜리테크놀로지는 골프장만을 위한 회사가 아닙니다. 사람과 로봇, 공간을 연결하는 위치기반 데이터 서비스를 기반으로 다양한 산업에서 활용 가능한 Physical AI 플랫폼을 만들어 가고 있습니다.</p>
+              <p>현재 개발 중인 <strong>Physical AI Robot Caddie</strong>는 RTK-GPS, UWB, AI Vision, Radar, ROS2, 클라우드 기술을 융합하여 사람을 이해하고 공간을 인식하며 자율적으로 움직이는 차세대 AI 로봇입니다. 이를 통해 축적되는 위치 데이터와 행동 데이터는 새로운 디지털 자산이 되어 더욱 지능적인 서비스를 만들어 냅니다.</p>
+              <p>우리는 기술을 만드는 데서 멈추지 않습니다. <strong>AI 로봇과 함께하는 새로운 체험과 즐거움</strong>, 그리고 <strong>SNS를 통해 자연스럽게 공유되는 혁신적인 경험</strong>을 제공하여 MZ세대가 먼저 찾고, 경험하고, 확산시키는 새로운 라이프스타일을 만들어 가고자 합니다.</p>
+              <p><strong>Robot Caddie는 우리의 최종 목적이 아니라, 위치기반 데이터 서비스와 Physical AI 플랫폼을 실현하기 위한 첫 번째 베이스 모델입니다.</strong> 앞으로도 (주)콜리테크놀로지는 사람과 공간을 연결하는 AI 기술을 바탕으로 다양한 산업으로 확장하며, 글로벌 Physical AI 플랫폼 기업으로 성장해 나가겠습니다.</p>
+              <p><strong>감사합니다.</strong></p>
             </div>
+            <aside className="ceo-message-profile" aria-label="박인환 대표이사">
+              <div className="ceo-message-photo">
+                <Image
+                  src="/assets/ceo-park-inhwan.jpg"
+                  alt="(주)콜리테크놀로지 대표이사 박인환"
+                  fill
+                  sizes="(max-width: 860px) 82vw, 340px"
+                />
+              </div>
+              <div className="ceo-message-signoff">
+                <strong>(주)콜리테크놀로지 대표이사 박인환</strong>
+                <Image src="/assets/ceo-signature.png" alt="박인환 대표이사 자필 서명" width={630} height={340} />
+              </div>
+            </aside>
           </div>
         </div>
       </section>

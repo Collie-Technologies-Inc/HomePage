@@ -17,11 +17,14 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .site-header { position: sticky; top: 0; z-index: 20; height: 72px; padding: 0 clamp(18px, 3vw, 52px); display: flex; align-items: center; gap: 28px; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); }
 .brand { display: flex; flex: 0 0 auto; }
 .brand img { width: 208px; height: 64px; object-fit: contain; }
-.site-header nav { margin-left: auto; display: flex; align-items: center; gap: clamp(10px, 1.1vw, 20px); }
-.site-header nav a { color: #273443; text-decoration: none; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.header-menu { position: relative; margin-left: auto; }
+.site-header nav { display: none; position: absolute; top: calc(100% + 12px); right: 0; width: min(260px, calc(100vw - 36px)); padding: 8px; background: white; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 16px 38px rgba(20,31,43,.16); }
+.header-menu[open] nav { display: flex; flex-direction: column; align-items: stretch; }
+.site-header nav a { padding: 13px 16px; border-radius: 8px; color: #273443; text-decoration: none; font-size: 14px; font-weight: 800; white-space: nowrap; }
 .site-header nav a:hover, .site-header nav a:focus-visible { color: var(--green); }
 .site-header .download { padding: 10px 13px; color: white; background: var(--navy); }
-.menu-button { display: none; margin-left: auto; border: 1px solid var(--navy); background: white; color: var(--navy); padding: 8px 12px; font-weight: 700; }
+.menu-button { display: block; border: 1px solid var(--navy); background: white; color: var(--navy); padding: 10px 15px; font-weight: 800; cursor: pointer; list-style: none; user-select: none; }
+.menu-button::-webkit-details-marker { display: none; }
 .document { width: min(100%, 1754px); margin: 0 auto; background: white; box-shadow: 0 16px 50px rgba(24,35,48,.1); }
 .home-hero { min-height: calc(100vh - 72px); position: relative; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); overflow: hidden; scroll-margin-top: 72px; background: linear-gradient(115deg, #102234 0%, #18354b 58%, #e8eee9 58%); color: white; }
 .hero-copy { position: relative; z-index: 2; align-self: center; padding: clamp(52px, 7vw, 118px); padding-right: clamp(32px, 5vw, 80px); }
@@ -68,6 +71,10 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 }
 .ax-control-page .pdf-title-mask,
 .ax-detail-page .pdf-title-mask { background: #f8fbfa; }
+.ax-detail-page .pdf-title-mask {
+  right: auto;
+  width: 43%;
+}
 .ax-control-page .pdf-rebuilt-title,
 .ax-detail-page .pdf-rebuilt-title { top: 3.2%; left: 4.2%; }
 .ax-control-page .ax-control-rebuilt-title {
@@ -144,7 +151,8 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   z-index: 3;
   top: 9.8%;
   left: 4.5%;
-  right: 4.5%;
+  right: auto;
+  width: 38.5%;
   height: 2.2%;
   background: #f8fbfa;
 }
@@ -345,9 +353,15 @@ footer a { color: white; text-decoration: none; }
   display: none;
 }
 .ceo-message-heading .page-title { margin-bottom: 1em !important; }
+.ceo-message-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(210px, 17vw, 245px);
+  gap: clamp(38px, 5vw, 76px);
+  align-items: start;
+}
 .ceo-message-body {
-  width: min(100%, 1080px);
-  margin-left: auto;
+  width: 100%;
+  margin: 0;
   padding: 0;
 }
 .ceo-message-body p {
@@ -359,17 +373,36 @@ footer a { color: white; text-decoration: none; }
 .ceo-message-body p:last-of-type { margin-bottom: 0; }
 .ceo-message-body strong { color: #173a52; font-weight: 900; }
 .ceo-message-greeting { font-size: clamp(19px, 1.55vw, 25px) !important; font-weight: 900; }
+.ceo-message-profile {
+  position: sticky;
+  top: calc(var(--header-height) + 34px);
+}
+.ceo-message-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.08;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #deddd9;
+  box-shadow: 0 24px 52px rgba(16, 34, 52, .16);
+}
+.ceo-message-photo img {
+  object-fit: cover;
+  object-position: 50% 18%;
+  filter: contrast(1.04);
+}
 .ceo-message-signoff {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 18px;
-  margin-top: 30px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  margin-top: 22px;
   color: #102234;
-  font-size: clamp(15px, 1.15vw, 19px);
+  font-size: clamp(13px, .95vw, 16px);
+  text-align: right;
 }
 .ceo-message-signoff img {
-  width: clamp(150px, 14vw, 220px);
+  width: clamp(135px, 11vw, 165px);
   height: auto;
   filter: brightness(0);
 }
@@ -652,17 +685,15 @@ footer a { color: white; text-decoration: none; }
 .putting-app-screen-6 { background-position: 50% 100%; }
 
 @media (max-width: 1180px) {
-  .menu-button { display: block; }
-  .site-header nav { display: none; position: absolute; left: 0; right: 0; top: 72px; max-height: calc(100vh - 72px); overflow: auto; padding: 18px 22px 24px; flex-direction: column; align-items: stretch; gap: 0; background: white; border-bottom: 1px solid var(--line); box-shadow: 0 14px 30px rgba(20,31,43,.12); }
-  .site-header nav.open { display: flex; }
-  .site-header nav a { padding: 12px 4px; border-bottom: 1px solid var(--line); font-size: 13px; }
-  .site-header .download { margin-top: 12px; padding: 13px; text-align: center; }
+  .site-header nav { max-height: calc(100vh - 92px); overflow: auto; }
 }
 @media (max-width: 860px) {
   .ceo-message { min-height: auto; padding: 52px 24px; }
+  .ceo-message-layout { grid-template-columns: 1fr; gap: 34px; }
   .ceo-message-body { padding: 0; }
-  .ceo-message-signoff { align-items: flex-end; flex-direction: column; gap: 8px; }
-  .ceo-message-signoff img { width: 170px; }
+  .ceo-message-profile { position: static; width: min(74%, 280px); margin: 0 auto; }
+  .ceo-message-signoff { align-items: flex-end; gap: 4px; }
+  .ceo-message-signoff img { width: 145px; }
   .company-overview { min-height: auto; padding: 48px 24px; }
   .company-overview-layout { grid-template-columns: 1fr; }
   .company-history-columns { grid-template-columns: 1fr; }
@@ -694,7 +725,7 @@ footer a { color: white; text-decoration: none; }
   .company-history li { grid-template-columns: 68px 1fr; }
   .site-header { height: 60px; }
   html { scroll-padding-top: 60px; }
-  .site-header nav { top: 60px; max-height: calc(100vh - 60px); }
+  .site-header nav { top: calc(100% + 8px); max-height: calc(100vh - 76px); }
   .brand img { width: 166px; height: 52px; }
   .home-hero { scroll-margin-top: 60px; }
   .hero-copy { padding: 58px 22px 40px; }
