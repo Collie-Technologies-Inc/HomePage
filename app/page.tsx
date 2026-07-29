@@ -65,7 +65,11 @@ export default function Page() {
       <section className="home-hero" id="cover" aria-label="(주)콜리테크놀로지">
         <div className="hero-copy">
           <p className="hero-kicker">PHYSICAL AI · GOLF COURSE AX<br />DIGITAL PUTTING</p>
-          <h1>골프장의 운영과 연습을 잇는<br /><em>Smart Golf Solution</em></h1>
+          <h1>
+            <span>골프장의 운영과</span>
+            <span>연습을 잇는,</span>
+            <em><span>Smart Golf</span><span>Solution</span></em>
+          </h1>
           <p className="hero-description">
             (주)콜리테크놀로지는 Physical AI Robot Caddie 기반 골프장 AX Solution과 Digital Putting 연습기를 개발합니다.
             다중 센서융합·자율주행·클라우드 관제로 골프장 운영을 혁신하고, 디지털 퍼팅 기술로 정밀한 연습 경험을 제공합니다.

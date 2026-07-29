@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 type User = {
   email: string | null;
@@ -17,7 +17,7 @@ const menuItems = [
 ] as const;
 
 export function HeaderActions() {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<User | null | undefined>(undefined);
   const [showLoginNotice, setShowLoginNotice] = useState(false);
 
   function startKakaoLogin() {
@@ -35,6 +35,31 @@ export function HeaderActions() {
       .catch(() => setUser(null));
   }, []);
 
+  useEffect(() => {
+    if (user !== null) return;
+    const previousOverflow = document.body.style.overflow;
+    window.scrollTo({ behavior: "auto", top: 0 });
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [user]);
+
+  async function logout(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const previousUser = user;
+    window.scrollTo({ behavior: "auto", top: 0 });
+    window.history.replaceState(null, "", "/");
+    setShowLoginNotice(false);
+    setUser(null);
+    try {
+      const response = await fetch("/api/auth/logout", { method: "POST" });
+      if (!response.ok) setUser(previousUser);
+    } catch {
+      setUser(previousUser);
+    }
+  }
+
   return (
     <>
       <nav className="header-navigation" id="site-navigation" aria-label="웹사이트 주요 메뉴">
@@ -45,14 +70,16 @@ export function HeaderActions() {
             onClick={(event) => {
               if (user) return;
               event.preventDefault();
-              setShowLoginNotice(true);
+              if (user === null) setShowLoginNotice(true);
             }}
           >
             {item.title}
           </a>
         ))}
       </nav>
-      {!user ? (
+      {user === undefined ? (
+        <span className="auth-loading" aria-label="로그인 상태 확인 중" />
+      ) : !user ? (
         <a
           className="kakao-login"
           href="/api/auth/kakao/start"
@@ -79,7 +106,7 @@ export function HeaderActions() {
           )}
           <span>{user.nickname}</span>
           {user.isAdmin ? <a className="admin-link" href="/admin/users">회원 관리</a> : null}
-          <form action="/api/auth/logout" method="post"><button type="submit">로그아웃</button></form>
+          <form action="/api/auth/logout" method="post" onSubmit={logout}><button type="submit">로그아웃</button></form>
         </div>
       )}
       {showLoginNotice ? (
