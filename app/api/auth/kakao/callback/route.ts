@@ -1,4 +1,3 @@
-import { eq } from "drizzle-orm";
 import { NextResponse } from "next/server";
 import { getDb } from "@/db";
 import { users } from "@/db/schema";
@@ -63,11 +62,10 @@ export async function GET(request: Request) {
   let userId = 0;
   if (process.env.DATABASE_URL) {
     const db = getDb();
-    await db.insert(users).values({ email, kakaoId, nickname, profileImageUrl }).onConflictDoUpdate({
+    const [user] = await db.insert(users).values({ email, kakaoId, nickname, profileImageUrl }).onConflictDoUpdate({
       target: users.kakaoId,
       set: { email, lastLoginAt: new Date().toISOString(), nickname, profileImageUrl, updatedAt: new Date().toISOString() },
-    });
-    const [user] = await db.select().from(users).where(eq(users.kakaoId, kakaoId)).limit(1);
+    }).returning({ id: users.id });
     if (!user) {
       appUrl.searchParams.set("auth_error", "storage");
       return NextResponse.redirect(appUrl);

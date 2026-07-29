@@ -53,7 +53,10 @@ export function HeaderActions() {
     setShowLoginNotice(false);
     setUser(null);
     try {
-      const response = await fetch("/api/auth/logout", { method: "POST" });
+      const response = await fetch("/api/auth/logout", {
+        credentials: "same-origin",
+        method: "POST",
+      });
       if (!response.ok) setUser(previousUser);
     } catch {
       setUser(previousUser);
