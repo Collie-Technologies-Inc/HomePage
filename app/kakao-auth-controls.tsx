@@ -10,10 +10,11 @@ type User = {
 };
 
 const menuItems = [
-  { id: "ceo-message", title: "기업현황" },
-  { id: "ax-control", title: "기술개발" },
-  { id: "ip-list", title: "연구개발" },
-  { id: "press", title: "뉴스 및 소식" },
+  { href: "/#ceo-message", protected: true, title: "기업현황" },
+  { href: "/#ax-control", protected: true, title: "기술개발" },
+  { href: "/#ip-list", protected: true, title: "연구개발" },
+  { href: "/#press", protected: true, title: "뉴스 및 소식" },
+  { href: "/contact", protected: false, title: "문의하기" },
 ] as const;
 
 export function HeaderActions() {
@@ -42,7 +43,7 @@ export function HeaderActions() {
   }, []);
 
   useEffect(() => {
-    if (user !== null) return;
+    if (user !== null || window.location.pathname !== "/") return;
     const previousOverflow = document.body.style.overflow;
     window.scrollTo({ behavior: "auto", top: 0 });
     document.body.style.overflow = "hidden";
@@ -74,9 +75,10 @@ export function HeaderActions() {
       <nav className="header-navigation" id="site-navigation" aria-label="웹사이트 주요 메뉴">
         {menuItems.map((item) => (
           <a
-            href={`#${item.id}`}
-            key={item.id}
+            href={item.href}
+            key={item.href}
             onClick={(event) => {
+              if (!item.protected) return;
               if (user) return;
               event.preventDefault();
               if (user === null) setShowLoginNotice(true);
