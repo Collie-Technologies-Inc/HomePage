@@ -17,6 +17,10 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .brand img { width: 208px; height: 64px; object-fit: contain; }
 .kakao-login { margin-left: auto; padding: 10px 15px; border-radius: 7px; background: #fee500; color: #191919; font-size: 13px; font-weight: 900; text-decoration: none; white-space: nowrap; }
 .kakao-user { margin-left: auto; display: flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 800; }
+.kakao-profile-image,
+.kakao-profile-placeholder { width: 34px; height: 34px; flex: 0 0 34px; border-radius: 50%; }
+.kakao-profile-image { display: block; border: 1px solid var(--line); object-fit: cover; background: #f4f5f6; }
+.kakao-profile-placeholder { display: grid; place-items: center; background: #fee500; color: #191919; font-size: 14px; font-weight: 900; }
 .kakao-user form { margin: 0; }
 .kakao-user button { padding: 8px 11px; border: 1px solid var(--line); background: white; color: var(--navy); font: inherit; cursor: pointer; }
 .header-menu { position: relative; margin-left: auto; }
@@ -766,6 +770,8 @@ footer a { color: white; text-decoration: none; }
   .brand img { width: 166px; height: 52px; }
   .kakao-login { margin-left: auto; padding: 9px 11px; font-size: 12px; }
   .kakao-user { min-width: 0; gap: 6px; font-size: 11px; }
+  .kakao-profile-image,
+  .kakao-profile-placeholder { width: 28px; height: 28px; flex-basis: 28px; }
   .kakao-user span {
     display: block;
     max-width: 72px;
