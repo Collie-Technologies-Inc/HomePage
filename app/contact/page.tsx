@@ -19,7 +19,6 @@ export default async function ContactPage() {
     <section className="contact-page">
       <div className="contact-shell">
         <div className="contact-intro">
-          <p className="contact-eyebrow">CONTACT COLLIE TECHNOLOGIES</p>
           <h1>문의하기</h1>
           <p className="contact-lead">제품과 기술, 사업 제휴 및 도입에 관한 문의를 남겨 주세요. 내용을 확인한 후 담당자가 빠르게 답변드리겠습니다.</p>
           <div className="contact-guide">
