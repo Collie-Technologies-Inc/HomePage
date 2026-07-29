@@ -1,11 +1,11 @@
-// @ts-expect-error Provided by the Cloudflare Workers runtime during deployment.
-import { env } from "cloudflare:workers";
-import { drizzle } from "drizzle-orm/d1";
+import { neon } from "@neondatabase/serverless";
+import { drizzle } from "drizzle-orm/neon-http";
 import * as schema from "./schema";
 
 export function getDb() {
-  if (!env.DB) {
-    throw new Error("Cloudflare D1 binding `DB` is unavailable.");
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) {
+    throw new Error("DATABASE_URL is unavailable.");
   }
-  return drizzle(env.DB, { schema });
+  return drizzle(neon(connectionString), { schema });
 }
