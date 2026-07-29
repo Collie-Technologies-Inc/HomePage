@@ -765,7 +765,15 @@ footer a { color: white; text-decoration: none; }
   .site-header nav { top: calc(100% + 8px); max-height: calc(100vh - 76px); }
   .brand img { width: 166px; height: 52px; }
   .kakao-login { margin-left: auto; padding: 9px 11px; font-size: 12px; }
-  .kakao-user span { display: none; }
+  .kakao-user { min-width: 0; gap: 6px; font-size: 11px; }
+  .kakao-user span {
+    display: block;
+    max-width: 72px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .kakao-user button { padding: 7px 8px; white-space: nowrap; }
   .header-menu { margin-left: 0; }
   .home-hero { scroll-margin-top: 60px; }
   .hero-copy { padding: 58px 22px 40px; }
