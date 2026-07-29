@@ -41,6 +41,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .login-required-actions button { min-width: 72px; padding: 11px 18px; border-radius: 10px; font: inherit; font-weight: 800; cursor: pointer; }
 .login-required-confirm { border: 1px solid #191919; background: #191919; color: white; }
 .login-required-cancel { border: 1px solid var(--line); background: white; color: #273443; }
+.login-required-actions button:disabled { cursor: wait; opacity: .68; }
 .login-required-actions button:focus-visible { outline: 3px solid rgba(114, 169, 69, .45); outline-offset: 2px; }
 .header-navigation { min-width: 0; margin-left: auto; display: flex; align-items: center; justify-content: flex-end; gap: clamp(2px, .6vw, 10px); }
 .site-header nav a { padding: 11px clamp(8px, 1vw, 16px); border-radius: 8px; color: #273443; text-decoration: none; font-size: 14px; font-weight: 800; white-space: nowrap; }
