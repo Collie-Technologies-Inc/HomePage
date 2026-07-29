@@ -14,7 +14,7 @@ const menuItems = [
   { href: "/#ax-control", protected: true, title: "기술개발" },
   { href: "/#ip-list", protected: true, title: "연구개발" },
   { href: "/#press", protected: true, title: "뉴스 및 소식" },
-  { href: "/contact", protected: false, title: "문의하기" },
+  { href: "/contact", protected: true, title: "문의하기" },
 ] as const;
 
 export function HeaderActions() {
@@ -32,7 +32,14 @@ export function HeaderActions() {
   useEffect(() => {
     fetch("/api/auth/me", { credentials: "same-origin" })
       .then((response) => response.json())
-      .then((data: { user?: User | null }) => setUser(data.user || null))
+      .then((data: { user?: User | null }) => {
+        const resolvedUser = data.user || null;
+        setUser(resolvedUser);
+        if (!resolvedUser && new URLSearchParams(window.location.search).get("contact") === "login-required") {
+          setShowLoginNotice(true);
+          window.history.replaceState(null, "", "/");
+        }
+      })
       .catch(() => setUser(null));
   }, []);
 
@@ -64,7 +71,11 @@ export function HeaderActions() {
         credentials: "same-origin",
         method: "POST",
       });
-      if (!response.ok) setUser(previousUser);
+      if (!response.ok) {
+        setUser(previousUser);
+      } else if (window.location.pathname !== "/") {
+        window.location.replace("/");
+      }
     } catch {
       setUser(previousUser);
     }
