@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { desc } from "drizzle-orm";
+import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { isAdminKakaoId, readSession } from "@/app/kakao-auth";
 import { getDb } from "@/db";
@@ -33,7 +34,10 @@ export default async function AdminUsersPage() {
             <h1>카카오 로그인 회원</h1>
             <p>가입 정보와 최근 로그인 기록을 확인할 수 있습니다.</p>
           </div>
-          <div className="admin-count">전체 {memberList.length}명</div>
+          <div className="admin-actions">
+            <Link className="admin-home-link" href="/">홈페이지로 돌아가기</Link>
+            <div className="admin-count">전체 {memberList.length}명</div>
+          </div>
         </header>
 
         <div className="admin-table-wrap">
