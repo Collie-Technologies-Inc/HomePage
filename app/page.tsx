@@ -67,7 +67,7 @@ export default function Page() {
           <p className="hero-kicker">PHYSICAL AI · GOLF COURSE AX<br />DIGITAL PUTTING</p>
           <h1>
             <span>골프장의 운영과</span>
-            <span>연습을 잇는,</span>
+            <span>연습을 잇는</span>
             <em><span>Smart Golf</span><span>Solution</span></em>
           </h1>
           <p className="hero-description">
