@@ -19,10 +19,8 @@ const menuItems = [
 export function HeaderActions() {
   const [user, setUser] = useState<User | null>(null);
   const [showLoginNotice, setShowLoginNotice] = useState(false);
-  const [isLoginRedirecting, setIsLoginRedirecting] = useState(false);
 
   function startKakaoLogin() {
-    setIsLoginRedirecting(true);
     if (window.location.hostname === "localhost") {
       window.location.href = `http://127.0.0.1:${window.location.port || "3000"}/api/auth/kakao/start`;
       return;
@@ -93,13 +91,10 @@ export function HeaderActions() {
             className="login-required-dialog"
             role="dialog"
           >
-            <h2 id="login-required-title">collietech.co.kr의 메시지</h2>
-            <p id="login-required-description">메뉴를 이용하려면 먼저 카카오 로그인이 필요합니다.</p>
+            <h2 id="login-required-title">로그인이 필요합니다</h2>
+            <p id="login-required-description">메뉴를 이용하려면 오른쪽의 카카오 로그인 버튼으로 먼저 로그인해 주세요.</p>
             <div className="login-required-actions">
-              <button className="login-required-confirm" disabled={isLoginRedirecting} onClick={startKakaoLogin} type="button">
-                {isLoginRedirecting ? "로그인 이동 중…" : "확인"}
-              </button>
-              <button className="login-required-cancel" disabled={isLoginRedirecting} onClick={() => setShowLoginNotice(false)} type="button">취소</button>
+              <button className="login-required-confirm" onClick={() => setShowLoginNotice(false)} type="button">확인</button>
             </div>
           </div>
         </div>
