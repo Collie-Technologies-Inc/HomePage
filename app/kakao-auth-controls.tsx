@@ -21,8 +21,11 @@ export function HeaderActions() {
   const [showLoginNotice, setShowLoginNotice] = useState(false);
 
   function startKakaoLogin() {
-    const host = window.location.hostname === "localhost" ? "127.0.0.1" : window.location.hostname;
-    window.location.href = `${window.location.protocol}//${host}:${window.location.port || "3000"}/api/auth/kakao/start`;
+    if (window.location.hostname === "localhost") {
+      window.location.href = `http://127.0.0.1:${window.location.port || "3000"}/api/auth/kakao/start`;
+      return;
+    }
+    window.location.href = `${window.location.origin}/api/auth/kakao/start`;
   }
 
   useEffect(() => {
