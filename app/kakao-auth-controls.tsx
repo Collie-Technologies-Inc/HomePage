@@ -36,6 +36,12 @@ export function HeaderActions() {
   }, []);
 
   useEffect(() => {
+    const showNotice = () => setShowLoginNotice(true);
+    window.addEventListener("collie:login-required", showNotice);
+    return () => window.removeEventListener("collie:login-required", showNotice);
+  }, []);
+
+  useEffect(() => {
     if (user !== null) return;
     const previousOverflow = document.body.style.overflow;
     window.scrollTo({ behavior: "auto", top: 0 });

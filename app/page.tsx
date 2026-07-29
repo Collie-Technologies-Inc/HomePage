@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Fragment } from "react";
 import { sections } from "./data";
+import { ProtectedHeroLinks } from "./protected-hero-links";
 
 const pressArticles = [
   {
@@ -74,10 +75,7 @@ export default function Page() {
             (주)콜리테크놀로지는 Physical AI Robot Caddie 기반 골프장 AX Solution과 Digital Putting 연습기를 개발합니다.
             다중 센서융합·자율주행·클라우드 관제로 골프장 운영을 혁신하고, 디지털 퍼팅 기술로 정밀한 연습 경험을 제공합니다.
           </p>
-          <div className="hero-links">
-            <a href="#ax-control">Robot Caddie & AX</a>
-            <a href="#putting-simulator">Digital Putting</a>
-          </div>
+          <ProtectedHeroLinks />
           <ul className="hero-tech" aria-label="핵심 기술">
             <li className="hero-tech-primary">RTK-GPS&nbsp;&nbsp;|&nbsp;&nbsp;UWB&nbsp;&nbsp;|&nbsp;&nbsp;Radar&nbsp;&nbsp;|&nbsp;&nbsp;AI Vision&nbsp;&nbsp;|&nbsp;&nbsp;ROS2&nbsp;&nbsp;|&nbsp;&nbsp;Motor Control</li>
             <li>Golf Dynamics&nbsp;&nbsp;|&nbsp;&nbsp;Impact &amp; Departure Sensor</li>
