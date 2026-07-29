@@ -6,6 +6,7 @@ type User = {
   email: string | null;
   nickname: string;
   profileImageUrl: string | null;
+  isAdmin: boolean;
 };
 
 export function KakaoAuthControls() {
@@ -33,6 +34,7 @@ export function KakaoAuthControls() {
         </span>
       )}
       <span>{user.nickname}</span>
+      {user.isAdmin ? <a className="admin-link" href="/admin/users">회원 관리</a> : null}
       <form action="/api/auth/logout" method="post"><button type="submit">로그아웃</button></form>
     </div>
   );

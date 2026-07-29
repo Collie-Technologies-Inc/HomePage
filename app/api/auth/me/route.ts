@@ -1,7 +1,7 @@
 import { eq } from "drizzle-orm";
 import { getDb } from "@/db";
 import { users } from "@/db/schema";
-import { readSession } from "@/app/kakao-auth";
+import { isAdminKakaoId, readSession } from "@/app/kakao-auth";
 
 export async function GET() {
   try {
@@ -16,7 +16,9 @@ export async function GET() {
       .from(users)
       .where(eq(users.id, session.userId))
       .limit(1);
-    return Response.json({ user: user || null });
+    return Response.json({
+      user: user ? { ...user, isAdmin: isAdminKakaoId(session.kakaoId) } : null,
+    });
   } catch {
     return Response.json({ user: null });
   }

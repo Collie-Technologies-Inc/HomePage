@@ -9,6 +9,14 @@ type SessionPayload = {
   userId: number;
 };
 
+export function isAdminKakaoId(kakaoId: string) {
+  return (process.env.ADMIN_KAKAO_IDS || "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean)
+    .includes(kakaoId);
+}
+
 function sessionSecret() {
   const value = process.env.SESSION_SECRET;
   if (!value || value.length < 32) {
@@ -71,4 +79,3 @@ export function callbackUrl(request: Request) {
 export function secureCookie(request: Request) {
   return new URL(request.url).protocol === "https:";
 }
-
