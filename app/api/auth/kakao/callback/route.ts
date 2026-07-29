@@ -16,9 +16,14 @@ type KakaoUser = {
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
+  const appUrl = new URL(callbackUrl(request));
+  appUrl.pathname = "/";
+  appUrl.search = "";
+  appUrl.hash = "";
   const stateCookie = request.headers.get("cookie")?.match(/(?:^|; )collie_kakao_state=([^;]+)/)?.[1];
   if (!url.searchParams.get("code") || !url.searchParams.get("state") || url.searchParams.get("state") !== stateCookie) {
-    return NextResponse.redirect(new URL("/?auth_error=invalid_state", request.url));
+    appUrl.searchParams.set("auth_error", "invalid_state");
+    return NextResponse.redirect(appUrl);
   }
 
   const clientId = process.env.KAKAO_REST_API_KEY;
@@ -38,30 +43,42 @@ export async function GET(request: Request) {
   });
   const token = (await tokenResponse.json()) as KakaoToken;
   if (!tokenResponse.ok || !token.access_token) {
-    return NextResponse.redirect(new URL("/?auth_error=token", request.url));
+    appUrl.searchParams.set("auth_error", "token");
+    return NextResponse.redirect(appUrl);
   }
 
   const profileResponse = await fetch("https://kapi.kakao.com/v2/user/me", {
     headers: { Authorization: `Bearer ${token.access_token}` },
   });
-  if (!profileResponse.ok) return NextResponse.redirect(new URL("/?auth_error=profile", request.url));
+  if (!profileResponse.ok) {
+    appUrl.searchParams.set("auth_error", "profile");
+    return NextResponse.redirect(appUrl);
+  }
   const kakaoUser = (await profileResponse.json()) as KakaoUser;
   const kakaoId = String(kakaoUser.id);
   const nickname = kakaoUser.kakao_account?.profile?.nickname || kakaoUser.properties?.nickname || "카카오 사용자";
   const profileImageUrl = kakaoUser.kakao_account?.profile?.profile_image_url || kakaoUser.properties?.profile_image || null;
   const email = kakaoUser.kakao_account?.email || null;
 
-  const db = getDb();
-  await db.insert(users).values({ email, kakaoId, nickname, profileImageUrl }).onConflictDoUpdate({
-    target: users.kakaoId,
-    set: { email, lastLoginAt: new Date().toISOString(), nickname, profileImageUrl, updatedAt: new Date().toISOString() },
-  });
-  const [user] = await db.select().from(users).where(eq(users.kakaoId, kakaoId)).limit(1);
-  if (!user) return NextResponse.redirect(new URL("/?auth_error=storage", request.url));
+  let userId = 0;
+  if (process.env.DATABASE_URL) {
+    const db = getDb();
+    await db.insert(users).values({ email, kakaoId, nickname, profileImageUrl }).onConflictDoUpdate({
+      target: users.kakaoId,
+      set: { email, lastLoginAt: new Date().toISOString(), nickname, profileImageUrl, updatedAt: new Date().toISOString() },
+    });
+    const [user] = await db.select().from(users).where(eq(users.kakaoId, kakaoId)).limit(1);
+    if (!user) {
+      appUrl.searchParams.set("auth_error", "storage");
+      return NextResponse.redirect(appUrl);
+    }
+    userId = user.id;
+  }
 
-  const response = NextResponse.redirect(new URL("/?login=kakao", request.url));
+  appUrl.searchParams.set("login", "kakao");
+  const response = NextResponse.redirect(appUrl);
   response.cookies.delete(KAKAO_STATE_COOKIE);
-  response.cookies.set(KAKAO_SESSION_COOKIE, await createSessionToken(user.id, kakaoId), {
+  response.cookies.set(KAKAO_SESSION_COOKIE, await createSessionToken(userId, kakaoId, { email, nickname, profileImageUrl }), {
     httpOnly: true,
     maxAge: 60 * 60 * 24 * 14,
     path: "/",
@@ -70,4 +87,3 @@ export async function GET(request: Request) {
   });
   return response;
 }
-

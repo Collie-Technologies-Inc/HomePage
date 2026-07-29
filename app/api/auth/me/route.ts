@@ -7,6 +7,16 @@ export async function GET() {
   try {
     const session = await readSession();
     if (!session) return Response.json({ user: null });
+    if (!process.env.DATABASE_URL) {
+      return Response.json({
+        user: session.nickname ? {
+          email: session.email || null,
+          isAdmin: isAdminKakaoId(session.kakaoId),
+          nickname: session.nickname,
+          profileImageUrl: session.profileImageUrl || null,
+        } : null,
+      });
+    }
     const [user] = await getDb()
       .select({
         email: users.email,

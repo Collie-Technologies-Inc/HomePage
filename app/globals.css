@@ -12,11 +12,11 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   letter-spacing: -.045em !important;
   text-align: left !important;
 }
-.site-header { position: sticky; top: 0; z-index: 20; height: 72px; padding: 0 clamp(18px, 3vw, 52px); display: flex; align-items: center; gap: 28px; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); }
+.site-header { position: sticky; top: 0; z-index: 20; height: 72px; padding: 0 clamp(18px, 3vw, 52px); display: flex; align-items: center; gap: clamp(14px, 2vw, 28px); background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); }
 .brand { display: flex; flex: 0 0 auto; }
 .brand img { width: 208px; height: 64px; object-fit: contain; }
-.kakao-login { margin-left: auto; padding: 10px 15px; border-radius: 7px; background: #fee500; color: #191919; font-size: 13px; font-weight: 900; text-decoration: none; white-space: nowrap; }
-.kakao-user { margin-left: auto; display: flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 800; }
+.kakao-login { flex: 0 0 auto; margin-left: 0; padding: 10px 15px; border-radius: 7px; background: #fee500; color: #191919; font-size: 13px; font-weight: 900; text-decoration: none; white-space: nowrap; }
+.kakao-user { flex: 0 0 auto; margin-left: 0; display: flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 800; }
 .kakao-profile-image,
 .kakao-profile-placeholder { width: 34px; height: 34px; flex: 0 0 34px; border-radius: 50%; }
 .kakao-profile-image { display: block; border: 1px solid var(--line); object-fit: cover; background: #f4f5f6; }
@@ -24,14 +24,28 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .admin-link { padding: 8px 11px; border-radius: 6px; background: var(--navy); color: white; text-decoration: none; white-space: nowrap; }
 .kakao-user form { margin: 0; }
 .kakao-user button { padding: 8px 11px; border: 1px solid var(--line); background: white; color: var(--navy); font: inherit; cursor: pointer; }
-.header-menu { position: relative; margin-left: auto; }
-.site-header nav { display: none; position: absolute; top: calc(100% + 12px); right: 0; width: min(260px, calc(100vw - 36px)); padding: 8px; background: white; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 16px 38px rgba(20,31,43,.16); }
-.header-menu[open] nav { display: flex; flex-direction: column; align-items: stretch; }
-.site-header nav a { padding: 13px 16px; border-radius: 8px; color: #273443; text-decoration: none; font-size: 14px; font-weight: 800; white-space: nowrap; }
+.login-required-backdrop {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(18, 32, 51, .28);
+  backdrop-filter: blur(2px);
+}
+.login-required-dialog { width: min(560px, 100%); padding: 28px 30px 24px; border: 1px solid rgba(18, 32, 51, .1); border-radius: 22px; background: white; box-shadow: 0 18px 48px rgba(18, 32, 51, .28); color: #202733; }
+.login-required-dialog h2 { margin: 0; font-size: 20px; font-weight: 500; }
+.login-required-dialog p { margin: 28px 0 34px; font-size: 17px; font-weight: 600; line-height: 1.55; }
+.login-required-actions { display: flex; justify-content: flex-end; gap: 10px; }
+.login-required-actions button { min-width: 72px; padding: 11px 18px; border-radius: 10px; font: inherit; font-weight: 800; cursor: pointer; }
+.login-required-confirm { border: 1px solid #191919; background: #191919; color: white; }
+.login-required-cancel { border: 1px solid var(--line); background: white; color: #273443; }
+.login-required-actions button:focus-visible { outline: 3px solid rgba(114, 169, 69, .45); outline-offset: 2px; }
+.header-navigation { min-width: 0; margin-left: auto; display: flex; align-items: center; justify-content: flex-end; gap: clamp(2px, .6vw, 10px); }
+.site-header nav a { padding: 11px clamp(8px, 1vw, 16px); border-radius: 8px; color: #273443; text-decoration: none; font-size: 14px; font-weight: 800; white-space: nowrap; }
 .site-header nav a:hover, .site-header nav a:focus-visible { color: var(--green); }
 .site-header .download { padding: 10px 13px; color: white; background: var(--navy); }
-.menu-button { display: block; border: 1px solid var(--navy); background: white; color: var(--navy); padding: 10px 15px; font-weight: 800; cursor: pointer; list-style: none; user-select: none; }
-.menu-button::-webkit-details-marker { display: none; }
 .document { width: min(100%, 1754px); margin: 0 auto; background: white; box-shadow: 0 16px 50px rgba(24,35,48,.1); }
 .home-hero { min-height: calc(100vh - 72px); position: relative; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); overflow: hidden; scroll-margin-top: 72px; background: linear-gradient(115deg, #102234 0%, #18354b 58%, #e8eee9 58%); color: white; }
 .hero-copy { position: relative; z-index: 2; align-self: center; padding: clamp(52px, 7vw, 118px); padding-right: clamp(32px, 5vw, 80px); }
@@ -713,7 +727,9 @@ footer a { color: white; text-decoration: none; }
 .putting-app-screen-6 { background-position: 50% 100%; }
 
 @media (max-width: 1180px) {
-  .site-header nav { max-height: calc(100vh - 92px); overflow: auto; }
+  .site-header { padding-inline: 18px; gap: 12px; }
+  .brand img { width: 166px; }
+  .site-header nav a { padding-inline: 8px; font-size: 13px; }
 }
 @media (max-width: 860px) {
   .ceo-message { min-height: auto; padding: 52px 24px; }
@@ -788,9 +804,16 @@ footer a { color: white; text-decoration: none; }
   .company-history li { grid-template-columns: 68px 1fr; }
   .site-header { height: 60px; }
   html { scroll-padding-top: 60px; }
-  .site-header nav { top: calc(100% + 8px); max-height: calc(100vh - 76px); }
-  .brand img { width: 166px; height: 52px; }
-  .kakao-login { margin-left: auto; padding: 9px 11px; font-size: 12px; }
+  .site-header { padding-inline: 8px; gap: 5px; }
+  .brand img { width: 96px; height: 48px; }
+  .header-navigation { flex: 1 1 auto; justify-content: flex-start; gap: 0; overflow-x: auto; scrollbar-width: none; }
+  .header-navigation::-webkit-scrollbar { display: none; }
+  .site-header nav a { padding: 8px 5px; font-size: 10px; }
+  .kakao-login { margin-left: 0; padding: 9px 8px; font-size: 11px; }
+  .login-required-backdrop { padding: 14px; }
+  .login-required-dialog { padding: 22px 20px 18px; border-radius: 18px; }
+  .login-required-dialog h2 { font-size: 17px; }
+  .login-required-dialog p { margin: 22px 0 28px; font-size: 15px; }
   .kakao-user { min-width: 0; gap: 6px; font-size: 11px; }
   .kakao-profile-image,
   .kakao-profile-placeholder { width: 28px; height: 28px; flex-basis: 28px; }
@@ -803,7 +826,6 @@ footer a { color: white; text-decoration: none; }
   }
   .kakao-user button { padding: 7px 8px; white-space: nowrap; }
   .admin-link { padding: 7px 8px; }
-  .header-menu { margin-left: 0; }
   .admin-heading { align-items: start; flex-direction: column; }
   .admin-actions { width: 100%; flex-wrap: wrap; }
   .home-hero { scroll-margin-top: 60px; }

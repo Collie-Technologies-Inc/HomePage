@@ -4,10 +4,15 @@ export const KAKAO_SESSION_COOKIE = "collie_kakao_session";
 export const KAKAO_STATE_COOKIE = "collie_kakao_state";
 
 type SessionPayload = {
+  email?: string | null;
   exp: number;
   kakaoId: string;
+  nickname?: string;
+  profileImageUrl?: string | null;
   userId: number;
 };
+
+type SessionProfile = Pick<SessionPayload, "email" | "nickname" | "profileImageUrl">;
 
 export function isAdminKakaoId(kakaoId: string) {
   return (process.env.ADMIN_KAKAO_IDS || "")
@@ -49,8 +54,9 @@ async function sign(value: string) {
   return encode(await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(value)));
 }
 
-export async function createSessionToken(userId: number, kakaoId: string) {
+export async function createSessionToken(userId: number, kakaoId: string, profile: SessionProfile = {}) {
   const payload = encode(JSON.stringify({
+    ...profile,
     exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 14,
     kakaoId,
     userId,
