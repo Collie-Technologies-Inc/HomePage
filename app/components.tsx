@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { KakaoAuthControls } from "./kakao-auth-controls";
 
 const menuItems = [
   { id: "ceo-message", title: "기업현황" },
@@ -13,6 +14,7 @@ export function Header() {
       <a className="brand" href="#cover" aria-label="(주)콜리테크놀로지 처음으로">
         <Image src="/assets/logo.jpg" alt="Collie Technologies" width={156} height={54} priority unoptimized />
       </a>
+      <KakaoAuthControls />
       <details className="header-menu">
         <summary className="menu-button">메뉴</summary>
         <nav id="site-navigation" aria-label="웹사이트 주요 메뉴">
