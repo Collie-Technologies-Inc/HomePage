@@ -14,7 +14,8 @@ export function ProtectedHeroLinks() {
       const response = await fetch("/api/auth/me", { credentials: "same-origin" });
       const data = (await response.json()) as { user?: unknown };
       if (response.ok && data.user) {
-        window.location.assign(href);
+        window.history.pushState(null, "", href);
+        document.getElementById(href.slice(1))?.scrollIntoView({ behavior: "smooth", block: "start" });
         return;
       }
     } catch {
