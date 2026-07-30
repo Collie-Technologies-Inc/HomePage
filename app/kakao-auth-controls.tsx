@@ -20,6 +20,7 @@ const menuItems = [
 export function HeaderActions() {
   const [user, setUser] = useState<User | null | undefined>(undefined);
   const [showLoginNotice, setShowLoginNotice] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   function startKakaoLogin() {
     if (window.location.hostname === "localhost") {
@@ -48,6 +49,15 @@ export function HeaderActions() {
     window.addEventListener("collie:login-required", showNotice);
     return () => window.removeEventListener("collie:login-required", showNotice);
   }, []);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [mobileMenuOpen]);
 
   useEffect(() => {
     if (user !== null || window.location.pathname !== "/") return;
@@ -83,16 +93,29 @@ export function HeaderActions() {
 
   return (
     <>
-      <nav className="header-navigation" id="site-navigation" aria-label="웹사이트 주요 메뉴">
+      <button
+        aria-controls="site-navigation"
+        aria-expanded={mobileMenuOpen}
+        className="mobile-menu-toggle"
+        onClick={() => setMobileMenuOpen((open) => !open)}
+        type="button"
+      >
+        <span aria-hidden="true">☰</span>
+        메뉴
+      </button>
+      <nav className={`header-navigation${mobileMenuOpen ? " is-open" : ""}`} id="site-navigation" aria-label="웹사이트 주요 메뉴">
         {menuItems.map((item) => (
           <a
             href={item.href}
             key={item.href}
             onClick={(event) => {
-              if (!item.protected) return;
-              if (user) return;
+              if (user) {
+                setMobileMenuOpen(false);
+                return;
+              }
               event.preventDefault();
-              if (user === null) setShowLoginNotice(true);
+              setMobileMenuOpen(false);
+              if (item.protected && user === null) setShowLoginNotice(true);
             }}
           >
             {item.title}
