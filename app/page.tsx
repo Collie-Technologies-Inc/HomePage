@@ -185,24 +185,21 @@ export default function Page() {
           )}
           {section.id === "robot-caddie" && (
             <>
-            <section className="pdf-page ax-control-page" id="ax-control" aria-label="Physical AI Robot Caddie 기반 골프 AX Solution">
-              <Image
-                unoptimized
-                src="/assets/ax-control-system.webp"
-                alt="Physical AI Robot Caddie 기반 골프 AX Solution"
-                width={1280}
-                height={720}
-                loading="lazy"
-                sizes="100vw"
-              />
-              <div className="pdf-title-mask" aria-hidden="true" />
-              <h2 className="pdf-rebuilt-title page-title ax-control-rebuilt-title">
+            <section className="ax-control-page" id="ax-control" aria-label="Physical AI Robot Caddie 기반 골프 AX Solution">
+              <h2 className="page-title ax-control-photo-title">
                 Physical AI Robot Caddie 기반 골프 AX Solution
               </h2>
-              <div className="ax-control-caption">
-                Physical AI Robot Caddie 기반 골프장 AX 관제 Solution Architecture
+              <div className="ax-control-photo">
+                <Image
+                  unoptimized
+                  src="/assets/robot-caddies-on-course.png"
+                  alt="골프 필드에서 골퍼와 함께 운용되는 Physical AI Robot Caddie"
+                  width={1536}
+                  height={1024}
+                  loading="lazy"
+                  sizes="(max-width: 860px) 100vw, 1440px"
+                />
               </div>
-              <div className="ax-control-bottom-mask" aria-hidden="true" />
             </section>
             <section className="pdf-page ax-detail-page" id="ax-sensor" aria-label="Sensor-based Physical AI Robot Caddie">
               <Image

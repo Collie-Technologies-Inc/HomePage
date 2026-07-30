@@ -94,71 +94,23 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   max-width: 88%;
   margin-bottom: 1em !important;
 }
-.ax-control-page .pdf-title-mask,
 .ax-detail-page .pdf-title-mask { background: #f8fbfa; }
 .ax-detail-page .pdf-title-mask {
   right: auto;
   width: 43%;
 }
-.ax-control-page .pdf-rebuilt-title,
 .ax-detail-page .pdf-rebuilt-title { top: 3.2%; left: 4.2%; }
-.ax-control-page .ax-control-rebuilt-title {
-  max-width: none;
-  white-space: nowrap;
-}
 .ax-control-page {
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
+  min-height: calc(100svh - var(--header-height));
+  padding: clamp(46px, 4.5vw, 72px) clamp(24px, 5vw, 80px) clamp(54px, 5vw, 80px);
+  scroll-margin-top: var(--header-height);
   background:
     radial-gradient(circle at 92% 5%, rgba(170, 225, 111, 0.16), transparent 28%),
     linear-gradient(145deg, #f8fbfa 0%, #eef5f2 100%);
 }
-.ax-control-page > img {
-  position: absolute;
-  inset: 0;
-  mix-blend-mode: multiply;
-}
-.ax-control-title {
-  position: absolute;
-  z-index: 2;
-  top: 3.2%;
-  left: 3.7%;
-  right: 3.7%;
-  height: 8.4%;
-  display: flex;
-  align-items: center;
-  background: #f8fbfa;
-  color: #090b0d;
-  font-size: clamp(13px, 2.25vw, 38px);
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.035em;
-}
-.ax-control-caption {
-  position: absolute;
-  z-index: 2;
-  left: 4.5%;
-  right: 39%;
-  top: 76.2%;
-  height: 6.5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f8fbfa;
-  color: #15191d;
-  font-size: clamp(10px, 1.45vw, 21px);
-  line-height: 1.25;
-  white-space: nowrap;
-}
-.ax-control-bottom-mask {
-  position: absolute;
-  z-index: 2;
-  left: 3.5%;
-  right: 2.8%;
-  bottom: 3.2%;
-  height: 13.5%;
-  background: #f8fbfa;
-}
+.ax-control-photo-title { width: min(100%, 1440px); margin: 0 auto clamp(24px, 2.5vw, 38px) !important; }
+.ax-control-photo { width: min(100%, 1440px); margin: 0 auto; overflow: hidden; border-radius: clamp(18px, 2vw, 32px); background: #dce8df; box-shadow: 0 22px 52px rgba(16, 39, 51, .14); }
+.ax-control-photo img { display: block; width: 100%; height: auto; }
 .ax-detail-page {
   aspect-ratio: 16 / 9;
   overflow: hidden;
@@ -818,9 +770,9 @@ footer a { color: white; text-decoration: none; }
   .pdf-page .pdf-title-mask {
     height: clamp(30px, 8.5vw, 38px);
   }
-  .ax-control-page .ax-control-rebuilt-title {
-    max-width: 91%;
-  }
+  .ax-control-page { min-height: auto; padding: 42px 18px 50px; }
+  .ax-control-photo-title { font-size: clamp(10px, 3.2vw, 14px) !important; white-space: nowrap; }
+  .ax-control-photo { border-radius: 16px; }
   .ax-sensor-caption,
   .ax-operation-caption {
     left: 6.5%;
