@@ -94,7 +94,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   max-width: 88%;
   margin-bottom: 1em !important;
 }
-.ax-control-page .pdf-title-mask { background: #fff; }
+.ax-control-page .pdf-title-mask { background: #f8fbfa; }
 .ax-detail-page .pdf-title-mask { background: #f8fbfa; }
 .ax-detail-page .pdf-title-mask {
   right: auto;
@@ -112,7 +112,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .ax-control-page > img {
   position: absolute;
   inset: 0;
-  mix-blend-mode: normal;
+  mix-blend-mode: multiply;
 }
 .ax-control-page .ax-control-rebuilt-title {
   max-width: none;
