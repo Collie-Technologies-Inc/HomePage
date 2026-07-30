@@ -1,6 +1,7 @@
 :root { --navy: #122033; --green: #72a945; --line: #dfe4e8; }
 * { box-sizing: border-box; }
-html { scroll-behavior: auto; scroll-padding-top: 72px; }
+html, body { scroll-behavior: auto !important; }
+html { scroll-padding-top: 72px; }
 body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretendard, "Noto Sans KR", sans-serif; }
 .page-title {
   margin: 0 0 1em !important;

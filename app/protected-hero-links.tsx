@@ -15,7 +15,7 @@ export function ProtectedHeroLinks() {
       const data = (await response.json()) as { user?: unknown };
       if (response.ok && data.user) {
         window.history.pushState(null, "", href);
-        document.getElementById(href.slice(1))?.scrollIntoView({ behavior: "smooth", block: "start" });
+        document.getElementById(href.slice(1))?.scrollIntoView({ behavior: "auto", block: "start" });
         return;
       }
     } catch {

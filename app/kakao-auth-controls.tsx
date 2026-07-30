@@ -111,6 +111,12 @@ export function HeaderActions() {
             onClick={(event) => {
               if (user) {
                 setMobileMenuOpen(false);
+                if (item.href.startsWith("/#") && window.location.pathname === "/") {
+                  event.preventDefault();
+                  const hash = item.href.slice(1);
+                  window.history.pushState(null, "", hash);
+                  document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: "auto", block: "start" });
+                }
                 return;
               }
               event.preventDefault();
