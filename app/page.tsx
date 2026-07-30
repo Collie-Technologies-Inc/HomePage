@@ -140,10 +140,8 @@ export default function Page() {
                     <div><dt>기업명</dt><dd>(주)콜리테크놀로지</dd></div>
                     <div><dt>대표자명</dt><dd>박인환</dd></div>
                     <div><dt>기업형태</dt><dd>법인사업자</dd></div>
-                    <div><dt>임직원 수</dt><dd>3명 (2026.07.27 현재)</dd></div>
                     <div><dt>주요 아이템</dt><dd>Physical AI Robot Caddie<br />기반 골프장 AX 관제 솔루션,<br />퍼팅 시뮬레이터, L.A.B. Putter, Stewart Trolley</dd></div>
                     <div><dt>설립일</dt><dd>2021.03.15</dd></div>
-                    <div><dt>자본금</dt><dd>₩56,250,000</dd></div>
                     <div><dt>본점 소재지</dt><dd>경기도 안산시 상록구 한양대학로 55<br />한양대학교 벤처창업관(창업보육센터) 604호</dd></div>
                   </dl>
                   <div className="company-history" aria-label="연혁">
