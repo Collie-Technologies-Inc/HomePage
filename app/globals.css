@@ -94,23 +94,65 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   max-width: 88%;
   margin-bottom: 1em !important;
 }
+.ax-control-page .pdf-title-mask,
 .ax-detail-page .pdf-title-mask { background: #f8fbfa; }
 .ax-detail-page .pdf-title-mask {
   right: auto;
   width: 43%;
 }
+.ax-control-page .pdf-rebuilt-title,
 .ax-detail-page .pdf-rebuilt-title { top: 3.2%; left: 4.2%; }
 .ax-control-page {
-  min-height: calc(100svh - var(--header-height));
-  padding: clamp(46px, 4.5vw, 72px) clamp(24px, 5vw, 80px) clamp(54px, 5vw, 80px);
-  scroll-margin-top: var(--header-height);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
   background:
     radial-gradient(circle at 92% 5%, rgba(170, 225, 111, 0.16), transparent 28%),
     linear-gradient(145deg, #f8fbfa 0%, #eef5f2 100%);
 }
-.ax-control-photo-title { width: min(100%, 1440px); margin: 0 auto clamp(24px, 2.5vw, 38px) !important; }
-.ax-control-photo { width: min(100%, 1440px); margin: 0 auto; overflow: hidden; border-radius: clamp(18px, 2vw, 32px); background: #dce8df; box-shadow: 0 22px 52px rgba(16, 39, 51, .14); }
-.ax-control-photo img { display: block; width: 100%; height: auto; }
+.ax-control-page > img {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: multiply;
+}
+.ax-control-page .ax-control-rebuilt-title {
+  max-width: none;
+  white-space: nowrap;
+}
+.ax-control-photo-slot {
+  position: absolute;
+  z-index: 3;
+  left: 3.55%;
+  top: 21.8%;
+  width: 40.1%;
+  height: 52.2%;
+  overflow: hidden;
+  border-radius: clamp(8px, 1.15vw, 18px);
+  background: #dce8df;
+  box-shadow: 0 10px 26px rgba(16, 39, 51, .16);
+}
+.ax-control-photo-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ax-control-caption-mask {
+  position: absolute;
+  z-index: 2;
+  left: 3.5%;
+  width: 41%;
+  top: 74%;
+  height: 9%;
+  background: #f8fbfa;
+}
+.ax-control-bottom-mask {
+  position: absolute;
+  z-index: 2;
+  left: 3.5%;
+  right: 2.8%;
+  bottom: 3.2%;
+  height: 13.5%;
+  background: #f8fbfa;
+}
 .ax-detail-page {
   aspect-ratio: 16 / 9;
   overflow: hidden;
@@ -770,9 +812,7 @@ footer a { color: white; text-decoration: none; }
   .pdf-page .pdf-title-mask {
     height: clamp(30px, 8.5vw, 38px);
   }
-  .ax-control-page { min-height: auto; padding: 42px 18px 50px; }
-  .ax-control-photo-title { font-size: clamp(10px, 3.2vw, 14px) !important; white-space: nowrap; }
-  .ax-control-photo { border-radius: 16px; }
+  .ax-control-page .ax-control-rebuilt-title { max-width: 91%; }
   .ax-sensor-caption,
   .ax-operation-caption {
     left: 6.5%;
