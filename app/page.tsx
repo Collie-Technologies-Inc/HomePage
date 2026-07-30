@@ -329,7 +329,7 @@ export default function Page() {
                     <strong>그린의 빠르기(Stimpmeter)</strong>와 <strong>마찰력 계수</strong>를 환경 변수로 설정하고,
                     <strong> 세로 1400 mm, 가로 330 mm의 Compact한 Mat</strong>에서 Putting을 하면,
                     (주)콜리테크놀로지가 개발한 <strong>골프 공 감지 센서와 방향 감지 센서</strong>가 골프 공의 움직임을 파악하여,
-                    골프 공의 위치, 속도, 방향을 골프 Dynamics에 의하여 정확하게 분석하여, <strong>최대 25 m</strong>까지의 Putting 연습을 할 수 있다.
+                    골프 공의 위치, 속도, 방향을 골프 Dynamics에 의하여 정확하게 분석하여, <strong>최대 25 m</strong>까지의 Putting 연습을 할 수 있습니다.
                   </li>
                   <li>평면뿐 아니라, 경사, 굴곡이 있는 그린까지 연습할 수 있으며, 두 사람이 Putting 대결 게임도 가능하다.</li>
                   <li>스마트 폰의 App과 Bluetooth로 연결하면, <strong>실제 그린의 모습을 TV화면으로 보면서 연습</strong>할 수 있다.</li>
