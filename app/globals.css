@@ -94,7 +94,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   max-width: 88%;
   margin-bottom: 1em !important;
 }
-.ax-control-page .pdf-title-mask,
+.ax-control-page .pdf-title-mask { background: #fff; }
 .ax-detail-page .pdf-title-mask { background: #f8fbfa; }
 .ax-detail-page .pdf-title-mask {
   right: auto;
@@ -112,46 +112,11 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .ax-control-page > img {
   position: absolute;
   inset: 0;
-  mix-blend-mode: multiply;
+  mix-blend-mode: normal;
 }
 .ax-control-page .ax-control-rebuilt-title {
   max-width: none;
   white-space: nowrap;
-}
-.ax-control-photo-slot {
-  position: absolute;
-  z-index: 3;
-  left: 4.65%;
-  top: 16.8%;
-  width: 54.75%;
-  height: 57.7%;
-  overflow: hidden;
-  border-radius: clamp(8px, 1.15vw, 18px);
-  background: #dce8df;
-  box-shadow: 0 10px 26px rgba(16, 39, 51, .16);
-}
-.ax-control-photo-slot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.ax-control-caption-mask {
-  position: absolute;
-  z-index: 2;
-  left: 3.5%;
-  width: 41%;
-  top: 74%;
-  height: 9%;
-  background: #f8fbfa;
-}
-.ax-control-bottom-mask {
-  position: absolute;
-  z-index: 2;
-  left: 3.5%;
-  right: 2.8%;
-  bottom: 3.2%;
-  height: 13.5%;
-  background: #f8fbfa;
 }
 .ax-detail-page {
   aspect-ratio: 16 / 9;

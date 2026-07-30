@@ -188,7 +188,7 @@ export default function Page() {
             <section className="pdf-page ax-control-page" id="ax-control" aria-label="Physical AI Robot Caddie 기반 골프 AX Solution">
               <Image
                 unoptimized
-                src="/assets/ax-control-system.webp"
+                src="/assets/ax-control-course-layout.jpg"
                 alt="Physical AI Robot Caddie 기반 골프 AX Solution"
                 width={1280}
                 height={720}
@@ -199,19 +199,6 @@ export default function Page() {
               <h2 className="pdf-rebuilt-title page-title ax-control-rebuilt-title">
                 Physical AI Robot Caddie 기반 골프 AX Solution
               </h2>
-              <div className="ax-control-photo-slot">
-                <Image
-                  unoptimized
-                  src="/assets/robot-caddies-on-course.png"
-                  alt="골프 필드에서 골퍼와 함께 운용되는 Physical AI Robot Caddie"
-                  width={1536}
-                  height={1024}
-                  loading="lazy"
-                  sizes="(max-width: 860px) 42vw, 520px"
-                />
-              </div>
-              <div className="ax-control-caption-mask" aria-hidden="true" />
-              <div className="ax-control-bottom-mask" aria-hidden="true" />
             </section>
             <section className="pdf-page ax-detail-page" id="ax-sensor" aria-label="Sensor-based Physical AI Robot Caddie">
               <Image
