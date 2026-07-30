@@ -33,6 +33,7 @@ const worker = {
     for (const [key, value] of Object.entries(env)) {
       if (typeof value === "string") process.env[key] = value;
     }
+    (globalThis as typeof globalThis & { __sitesEnv?: Env }).__sitesEnv = env;
 
     const url = new URL(request.url);
 

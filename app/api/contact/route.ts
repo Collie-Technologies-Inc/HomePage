@@ -5,6 +5,14 @@ export const runtime = "edge";
 
 const recipient = "james.park@collietech.co.kr";
 
+function runtimeEnv(name: string) {
+  const workerEnv = (globalThis as typeof globalThis & {
+    __sitesEnv?: Record<string, unknown>;
+  }).__sitesEnv;
+  const workerValue = workerEnv?.[name];
+  return typeof workerValue === "string" && workerValue ? workerValue : process.env[name];
+}
+
 function text(value: unknown, maxLength: number) {
   return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
 }
@@ -13,7 +21,7 @@ export async function POST(request: Request) {
   const session = await readSession();
   if (!session) return NextResponse.json({ error: "로그인 후 문의해 주세요." }, { status: 401 });
 
-  const apiKey = process.env.RESEND_API_KEY;
+  const apiKey = runtimeEnv("RESEND_API_KEY");
   if (!apiKey) return NextResponse.json({ error: "메일 발송 설정이 아직 완료되지 않았습니다." }, { status: 503 });
 
   const data = (await request.json()) as Record<string, unknown>;
@@ -41,7 +49,7 @@ export async function POST(request: Request) {
     method: "POST",
     headers: { authorization: `Bearer ${apiKey}`, "content-type": "application/json" },
     body: JSON.stringify({
-      from: process.env.CONTACT_FROM_EMAIL || "Collie Technologies <website@collietech.co.kr>",
+      from: runtimeEnv("CONTACT_FROM_EMAIL") || "Collie Technologies <website@collietech.co.kr>",
       to: [recipient],
       reply_to: email,
       subject: `[홈페이지 문의] ${subject}`,
