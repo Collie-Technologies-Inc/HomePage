@@ -121,10 +121,10 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .ax-control-photo-slot {
   position: absolute;
   z-index: 3;
-  left: 3.55%;
-  top: 21.8%;
-  width: 40.1%;
-  height: 52.2%;
+  left: 4.65%;
+  top: 16.8%;
+  width: 54.75%;
+  height: 57.7%;
   overflow: hidden;
   border-radius: clamp(8px, 1.15vw, 18px);
   background: #dce8df;
