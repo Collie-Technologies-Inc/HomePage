@@ -1,27 +1,32 @@
 "use client";
 
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 
 export function ContactForm() {
-  function sendInquiry(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const form = new FormData(event.currentTarget);
-    const subject = `[홈페이지 문의] ${String(form.get("subject") || "문의드립니다")}`;
-    const body = [
-      `성함 / 회사명: ${String(form.get("name") || "")}`,
-      `이메일: ${String(form.get("email") || "")}`,
-      `연락처: ${String(form.get("phone") || "미입력")}`,
-      `문의 유형: ${String(form.get("type") || "")}`,
-      `기존 고객 여부: ${String(form.get("customer") || "")}`,
-      `제품 / 프로젝트: ${String(form.get("product") || "미입력")}`,
-      "",
-      "문의 내용",
-      String(form.get("description") || ""),
-    ].join("\n");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [message, setMessage] = useState("");
 
-    window.location.assign(
-      `mailto:james.park@collietech.co.kr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
-    );
+  async function sendInquiry(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formElement = event.currentTarget;
+    setStatus("sending");
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(formElement))),
+      });
+      const result = (await response.json()) as { error?: string };
+      if (!response.ok) throw new Error(result.error || "문의 전송에 실패했습니다.");
+      formElement.reset();
+      setStatus("sent");
+      setMessage("문의가 정상적으로 전송되었습니다. 담당자가 확인 후 답변드리겠습니다.");
+    } catch (error) {
+      setStatus("error");
+      setMessage(error instanceof Error ? error.message : "문의 전송에 실패했습니다. 잠시 후 다시 시도해 주세요.");
+    }
   }
 
   return (
@@ -78,8 +83,11 @@ export function ContactForm() {
         <span>상세 내용 <strong>필수</strong></span>
         <textarea name="description" required rows={8} placeholder="문의 목적과 필요한 내용을 자세히 입력해 주세요." />
       </label>
-      <p className="contact-form-note">파일 첨부가 필요한 경우 이메일 창이 열린 후 직접 첨부해 주세요.</p>
-      <button className="contact-submit" type="submit">이메일로 문의 보내기</button>
+      <p className="contact-form-note">입력하신 내용은 문의 답변 목적으로만 사용됩니다.</p>
+      {message ? <p className={`contact-form-status is-${status}`} role="status">{message}</p> : null}
+      <button className="contact-submit" type="submit" disabled={status === "sending"}>
+        {status === "sending" ? "전송 중입니다..." : "문의 보내기"}
+      </button>
     </form>
   );
 }
