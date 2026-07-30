@@ -294,6 +294,17 @@ export default function Page() {
                 </div>
               </div>
             </section>
+            <section className="core-technology-roadmap-page" id="core-technology-roadmap" aria-label="핵심 기술 개발 성과 및 고도화 로드맵">
+              <Image
+                unoptimized
+                src="/assets/core-technology-roadmap.jpg"
+                alt="핵심 기술 개발 성과 및 고도화 로드맵"
+                width={1280}
+                height={720}
+                loading="lazy"
+                sizes="100vw"
+              />
+            </section>
             </>
           )}
           {section.id === "putting-simulator" && (
