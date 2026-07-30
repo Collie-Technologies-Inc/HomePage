@@ -338,7 +338,6 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   position: absolute;
   z-index: 3;
   left: 15.55%;
-  top: 24.6%;
   width: 7.4%;
   height: 17.2%;
   overflow: hidden;
@@ -347,6 +346,8 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   background: #102234;
   box-shadow: 0 6px 18px rgba(16, 39, 51, .2);
 }
+.roadmap-video-card--second-row { top: 43.35%; }
+.roadmap-video-card--third-row { top: 62.25%; }
 .roadmap-video-card video { width: 100%; height: 100%; object-fit: cover; background: #102234; }
 .roadmap-video-card button {
   position: absolute;

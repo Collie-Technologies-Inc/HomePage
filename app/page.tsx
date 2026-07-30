@@ -305,7 +305,16 @@ export default function Page() {
                 loading="lazy"
                 sizes="100vw"
               />
-              <RoadmapVideoCard />
+              <RoadmapVideoCard
+                className="roadmap-video-card--second-row"
+                label="Homepage2 영상 재생"
+                src="https://media.githubusercontent.com/media/Collie-Technologies-Inc/HomePage/30eb2c07b7497a514eee001bd48d1ad1a61ad165/public/assets/homepage2.mp4"
+              />
+              <RoadmapVideoCard
+                className="roadmap-video-card--third-row"
+                label="Homepage1 영상 재생"
+                src="https://media.githubusercontent.com/media/Collie-Technologies-Inc/HomePage/68f25e2f5f93060e7c895fd8fdffc3f9a5339fad/media/homepage1.mp4"
+              />
             </section>
             </>
           )}
