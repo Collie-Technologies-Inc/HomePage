@@ -13,6 +13,18 @@ function runtimeEnv(name: string) {
   return typeof workerValue === "string" && workerValue ? workerValue : process.env[name];
 }
 
+export async function GET() {
+  const workerEnv = (globalThis as typeof globalThis & {
+    __sitesEnv?: Record<string, unknown>;
+  }).__sitesEnv;
+  return NextResponse.json({
+    resendWorkerBinding: typeof workerEnv?.RESEND_API_KEY === "string" && workerEnv.RESEND_API_KEY.length > 0,
+    resendProcessEnv: typeof process.env.RESEND_API_KEY === "string" && process.env.RESEND_API_KEY.length > 0,
+    senderWorkerBinding: typeof workerEnv?.CONTACT_FROM_EMAIL === "string" && workerEnv.CONTACT_FROM_EMAIL.length > 0,
+    senderProcessEnv: typeof process.env.CONTACT_FROM_EMAIL === "string" && process.env.CONTACT_FROM_EMAIL.length > 0,
+  });
+}
+
 function text(value: unknown, maxLength: number) {
   return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
 }
