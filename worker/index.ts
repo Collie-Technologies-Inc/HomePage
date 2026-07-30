@@ -3,6 +3,7 @@ import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } fr
 import handler from "vinext/server/app-router-entry";
 
 interface Env {
+  [key: string]: unknown;
   ASSETS: Fetcher;
   IMAGES: {
     input(stream: ReadableStream): {
@@ -26,6 +27,13 @@ interface ExecutionContext {
 
 const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+    // Sites provides secrets and environment variables as Worker bindings.
+    // vinext's Next.js server code reads them through process.env, so bridge
+    // the string bindings before dispatching each request.
+    for (const [key, value] of Object.entries(env)) {
+      if (typeof value === "string") process.env[key] = value;
+    }
+
     const url = new URL(request.url);
 
     if (url.pathname === "/_vinext/image") {
