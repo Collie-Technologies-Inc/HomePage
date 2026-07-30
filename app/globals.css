@@ -1070,6 +1070,7 @@ footer a { color: white; text-decoration: none; }
   .press-heading span { line-height: 1.65; }
 }
 
+.research-development-intro,
 .ip-overview {
   min-height: calc(100svh - var(--header-height));
   padding: clamp(62px, 6vw, 96px) clamp(22px, 5vw, 80px);
@@ -1077,6 +1078,119 @@ footer a { color: white; text-decoration: none; }
     radial-gradient(circle at 92% 8%, rgba(72, 151, 191, 0.13), transparent 28%),
     linear-gradient(145deg, #eef6fb 0%, #f8fbfd 58%, #edf4f7 100%);
   color: #12283a;
+}
+
+.research-development-inner {
+  width: min(100%, 1420px);
+  margin: 0 auto;
+}
+
+.research-development-intro .page-title {
+  margin: 0 0 clamp(30px, 3.2vw, 48px);
+}
+
+.research-device-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.2vw, 32px);
+}
+
+.research-device-card {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(20, 61, 88, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 20px 48px rgba(23, 62, 88, 0.12);
+}
+
+.research-device-card--swing { background: #f2f3f5; }
+.research-device-card--radar { background: #dcebf7; }
+
+.research-device-photo {
+  width: 100%;
+  aspect-ratio: 1.76 / 1;
+  background-image: url("/assets/technology-results-source.jpg");
+  background-repeat: no-repeat;
+  background-size: 238.36% 236.07%;
+}
+
+.research-device-photo--swing { background-position: 8.1% 22.65%; }
+.research-device-photo--radar { background-position: 80.35% 22.65%; }
+
+.research-device-card h3 {
+  position: absolute;
+  right: 22px;
+  bottom: 20px;
+  margin: 0;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(15, 42, 59, 0.9);
+  color: #fff;
+  font-size: clamp(15px, 1.35vw, 20px);
+  line-height: 1.2;
+  backdrop-filter: blur(8px);
+}
+
+.research-results-copy {
+  margin-top: clamp(24px, 3vw, 42px);
+  padding: clamp(24px, 3vw, 42px);
+  border: 1px solid rgba(20, 61, 88, 0.12);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 46px rgba(23, 62, 88, 0.09);
+}
+
+.research-results-lead {
+  position: relative;
+  margin: 0;
+  padding-left: 28px;
+  font-size: clamp(18px, 1.65vw, 25px);
+  font-weight: 850;
+  line-height: 1.5;
+}
+
+.research-results-lead::before {
+  content: "";
+  position: absolute;
+  top: 0.48em;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #153d55;
+}
+
+.research-results-project {
+  margin: 16px 0 0 28px;
+  color: #34566d;
+  font-size: clamp(15px, 1.25vw, 19px);
+  line-height: 1.6;
+}
+
+.research-results-details {
+  display: grid;
+  gap: 14px;
+  margin: 24px 0 0 28px;
+}
+
+.research-results-details div {
+  display: grid;
+  grid-template-columns: minmax(150px, 190px) 1fr;
+  gap: 18px;
+  align-items: start;
+  padding-top: 14px;
+  border-top: 1px solid rgba(20, 61, 88, 0.12);
+}
+
+.research-results-details dt {
+  color: #153d55;
+  font-weight: 850;
+}
+
+.research-results-details dd {
+  margin: 0;
+  line-height: 1.65;
 }
 
 .ip-overview-inner {
@@ -1154,6 +1268,16 @@ footer a { color: white; text-decoration: none; }
 }
 
 @media (max-width: 700px) {
+  .research-development-intro { min-height: auto; padding: 48px 18px 60px; }
+  .research-device-grid { grid-template-columns: 1fr; }
+  .research-device-card { border-radius: 18px; }
+  .research-device-card h3 { right: 14px; bottom: 14px; padding: 8px 12px; }
+  .research-results-copy { padding: 22px 18px; border-radius: 18px; }
+  .research-results-lead { padding-left: 22px; }
+  .research-results-lead::before { width: 10px; height: 10px; }
+  .research-results-project,
+  .research-results-details { margin-left: 22px; }
+  .research-results-details div { grid-template-columns: 1fr; gap: 6px; }
   .ip-overview { min-height: auto; padding: 52px 18px 64px; }
   .ip-table-wrap { border-radius: 14px; }
 }

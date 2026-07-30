@@ -12,7 +12,7 @@ type User = {
 const menuItems = [
   { href: "/#ceo-message", protected: true, title: "기업현황" },
   { href: "/#ax-control", protected: true, title: "기술개발" },
-  { href: "/#ip-list", protected: true, title: "연구개발" },
+  { href: "/#research-development", protected: true, title: "연구개발" },
   { href: "/#press", protected: true, title: "뉴스 및 소식" },
   { href: "/contact", protected: true, title: "문의하기" },
 ] as const;

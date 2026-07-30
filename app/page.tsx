@@ -386,6 +386,40 @@ export default function Page() {
             </>
           )}
           {section.id === "ip-list" ? (
+            <>
+            <section className="research-development-intro" id="research-development" aria-labelledby="research-development-title">
+              <div className="research-development-inner">
+                <h2 className="page-title" id="research-development-title">기술개발 실적</h2>
+                <div className="research-device-grid" aria-label="기술개발 장비">
+                  <article className="research-device-card research-device-card--swing">
+                    <div className="research-device-photo research-device-photo--swing" role="img" aria-label="스윙 분석 단말기" />
+                    <h3>스윙 분석 단말기</h3>
+                  </article>
+                  <article className="research-device-card research-device-card--radar">
+                    <div className="research-device-photo research-device-photo--radar" role="img" aria-label="비거리 탄도 분석기" />
+                    <h3>비거리 탄도 분석기</h3>
+                  </article>
+                </div>
+                <div className="research-results-copy">
+                  <p className="research-results-lead">
+                    Physical AI 기반 골프장 AX 관제 솔루션에 적용하여 추가 데이터 서비스를 위한 스윙분석단말기와 비거리 탄도 분석기
+                  </p>
+                  <p className="research-results-project">
+                    2023년 서울시 성장 단계 스케일 업 기술 사업화 지원 프로젝트의 개발 산출물 (Prototype 완성)
+                  </p>
+                  <dl className="research-results-details">
+                    <div>
+                      <dt>스윙 분석 단말기</dt>
+                      <dd>FOV 170 어안렌즈 카메라, Jetson AGX, AWS를 이용하여 골퍼 스윙 Skeleton 추출 및 분석</dd>
+                    </div>
+                    <div>
+                      <dt>비거리 탄도 분석기</dt>
+                      <dd>K-LC7 Radar, STM32f429 Microprocessor를 사용하여 FFT 및 Doppler 해석, 골프장·실내·실외 연습장에서 비거리 탄도 분석</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </section>
             <section className="ip-overview" id="ip-list" aria-label="지식재산권 인정·인증서">
               <div className="ip-overview-inner">
                 <h2 className="page-title">지식재산권 인정·인증서</h2>
@@ -417,6 +451,7 @@ export default function Page() {
                 </div>
               </div>
             </section>
+            </>
           ) : section.id === "press" ? (
             <section className="press-page" id="press" aria-label="홍보 기사">
               <div className="press-heading">
