@@ -551,7 +551,8 @@ footer a { color: white; text-decoration: none; }
 .digital-putting-intro,
 .digital-putting-design,
 .digital-putting-ui,
-.digital-putting-app-ui {
+.digital-putting-app-ui,
+.digital-putting-videos {
   background: #f1ece3;
 }
 
@@ -784,6 +785,100 @@ footer a { color: white; text-decoration: none; }
 .putting-app-screen-5 { background-position: 50% 0%; }
 .putting-app-screen-6 { background-position: 50% 100%; }
 
+.digital-putting-videos {
+  min-height: calc(100svh - var(--header-height));
+  padding: clamp(56px, 5vw, 86px) clamp(32px, 6vw, 96px) clamp(52px, 5vw, 80px);
+  scroll-margin-top: var(--header-height);
+  color: #10171c;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.digital-putting-videos-inner {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+}
+
+.digital-putting-videos h2 {
+  margin: 0 0 clamp(28px, 3vw, 44px);
+  color: #090b0d;
+  font-size: clamp(34px, 4vw, 62px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -.045em;
+}
+
+.digital-putting-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 2.4vw, 34px);
+}
+
+.putting-video-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: clamp(16px, 1.8vw, 26px);
+  background: #102234;
+  box-shadow: 0 18px 46px rgba(16, 34, 52, .16);
+}
+
+.putting-video-card video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #102234;
+}
+
+.putting-video-card button {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: linear-gradient(rgba(16, 34, 52, .08), rgba(16, 34, 52, .3));
+  cursor: pointer;
+}
+
+.putting-video-card button span {
+  width: clamp(54px, 5vw, 76px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+}
+
+.putting-video-card button span::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 31% 0 0 40%;
+  border-top: .24em solid transparent;
+  border-bottom: .24em solid transparent;
+  border-left: .4em solid #163a58;
+  font-size: clamp(54px, 5vw, 76px);
+}
+
+.putting-video-card button:hover span,
+.putting-video-card button:focus-visible span { transform: scale(1.08); }
+
+.putting-video-card h3 {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  margin: 0;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: rgba(16, 34, 52, .78);
+  color: #fff;
+  font-size: clamp(13px, 1.15vw, 17px);
+  line-height: 1.2;
+  backdrop-filter: blur(8px);
+}
+
+.putting-video-card.is-playing h3 { display: none; }
+
 @media (max-width: 1180px) {
   .site-header { padding-inline: 18px; gap: 12px; }
   .brand img { width: 166px; }
@@ -824,6 +919,7 @@ footer a { color: white; text-decoration: none; }
   .putting-ui-screen { border-radius: 0; }
   .digital-putting-app-ui { min-height: auto; padding: 52px 26px 46px; }
   .digital-putting-app-ui-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .digital-putting-videos { min-height: auto; padding: 52px 26px 56px; }
 }
 @media (max-width: 640px) {
   .page-title {
@@ -855,10 +951,12 @@ footer a { color: white; text-decoration: none; }
   .field-experience-copy h2,
   .digital-putting-design h2,
   .digital-putting-ui h2,
-  .digital-putting-app-ui h2 {
+  .digital-putting-app-ui h2,
+  .digital-putting-videos h2 {
     font-size: clamp(20px, 5.8vw, 26px);
     line-height: 1.18;
   }
+  .digital-putting-video-grid { grid-template-columns: 1fr; }
   .company-facts > div { grid-template-columns: 92px 1fr; }
   .company-facts dt, .company-facts dd { padding: 11px 12px; }
   .company-history li { grid-template-columns: 68px 1fr; }

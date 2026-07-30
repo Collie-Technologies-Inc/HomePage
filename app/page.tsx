@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { RoadmapVideoCard } from "./roadmap-video-card";
+import { PuttingVideoCard } from "./putting-video-card";
 import { Fragment } from "react";
 import { sections } from "./data";
 import { ProtectedHeroLinks } from "./protected-hero-links";
@@ -380,6 +381,29 @@ export default function Page() {
                   <div className="putting-app-screen putting-app-screen-4" role="img" aria-label="경사 퍼팅 연습 화면" />
                   <div className="putting-app-screen putting-app-screen-5" role="img" aria-label="퍼팅 대결 모드 화면" />
                   <div className="putting-app-screen putting-app-screen-6" role="img" aria-label="mini green 애플리케이션 설정 화면" />
+                </div>
+              </div>
+            </section>
+            <section className="digital-putting-videos" id="putting-videos" aria-labelledby="putting-videos-title">
+              <div className="digital-putting-videos-inner">
+                <h2 className="page-title" id="putting-videos-title">영상으로 보는 Digital Putting 연습기</h2>
+                <div className="digital-putting-video-grid">
+                  <PuttingVideoCard
+                    label="Digital Putting 1"
+                    src="https://media.githubusercontent.com/media/Collie-Technologies-Inc/HomePage/main/media/putting-1.mp4"
+                  />
+                  <PuttingVideoCard
+                    label="Digital Putting 2"
+                    src="https://media.githubusercontent.com/media/Collie-Technologies-Inc/HomePage/main/media/putting-2.mp4"
+                  />
+                  <PuttingVideoCard
+                    label="Digital Putting 3 · 경사"
+                    src="https://media.githubusercontent.com/media/Collie-Technologies-Inc/HomePage/main/media/putting-3-slope.mp4"
+                  />
+                  <PuttingVideoCard
+                    label="Digital Putting 4 · TV"
+                    src="https://media.githubusercontent.com/media/Collie-Technologies-Inc/HomePage/main/media/putting-4-tv.mp4"
+                  />
                 </div>
               </div>
             </section>
