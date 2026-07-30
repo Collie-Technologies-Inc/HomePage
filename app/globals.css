@@ -104,6 +104,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .ax-detail-page .pdf-rebuilt-title { top: 3.2%; left: 4.2%; }
 .ax-control-page {
   aspect-ratio: 16 / 9;
+  scroll-margin-top: 0;
   overflow: hidden;
   background:
     radial-gradient(circle at 92% 5%, rgba(170, 225, 111, 0.16), transparent 28%),
