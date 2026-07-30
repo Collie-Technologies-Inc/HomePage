@@ -5,24 +5,19 @@ export const runtime = "edge";
 
 const recipient = "james.park@collietech.co.kr";
 
-function runtimeEnv(name: string) {
+async function runtimeEnv(name: string) {
+  try {
+    const { env: cloudflareEnv } = await import("cloudflare:workers");
+    const directWorkerValue = (cloudflareEnv as Record<string, unknown>)[name];
+    if (typeof directWorkerValue === "string" && directWorkerValue) return directWorkerValue;
+  } catch {
+    // Local Next.js builds do not provide the Cloudflare runtime module.
+  }
   const workerEnv = (globalThis as typeof globalThis & {
     __sitesEnv?: Record<string, unknown>;
   }).__sitesEnv;
   const workerValue = workerEnv?.[name];
   return typeof workerValue === "string" && workerValue ? workerValue : process.env[name];
-}
-
-export async function GET() {
-  const workerEnv = (globalThis as typeof globalThis & {
-    __sitesEnv?: Record<string, unknown>;
-  }).__sitesEnv;
-  return NextResponse.json({
-    resendWorkerBinding: typeof workerEnv?.RESEND_API_KEY === "string" && workerEnv.RESEND_API_KEY.length > 0,
-    resendProcessEnv: typeof process.env.RESEND_API_KEY === "string" && process.env.RESEND_API_KEY.length > 0,
-    senderWorkerBinding: typeof workerEnv?.CONTACT_FROM_EMAIL === "string" && workerEnv.CONTACT_FROM_EMAIL.length > 0,
-    senderProcessEnv: typeof process.env.CONTACT_FROM_EMAIL === "string" && process.env.CONTACT_FROM_EMAIL.length > 0,
-  });
 }
 
 function text(value: unknown, maxLength: number) {
@@ -33,7 +28,7 @@ export async function POST(request: Request) {
   const session = await readSession();
   if (!session) return NextResponse.json({ error: "로그인 후 문의해 주세요." }, { status: 401 });
 
-  const apiKey = runtimeEnv("RESEND_API_KEY");
+  const apiKey = await runtimeEnv("RESEND_API_KEY");
   if (!apiKey) return NextResponse.json({ error: "메일 발송 설정이 아직 완료되지 않았습니다." }, { status: 503 });
 
   const data = (await request.json()) as Record<string, unknown>;
@@ -61,7 +56,7 @@ export async function POST(request: Request) {
     method: "POST",
     headers: { authorization: `Bearer ${apiKey}`, "content-type": "application/json" },
     body: JSON.stringify({
-      from: runtimeEnv("CONTACT_FROM_EMAIL") || "Collie Technologies <website@collietech.co.kr>",
+      from: (await runtimeEnv("CONTACT_FROM_EMAIL")) || "Collie Technologies <website@collietech.co.kr>",
       to: [recipient],
       reply_to: email,
       subject: `[홈페이지 문의] ${subject}`,
