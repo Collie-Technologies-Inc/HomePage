@@ -344,7 +344,9 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   border: 3px solid #fff;
   border-radius: clamp(7px, .8vw, 12px);
   background: #102234;
-  box-shadow: 0 6px 18px rgba(16, 39, 51, .2);
+  box-shadow:
+    0 0 0 clamp(6px, .65vw, 10px) #f8fbfa,
+    0 6px 18px rgba(16, 39, 51, .2);
 }
 .roadmap-video-card--second-row { top: 43.35%; }
 .roadmap-video-card--third-row { top: 62.25%; }
