@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { RoadmapVideoCard } from "./roadmap-video-card";
 import { Fragment } from "react";
 import { sections } from "./data";
 import { ProtectedHeroLinks } from "./protected-hero-links";
@@ -304,6 +305,7 @@ export default function Page() {
                 loading="lazy"
                 sizes="100vw"
               />
+              <RoadmapVideoCard />
             </section>
             </>
           )}
