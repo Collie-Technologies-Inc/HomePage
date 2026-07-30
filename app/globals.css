@@ -1261,9 +1261,12 @@ footer a { color: white; text-decoration: none; }
 
 .research-results-project {
   margin: 16px 0 0 28px;
-  color: #34566d;
-  font-size: clamp(15px, 1.25vw, 19px);
-  line-height: 1.6;
+  color: #111820;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: clamp(14px, 1.28vw, 20px);
+  font-weight: 600;
+  line-height: 1.65;
+  letter-spacing: -.02em;
 }
 
 .research-results-details {
