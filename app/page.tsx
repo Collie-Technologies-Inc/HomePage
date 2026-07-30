@@ -389,19 +389,19 @@ export default function Page() {
                 <h2 className="page-title" id="putting-videos-title">영상으로 보는 Digital Putting 연습기</h2>
                 <div className="digital-putting-video-grid">
                   <PuttingVideoCard
-                    label="Digital Putting 1"
+                    label="퍼팅 연습"
                     src="https://media.githubusercontent.com/media/Collie-Technologies-Inc/HomePage/main/media/putting-1.mp4"
                   />
                   <PuttingVideoCard
-                    label="Digital Putting 2"
+                    label="평지 연습"
                     src="https://media.githubusercontent.com/media/Collie-Technologies-Inc/HomePage/main/media/putting-2.mp4"
                   />
                   <PuttingVideoCard
-                    label="Digital Putting 3 · 경사"
+                    label="경사 연습"
                     src="https://media.githubusercontent.com/media/Collie-Technologies-Inc/HomePage/main/media/putting-3-slope.mp4"
                   />
                   <PuttingVideoCard
-                    label="Digital Putting 4 · TV"
+                    label="TV 연동"
                     src="https://media.githubusercontent.com/media/Collie-Technologies-Inc/HomePage/main/media/putting-4-tv.mp4"
                   />
                 </div>
