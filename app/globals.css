@@ -105,7 +105,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .ax-detail-page .pdf-rebuilt-title { top: 3.2%; left: 4.2%; }
 .ax-control-page {
   /* Crop the unused lower canvas while preserving the complete page artwork. */
-  aspect-ratio: 16 / 8.15;
+  aspect-ratio: 16 / 7.3;
   scroll-margin-top: 72px;
   overflow: hidden;
   background:
