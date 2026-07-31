@@ -104,7 +104,8 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .ax-control-page .pdf-rebuilt-title,
 .ax-detail-page .pdf-rebuilt-title { top: 3.2%; left: 4.2%; }
 .ax-control-page {
-  aspect-ratio: 16 / 9;
+  /* Crop the unused lower canvas while preserving the complete page artwork. */
+  aspect-ratio: 16 / 8.15;
   scroll-margin-top: 72px;
   overflow: hidden;
   background:
@@ -296,7 +297,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .robot-platform-page {
   min-height: auto;
   scroll-margin-top: 72px;
-  padding: clamp(28px, 3.2vw, 48px) clamp(28px, 5vw, 78px);
+  padding: clamp(28px, 3.2vw, 48px) clamp(28px, 5vw, 78px) clamp(14px, 1.6vw, 24px);
   display: flex;
   align-items: flex-start;
   background: #f4f8f6;
@@ -1110,7 +1111,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   .robot-platform-page {
     min-height: auto;
     scroll-margin-top: 60px;
-    padding: 28px 22px 52px;
+    padding: 28px 22px 26px;
   }
   .robot-platform-page .page-title { white-space: normal; }
   .robot-platform-heading {
