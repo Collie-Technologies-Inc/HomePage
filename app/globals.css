@@ -105,7 +105,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .ax-detail-page .pdf-rebuilt-title { top: 3.2%; left: 4.2%; }
 .ax-control-page {
   aspect-ratio: 16 / 9;
-  scroll-margin-top: 0;
+  scroll-margin-top: 72px;
   overflow: hidden;
   background:
     radial-gradient(circle at 92% 5%, rgba(170, 225, 111, 0.16), transparent 28%),
@@ -180,7 +180,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   width: 100%;
   min-height: auto;
   scroll-margin-top: 72px;
-  padding: clamp(28px, 3.2vw, 48px) clamp(28px, 5vw, 78px) clamp(56px, 5vw, 76px);
+  padding: clamp(28px, 3.2vw, 48px) clamp(28px, 5vw, 78px);
   background: #f4f8f6;
   font-family: "Noto Sans KR", sans-serif;
 }
@@ -212,7 +212,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .golf-control-visual {
   position: relative;
   width: calc(100% + clamp(18px, 2vw, 34px));
-  aspect-ratio: 2.38 / 1;
+  aspect-ratio: 2.18 / 1;
   overflow: hidden;
   border-radius: clamp(14px, 1.4vw, 22px);
   background: #eef4f7;
@@ -295,7 +295,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .robot-platform-page {
   min-height: auto;
   scroll-margin-top: 72px;
-  padding: clamp(28px, 3.2vw, 48px) clamp(28px, 5vw, 78px) clamp(56px, 5vw, 76px);
+  padding: clamp(28px, 3.2vw, 48px) clamp(28px, 5vw, 78px);
   display: flex;
   align-items: flex-start;
   background: #f4f8f6;
@@ -355,13 +355,21 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   letter-spacing: -.035em;
 }
 .field-experience-copy h2 {
+  position: relative;
   margin: 0;
-  color: #21814a;
-  font-size: clamp(19px, 1.75vw, 28px);
-  font-weight: 800;
-  line-height: 1.32;
+  padding-left: .9em;
+  color: #111820;
+  font-size: clamp(22px, 2.6vw, 40px);
+  font-weight: 900;
+  line-height: 1.28;
   letter-spacing: -.04em;
   white-space: nowrap;
+}
+.field-experience-copy h2::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .field-experience-description {
   margin: 3.3% 0 4.2%;
@@ -1065,7 +1073,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   .hero-visual { min-height: 540px; }
   .field-experience-page { aspect-ratio: auto; grid-template-columns: 1fr; }
   .field-experience-copy { padding: 54px 28px 36px; }
-  .field-experience-copy h2 { white-space: normal; }
+  .field-experience-copy h2 { font-size: clamp(19px, 5.8vw, 25px); white-space: normal; }
   .field-experience-steps { grid-template-columns: 1fr; gap: 16px; }
   .field-experience-steps article { width: 100%; height: auto; min-height: 190px; padding: 28px; }
   .field-experience-steps span { margin-bottom: 28px; }
