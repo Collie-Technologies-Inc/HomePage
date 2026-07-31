@@ -1274,7 +1274,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   margin: 16px 0 0 28px;
   color: #111820;
   font-family: "Noto Sans KR", sans-serif;
-  font-size: clamp(14px, 1.28vw, 20px);
+  font-size: clamp(16px, 1.4vw, 21px);
   font-weight: 600;
   line-height: 1.65;
   letter-spacing: -.02em;
