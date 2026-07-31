@@ -500,8 +500,8 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .roadmap-video-card {
   position: absolute;
   z-index: 3;
-  left: 15.55%;
-  width: 7.4%;
+  left: 15.05%;
+  width: 8.4%;
   height: 15.4%;
   overflow: hidden;
   border: 3px solid #fff;
