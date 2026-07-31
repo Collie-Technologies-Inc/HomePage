@@ -6,18 +6,28 @@ export const runtime = "edge";
 const recipient = "james.park@collietech.co.kr";
 
 async function runtimeEnv(name: string) {
-  try {
-    const { env: cloudflareEnv } = await import("cloudflare:workers");
-    const directWorkerValue = (cloudflareEnv as Record<string, unknown>)[name];
-    if (typeof directWorkerValue === "string" && directWorkerValue) return directWorkerValue;
-  } catch {
-    // Local Next.js builds do not provide the Cloudflare runtime module.
-  }
   const workerEnv = (globalThis as typeof globalThis & {
     __sitesEnv?: Record<string, unknown>;
   }).__sitesEnv;
   const workerValue = workerEnv?.[name];
-  return typeof workerValue === "string" && workerValue ? workerValue : process.env[name];
+  if (typeof workerValue === "string" && workerValue) return workerValue;
+
+  const processValue = process.env[name];
+  if (processValue) return processValue;
+
+  try {
+    // Keep the Cloudflare-only module out of Vercel's Edge Function bundle.
+    const dynamicImport = new Function("specifier", "return import(specifier)") as (
+      specifier: string,
+    ) => Promise<{ env: Record<string, unknown> }>;
+    const { env: cloudflareEnv } = await dynamicImport("cloudflare:workers");
+    const directWorkerValue = (cloudflareEnv as Record<string, unknown>)[name];
+    if (typeof directWorkerValue === "string" && directWorkerValue) return directWorkerValue;
+  } catch {
+    // Vercel and local Next.js builds do not provide the Cloudflare module.
+  }
+
+  return undefined;
 }
 
 function text(value: unknown, maxLength: number) {
