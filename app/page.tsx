@@ -235,15 +235,26 @@ export default function Page() {
             </section>
             <section className="golf-control-page" id="ax-operation" aria-label="골프장 AX 관제">
               <div className="golf-control-page-inner">
-                <Image
-                  unoptimized
-                  src="/assets/golf-course-ax-control.png"
-                  alt="골프장의 안전, 운영, 고객 서비스를 통합 관리하는 골프장 AX 관제"
-                  width={1680}
-                  height={945}
-                  loading="lazy"
-                  sizes="100vw"
-                />
+                <h2 className="golf-control-title page-title">골프장 AX 관제</h2>
+                <p className="golf-control-lead">골프장의 안전, 운영, 고객 서비스를 통합 관리</p>
+                <div className="golf-control-board">
+                  <article>
+                    <span className="golf-control-index">01</span>
+                    <div><h3>디지털 펜스</h3><ul><li>코스 내 해저드, 벙커, OB 구역 사전 설정</li><li>로봇 캐디가 설정 구역 접근 시 우회 또는 정지</li><li>코스 이탈, 전복 사고 등 안전사고 원천 차단</li><li>문제 발생 시 중앙 관제실 알림 및 장비 제어</li></ul></div>
+                  </article>
+                  <article>
+                    <span className="golf-control-index">02</span>
+                    <div><h3>센서 융합 &amp; 시설 관리</h3><ul><li>위험구간과 시설 이상 징후 파악</li><li>사고 예측 및 사전 차단</li><li>잔디와 시설물 상태 확인 및 점검</li><li>관리 유지 보수 효율화</li></ul></div>
+                  </article>
+                  <article>
+                    <span className="golf-control-index">03</span>
+                    <div><h3>골퍼·로봇 캐디·전후 팀 간격 확인</h3><ul><li>로봇 캐디 및 골퍼 위치 파악</li><li>팀별 위치를 파악해 샷 전 위험 경고</li><li>전후 팀 간격 확인 후 진행 관리</li><li>정체 홀 발생 시 Slow Play 경고 및 속도 조절</li></ul></div>
+                  </article>
+                  <article>
+                    <span className="golf-control-index">04</span>
+                    <div><h3>맞춤형 골프 정보 제공</h3><ul><li>골퍼의 경기 데이터 수집·분석</li><li>빅데이터 기반 정보 구성</li><li>맞춤형 골프 정보 제공</li><li>안전사고 감소와 운영비 절감</li></ul></div>
+                  </article>
+                </div>
               </div>
             </section>
             <section className="pdf-page ax-detail-page" id="ax-experience" aria-label="AI 기반 차세대 골프 경험">
