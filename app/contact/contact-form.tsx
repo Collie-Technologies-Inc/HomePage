@@ -2,6 +2,22 @@
 
 import { FormEvent, useState } from "react";
 
+function formatPhoneNumber(value: string) {
+  const digits = value.replace(/\D/g, "").slice(0, 11);
+
+  if (digits.startsWith("02")) {
+    if (digits.length <= 2) return digits;
+    if (digits.length <= 5) return `${digits.slice(0, 2)}-${digits.slice(2)}`;
+    if (digits.length <= 9) return `${digits.slice(0, 2)}-${digits.slice(2, 5)}-${digits.slice(5)}`;
+    return `${digits.slice(0, 2)}-${digits.slice(2, 6)}-${digits.slice(6, 10)}`;
+  }
+
+  if (digits.length <= 3) return digits;
+  if (digits.length <= 7) return `${digits.slice(0, 3)}-${digits.slice(3)}`;
+  if (digits.length <= 10) return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
+  return `${digits.slice(0, 3)}-${digits.slice(3, 7)}-${digits.slice(7)}`;
+}
+
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [message, setMessage] = useState("");
@@ -42,7 +58,17 @@ export function ContactForm() {
         </label>
         <label>
           <span>연락처 <small>선택</small></span>
-          <input name="phone" type="tel" autoComplete="tel" placeholder="010-0000-0000" />
+          <input
+            name="phone"
+            type="tel"
+            inputMode="numeric"
+            autoComplete="tel"
+            maxLength={13}
+            placeholder="010-0000-0000"
+            onInput={(event) => {
+              event.currentTarget.value = formatPhoneNumber(event.currentTarget.value);
+            }}
+          />
         </label>
         <label>
           <span>문의 유형 <strong>필수</strong></span>
