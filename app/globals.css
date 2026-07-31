@@ -189,7 +189,6 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   margin: 0 auto;
 }
 .golf-control-title {
-  display: none;
   margin-bottom: clamp(22px, 2.4vw, 38px) !important;
   color: #111820;
   font-family: "Noto Sans KR", sans-serif;
@@ -199,7 +198,6 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   letter-spacing: -.045em;
 }
 .golf-control-lead {
-  display: none;
   position: relative;
   margin: 0 0 clamp(28px, 3vw, 46px);
   padding-left: .9em;
