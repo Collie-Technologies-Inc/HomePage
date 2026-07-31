@@ -201,10 +201,9 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   aspect-ratio: 2.35 / 1;
   overflow: hidden;
   border-radius: clamp(14px, 1.5vw, 24px);
-  background: #edf3f5;
-  box-shadow: 0 20px 54px rgba(22, 49, 68, .12);
+  background: transparent;
 }
-.robot-platform-diagram img { object-fit: cover; object-position: center 67%; }
+.robot-platform-diagram img { object-fit: cover; object-position: center 67%; mix-blend-mode: multiply; }
 .field-experience-page {
   width: 100%;
   aspect-ratio: 16 / 9;
