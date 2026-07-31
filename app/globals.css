@@ -176,6 +176,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   background: #f8fbfa;
 }
 .golf-control-page {
+  /* Keep the operation section on the same content grid as the robot platform. */
   width: 100%;
   min-height: auto;
   scroll-margin-top: 72px;
