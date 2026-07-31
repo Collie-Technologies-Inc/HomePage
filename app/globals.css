@@ -220,7 +220,8 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 }
 .golf-control-visual img {
   object-fit: cover;
-  object-position: center bottom;
+  object-position: center 76%;
+  transform: scale(1.14);
 }
 .golf-control-board {
   display: none;
