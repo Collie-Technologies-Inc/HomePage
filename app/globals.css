@@ -115,6 +115,8 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .ax-control-page > img {
   position: absolute;
   inset: 0;
+  object-fit: cover;
+  object-position: center top;
   mix-blend-mode: multiply;
 }
 .ax-control-page .ax-control-rebuilt-title {
@@ -330,7 +332,8 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   background: #f4f8f6;
 }
 .robot-platform-diagram img { object-fit: cover; object-position: center 67%; mix-blend-mode: multiply; transform: scale(1.08); }
-.robot-platform-diagram--technology img { object-position: center 67%; }
+.robot-platform-diagram--technology { aspect-ratio: 2.65 / 1; }
+.robot-platform-diagram--technology img { object-position: center 56%; transform: scale(1.04); }
 .field-experience-page {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -1125,6 +1128,8 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
     border-radius: 14px;
   }
   .robot-platform-diagram img { object-position: center 66%; transform: scale(1.1); }
+  .robot-platform-diagram--technology { aspect-ratio: 2.4 / 1; }
+  .robot-platform-diagram--technology img { object-position: center 56%; transform: scale(1.04); }
   .ax-sensor-caption,
   .ax-operation-caption {
     left: 6.5%;
