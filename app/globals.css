@@ -179,7 +179,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   width: 100%;
   min-height: auto;
   scroll-margin-top: 72px;
-  padding: clamp(24px, 3.2vw, 48px) clamp(18px, 4vw, 64px);
+  padding: clamp(28px, 3.2vw, 48px) clamp(28px, 5vw, 78px) clamp(56px, 5vw, 76px);
   background: #f4f8f6;
   font-family: "Noto Sans KR", sans-serif;
 }
@@ -188,7 +188,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   margin: 0 auto;
 }
 .golf-control-title {
-  margin: 0 0 clamp(18px, 2vw, 30px);
+  margin-bottom: clamp(22px, 2.4vw, 38px) !important;
   color: #111820;
   font-family: "Noto Sans KR", sans-serif;
   font-size: clamp(32px, 3.5vw, 56px);
@@ -211,6 +211,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .golf-control-board {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: calc(100% + clamp(18px, 2vw, 34px));
   overflow: hidden;
   border: 1px solid rgba(13, 45, 78, .12);
   border-radius: clamp(14px, 1.4vw, 22px);
@@ -242,7 +243,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 }
 .golf-control-board h3 {
   margin: 0 0 clamp(16px, 1.7vw, 26px);
-  color: #0d3156;
+  color: #111820;
   font-family: "Noto Sans KR", sans-serif;
   font-size: clamp(24px, 2.25vw, 36px);
   font-weight: 900;
@@ -252,7 +253,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .golf-control-board ul { margin: 0; padding-left: 1.15em; }
 .golf-control-board li {
   margin: .42em 0;
-  color: #152332;
+  color: #111820;
   font-family: "Noto Sans KR", sans-serif;
   font-size: clamp(17px, 1.45vw, 23px);
   font-weight: 500;
@@ -260,10 +261,10 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   letter-spacing: -.025em;
 }
 @media (max-width: 760px) {
-  .golf-control-page { padding: 32px 28px 46px; }
-  .golf-control-title { font-size: clamp(30px, 8.3vw, 42px); }
-  .golf-control-lead { font-size: clamp(22px, 5.9vw, 31px); }
-  .golf-control-board { grid-template-columns: 1fr; }
+  .golf-control-page { padding: 28px 22px 52px; }
+  .golf-control-title { white-space: normal; }
+  .golf-control-lead { margin-bottom: 24px; font-size: clamp(19px, 5.8vw, 25px); }
+  .golf-control-board { width: 100%; grid-template-columns: 1fr; }
   .golf-control-board article,
   .golf-control-board article:nth-child(2n),
   .golf-control-board article:nth-last-child(-n+2) {
