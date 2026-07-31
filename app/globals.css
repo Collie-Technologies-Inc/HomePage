@@ -112,7 +112,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
     radial-gradient(circle at 92% 5%, rgba(170, 225, 111, 0.16), transparent 28%),
     linear-gradient(145deg, #f8fbfa 0%, #eef5f2 100%);
 }
-.ax-control-page > img {
+.pdf-page.ax-control-page > img {
   position: absolute;
   inset: 0;
   object-fit: cover;
