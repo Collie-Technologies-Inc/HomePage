@@ -218,6 +218,19 @@ export default function Page() {
                     sizes="(max-width: 860px) 92vw, 1200px"
                   />
                 </div>
+                <p className="robot-platform-heading robot-platform-heading--secondary">
+                  캐디 보다 더 똑똑하게 움직이는 핵심 기술
+                </p>
+                <div className="robot-platform-diagram robot-platform-diagram--technology">
+                  <Image
+                    unoptimized
+                    src="/assets/robot-caddie-core-technology.jpg"
+                    alt="3D 지도 기반 자율주행과 지능형 장애물 회피 등 Robot Caddie 핵심 기술"
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 860px) 92vw, 1200px"
+                  />
+                </div>
               </div>
             </section>
             <section className="pdf-page ax-detail-page" id="ax-operation" aria-label="골프장 AX 관제">

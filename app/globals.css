@@ -176,36 +176,42 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   background: #f8fbfa;
 }
 .robot-platform-page {
-  min-height: calc(100vh - 72px);
+  min-height: auto;
   scroll-margin-top: 72px;
   padding: clamp(28px, 3.2vw, 48px) clamp(28px, 5vw, 78px) clamp(56px, 5vw, 76px);
   display: flex;
   align-items: flex-start;
-  background:
-    radial-gradient(circle at 92% 5%, rgba(170, 225, 111, 0.16), transparent 28%),
-    linear-gradient(145deg, #f8fbfa 0%, #eef5f2 100%);
+  background: #f4f8f6;
 }
 .robot-platform-inner { width: min(100%, 1420px); margin: 0 auto; }
 .robot-platform-page .page-title { margin-bottom: clamp(22px, 2.4vw, 38px) !important; }
 .robot-platform-heading {
+  position: relative;
   margin: 0 0 clamp(28px, 3vw, 48px);
+  padding-left: .9em;
   color: #111820;
   font-size: clamp(22px, 2.6vw, 40px);
   font-weight: 900;
   line-height: 1.28;
   letter-spacing: -.045em;
 }
+.robot-platform-heading::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.robot-platform-heading--secondary { margin-top: clamp(38px, 4vw, 62px); }
 .robot-platform-diagram {
   position: relative;
   width: calc(100% + clamp(18px, 2vw, 34px));
   aspect-ratio: 2.35 / 1;
   overflow: hidden;
-  border-radius: clamp(14px, 1.5vw, 24px);
-  background: transparent;
-  border: 1px solid rgba(21, 61, 85, .12);
-  box-shadow: 0 22px 52px rgba(22, 49, 68, .13);
+  border-radius: clamp(10px, 1vw, 16px);
+  background: #f4f8f6;
 }
 .robot-platform-diagram img { object-fit: cover; object-position: center 67%; mix-blend-mode: multiply; transform: scale(1.08); }
+.robot-platform-diagram--technology img { object-position: center 67%; }
 .field-experience-page {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -987,6 +993,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
     margin-bottom: 24px;
     font-size: clamp(19px, 5.8vw, 25px);
   }
+  .robot-platform-heading--secondary { margin-top: 32px; }
   .robot-platform-diagram {
     width: 100%;
     aspect-ratio: 1.48 / 1;
