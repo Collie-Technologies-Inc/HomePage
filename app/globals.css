@@ -175,6 +175,24 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   height: 4.2%;
   background: #f8fbfa;
 }
+.golf-control-page {
+  width: 100%;
+  min-height: auto;
+  scroll-margin-top: 72px;
+  padding: clamp(24px, 3.2vw, 48px) clamp(18px, 4vw, 64px);
+  background: #f4f8f6;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.golf-control-page-inner {
+  width: min(100%, 1480px);
+  margin: 0 auto;
+}
+.golf-control-page img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: clamp(10px, 1vw, 16px);
+}
 .robot-platform-page {
   min-height: auto;
   scroll-margin-top: 72px;

@@ -233,21 +233,18 @@ export default function Page() {
                 </div>
               </div>
             </section>
-            <section className="pdf-page ax-detail-page" id="ax-operation" aria-label="골프장 AX 관제">
-              <Image
-                unoptimized
-                src="/assets/ax-golf-course-control.jpg"
-                alt="골프장 AX 관제"
-                width={1280}
-                height={720}
-                loading="lazy"
-                sizes="100vw"
-              />
-              <div className="pdf-title-mask" aria-hidden="true" />
-              <h2 className="pdf-rebuilt-title page-title">골프장 AX 관제</h2>
-              <div className="ax-detail-line-mask" aria-hidden="true" />
-              <div className="ax-detail-caption ax-operation-caption">골프장 AX 관제</div>
-              <div className="ax-page-number-mask" aria-hidden="true" />
+            <section className="golf-control-page" id="ax-operation" aria-label="골프장 AX 관제">
+              <div className="golf-control-page-inner">
+                <Image
+                  unoptimized
+                  src="/assets/golf-course-ax-control.png"
+                  alt="골프장의 안전, 운영, 고객 서비스를 통합 관리하는 골프장 AX 관제"
+                  width={1680}
+                  height={945}
+                  loading="lazy"
+                  sizes="100vw"
+                />
+              </div>
             </section>
             <section className="pdf-page ax-detail-page" id="ax-experience" aria-label="AI 기반 차세대 골프 경험">
               <Image
