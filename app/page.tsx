@@ -202,23 +202,23 @@ export default function Page() {
                 Physical AI Robot Caddie 기반 골프 AX Solution
               </h2>
             </section>
-            <section className="pdf-page ax-detail-page" id="ax-sensor" aria-label="Sensor-based Physical AI Robot Caddie">
-              <Image
-                unoptimized
-                src="/assets/ax-sensor-physical-ai.jpg"
-                alt="Sensor-based Physical AI Robot Caddie"
-                width={1280}
-                height={720}
-                loading="lazy"
-                sizes="100vw"
-              />
-              <div className="pdf-title-mask" aria-hidden="true" />
-              <h2 className="pdf-rebuilt-title page-title">Physical AI Robot Caddie</h2>
-              <div className="ax-detail-line-mask" aria-hidden="true" />
-              <div className="ax-detail-caption ax-sensor-caption">
-                Sensor-based Physical AI Robot Caddie
+            <section className="robot-platform-page" id="ax-sensor" aria-labelledby="robot-platform-title">
+              <div className="robot-platform-inner">
+                <h2 className="page-title" id="robot-platform-title">Physical AI Robot Caddie</h2>
+                <p className="robot-platform-heading">
+                  단순한 로봇을 넘어, 골퍼와 골프장을 연결하는 데이터 플랫폼으로
+                </p>
+                <div className="robot-platform-diagram">
+                  <Image
+                    unoptimized
+                    src="/assets/robot-caddie-data-platform.jpg"
+                    alt="골퍼와 골프장을 연결하는 Physical AI Robot Caddie 데이터 플랫폼"
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 860px) 92vw, 1200px"
+                  />
+                </div>
               </div>
-              <div className="ax-page-number-mask" aria-hidden="true" />
             </section>
             <section className="pdf-page ax-detail-page" id="ax-operation" aria-label="골프장 AX 관제">
               <Image
