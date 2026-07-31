@@ -237,7 +237,17 @@ export default function Page() {
               <div className="golf-control-page-inner">
                 <h2 className="golf-control-title page-title">골프장 AX 관제</h2>
                 <p className="golf-control-lead">골프장의 안전, 운영, 고객 서비스를 통합 관리</p>
-                <div className="golf-control-board">
+                <div className="golf-control-visual" aria-label="골프장 AX 관제 주요 기능">
+                  <Image
+                    unoptimized
+                    src="/assets/golf-course-ax-control.png"
+                    alt="디지털 펜스, 센서 융합 및 시설 관리, 골퍼와 로봇 캐디 간격 확인, 맞춤형 골프 정보 제공"
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 860px) 92vw, 1420px"
+                  />
+                </div>
+                <div className="golf-control-board" aria-hidden="true">
                   <article>
                     <span className="golf-control-index">01</span>
                     <div><h3>디지털 펜스</h3><ul><li>코스 내 해저드, 벙커, OB 구역 사전 설정</li><li>로봇 캐디가 설정 구역 접근 시 우회 또는 정지</li><li>코스 이탈, 전복 사고 등 안전사고 원천 차단</li><li>문제 발생 시 중앙 관제실 알림 및 장비 제어</li></ul></div>

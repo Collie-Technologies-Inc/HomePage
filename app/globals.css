@@ -209,8 +209,21 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   letter-spacing: -.045em;
 }
 .golf-control-lead::before { content: "•"; position: absolute; left: 0; top: 0; }
+.golf-control-visual {
+  position: relative;
+  width: calc(100% + clamp(18px, 2vw, 34px));
+  aspect-ratio: 2.38 / 1;
+  overflow: hidden;
+  border-radius: clamp(14px, 1.4vw, 22px);
+  background: #eef4f7;
+  box-shadow: 0 20px 48px rgba(16, 42, 64, .08);
+}
+.golf-control-visual img {
+  object-fit: cover;
+  object-position: center bottom;
+}
 .golf-control-board {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   width: calc(100% + clamp(18px, 2vw, 34px));
   overflow: hidden;
@@ -265,6 +278,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   .golf-control-page { padding: 28px 22px 52px; }
   .golf-control-title { white-space: normal; }
   .golf-control-lead { margin-bottom: 24px; font-size: clamp(19px, 5.8vw, 25px); }
+  .golf-control-visual { width: 100%; aspect-ratio: 2.08 / 1; border-radius: 14px; }
   .golf-control-board { width: 100%; grid-template-columns: 1fr; }
   .golf-control-board article,
   .golf-control-board article:nth-child(2n),
