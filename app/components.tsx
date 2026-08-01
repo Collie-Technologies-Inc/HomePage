@@ -24,16 +24,9 @@ export function Footer() {
           <p>
             <span>대표 박인환</span>
             <span>사업자등록번호 210-88-02127</span>
-            <a
-              href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2108802127"
-              target="_blank"
-              rel="noreferrer"
-            >
-              사업자 정보 확인
-            </a>
           </p>
           <p>
-            <span>통신판매업 신고번호 확인 후 기재 예정</span>
+            <span>통신판매업 신고번호 2022-경기안산-2097</span>
             <span>고객센터 <a href="tel:0314003725">031-400-3725</a></span>
           </p>
           <p>
