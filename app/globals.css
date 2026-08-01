@@ -409,7 +409,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .field-experience-copy {
   display: flex;
   flex-direction: column;
-  padding: 4.3% 5.2% 4%;
+  padding: 4.3% 5.2% 4% 8.35%;
   color: #0d2027;
   font-family: "Noto Sans KR", sans-serif;
 }
@@ -575,7 +575,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   box-shadow: 0 6px 18px rgba(16, 39, 51, .2);
 }
 .roadmap-video-card--second-row { top: 44%; }
-.roadmap-video-card--third-row { top: 63%; }
+.roadmap-video-card--third-row { top: 61.5%; }
 .roadmap-video-card video { width: 100%; height: 100%; object-fit: cover; background: #102234; }
 .roadmap-video-card button {
   position: absolute;
@@ -1584,11 +1584,14 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 }
 
 .ip-overview-visual img {
+  position: absolute !important;
+  top: -3.3% !important;
+  left: -1.1% !important;
   display: block;
   width: 101.9% !important;
   max-width: none;
   height: auto !important;
-  transform: translate(-1.1%, -2.9%);
+  transform: none;
 }
 
 @media (max-width: 700px) {
@@ -1603,6 +1606,23 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   .research-results-details { margin-left: 22px; }
   .research-results-details div { grid-template-columns: 1fr; gap: 6px; }
   .ip-overview { min-height: auto; padding: 52px 18px 64px; }
+}
+
+.digital-putting-intro ul,
+.digital-putting-intro strong {
+  font-weight: 400;
+}
+
+.press-page {
+  padding-top: clamp(36px, 3.5vw, 58px);
+}
+
+@media (max-width: 520px) {
+  .press-page { padding-top: 28px; }
+}
+
+@media (max-width: 700px) {
+  .field-experience-copy { padding-left: 28px; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

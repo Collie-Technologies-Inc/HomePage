@@ -270,7 +270,10 @@ export default function Page() {
             <section className="field-experience-page" id="field-experience" aria-label="필드 경험">
               <div className="field-experience-copy">
                 <p className="field-experience-kicker page-title">Field Experience</p>
-                <h2>걷고 싶을 때는 함께 걷고, 이동할 때는 먼저 준비합니다.</h2>
+                <h2>
+                  걷고 싶을 때는 함께 걷고,<br />
+                  이동할 때는 먼저 준비합니다.
+                </h2>
                 <p className="field-experience-description">
                   고령의 시니어 골퍼도 페어웨이에서는 로봇 캐디와 함께 걸으며 플레이하고, 긴 카트길에서는 4인용 승용 카트로 편안하게 이동할 수 있습니다.
                 </p>
