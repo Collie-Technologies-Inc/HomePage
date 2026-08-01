@@ -214,17 +214,20 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .golf-control-lead::before { content: "•"; position: absolute; left: 0; top: 0; }
 .golf-control-visual {
   position: relative;
-  width: calc(100% + clamp(18px, 2vw, 34px));
-  aspect-ratio: 2.35 / 1;
+  width: 100%;
+  aspect-ratio: 1476 / 650;
   overflow: hidden;
   border-radius: clamp(14px, 1.4vw, 22px);
   background: #eef4f7;
   box-shadow: 0 20px 48px rgba(16, 42, 64, .08);
 }
 .golf-control-visual img {
-  object-fit: cover;
-  object-position: center 76%;
-  transform: scale(1.14);
+  width: 100% !important;
+  height: 100% !important;
+  inset: 0 !important;
+  object-fit: contain;
+  object-position: left top;
+  transform: none;
 }
 .golf-control-board {
   display: none;
@@ -282,7 +285,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   .golf-control-page { padding: 28px 22px 52px; }
   .golf-control-title { white-space: normal; }
   .golf-control-lead { margin-bottom: 24px; font-size: clamp(19px, 5.8vw, 25px); }
-  .golf-control-visual { width: 100%; aspect-ratio: 2.35 / 1; border-radius: 14px; }
+  .golf-control-visual { width: 100%; aspect-ratio: 1476 / 650; border-radius: 14px; }
   .golf-control-board { width: 100%; grid-template-columns: 1fr; }
   .golf-control-board article,
   .golf-control-board article:nth-child(2n),
@@ -326,7 +329,8 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .robot-platform-diagram {
   position: relative;
   width: 100%;
-  aspect-ratio: 1.7 / 1;
+  aspect-ratio: 16 / 9;
+  margin: 0;
   overflow: hidden;
   border-radius: 0;
   border: 0;
@@ -334,6 +338,9 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   box-shadow: none;
 }
 .robot-platform-diagram img {
+  width: 100% !important;
+  height: 100% !important;
+  inset: 0 !important;
   object-fit: contain;
   object-position: left top;
   mix-blend-mode: multiply;
@@ -346,13 +353,13 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 }
 .ai-coach-page {
   scroll-margin-top: 72px;
-  padding: clamp(40px, 5vw, 76px) clamp(28px, 5vw, 78px);
+  padding: clamp(24px, 2.4vw, 38px) clamp(28px, 5vw, 78px) clamp(20px, 2vw, 32px);
   background:
     radial-gradient(circle at 92% 7%, rgba(170, 225, 111, .18), transparent 27%),
     linear-gradient(145deg, #f8fbfa 0%, #edf5f2 100%);
 }
 .ai-coach-inner { width: min(100%, 1420px); margin: 0 auto; }
-.ai-coach-page .page-title { margin-bottom: clamp(28px, 3vw, 46px) !important; }
+.ai-coach-page .page-title { margin-bottom: clamp(18px, 1.8vw, 28px) !important; }
 .ai-coach-visual {
   position: relative;
   width: 100%;
@@ -364,10 +371,13 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   box-shadow: 0 22px 54px rgba(20, 55, 75, .1);
 }
 .ai-coach-visual img {
+  width: 100% !important;
+  height: 100% !important;
+  inset: 0 !important;
   object-fit: contain;
-  object-position: center top;
+  object-position: left top;
   mix-blend-mode: multiply;
-  transform: scale(1.04);
+  transform: none;
   transform-origin: center top;
 }
 .field-experience-page {
@@ -1160,7 +1170,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   .robot-platform-heading--secondary { margin-top: 32px; }
   .robot-platform-diagram {
     width: 100%;
-    aspect-ratio: 1.7 / 1;
+    aspect-ratio: 16 / 9;
     border-radius: 0;
   }
   .robot-platform-diagram img { object-position: left top; }
@@ -1168,11 +1178,11 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   .robot-platform-diagram--technology img { object-position: left top; transform: none; }
   .ai-coach-page {
     scroll-margin-top: 60px;
-    padding: 34px 22px 38px;
+    padding: 18px 22px;
   }
   .ai-coach-page .page-title {
     white-space: normal;
-    margin-bottom: 24px !important;
+    margin-bottom: 16px !important;
   }
   .ai-coach-visual { aspect-ratio: 16 / 9; border-radius: 14px; }
   .ax-sensor-caption,

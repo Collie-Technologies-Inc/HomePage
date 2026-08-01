@@ -240,7 +240,7 @@ export default function Page() {
                 <div className="golf-control-visual" aria-label="골프장 AX 관제 주요 기능">
                   <Image
                     unoptimized
-                    src="/assets/golf-course-ax-control.png"
+                    src="/assets/golf-course-ax-control-content.png"
                     alt="디지털 펜스, 센서 융합 및 시설 관리, 골퍼와 로봇 캐디 간격 확인, 맞춤형 골프 정보 제공"
                     fill
                     loading="lazy"
