@@ -1,4 +1,10 @@
-:root { --navy: #122033; --green: #72a945; --line: #dfe4e8; }
+:root {
+  --navy: #122033;
+  --green: #72a945;
+  --line: #dfe4e8;
+  --page-gutter: clamp(28px, 5vw, 80px);
+  --page-content-width: 1420px;
+}
 * { box-sizing: border-box; }
 html, body { scroll-behavior: auto !important; }
 html { scroll-padding-top: 72px; }
@@ -183,7 +189,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   width: 100%;
   min-height: auto;
   scroll-margin-top: 72px;
-  padding: clamp(28px, 3.2vw, 48px) clamp(28px, 5vw, 78px);
+  padding: clamp(28px, 3.2vw, 48px) var(--page-gutter);
   background: #f4f8f6;
   font-family: "Noto Sans KR", sans-serif;
 }
@@ -302,7 +308,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .robot-platform-page {
   min-height: auto;
   scroll-margin-top: 72px;
-  padding: clamp(28px, 3.2vw, 48px) clamp(28px, 5vw, 78px) clamp(14px, 1.6vw, 24px);
+  padding: clamp(28px, 3.2vw, 48px) var(--page-gutter) clamp(14px, 1.6vw, 24px);
   display: flex;
   align-items: flex-start;
   background: #f4f8f6;
@@ -368,7 +374,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 }
 .ai-coach-page {
   scroll-margin-top: 72px;
-  padding: clamp(24px, 2.4vw, 38px) clamp(28px, 5vw, 78px) clamp(20px, 2vw, 32px);
+  padding: clamp(24px, 2.4vw, 38px) var(--page-gutter) clamp(20px, 2vw, 32px);
   background:
     radial-gradient(circle at 92% 7%, rgba(170, 225, 111, .18), transparent 27%),
     linear-gradient(145deg, #f8fbfa 0%, #edf5f2 100%);
@@ -792,14 +798,14 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 
 .digital-putting-intro {
   min-height: calc(100svh - var(--header-height));
-  padding: clamp(56px, 5vw, 86px) clamp(32px, 5vw, 80px) clamp(42px, 4vw, 68px);
+  padding: clamp(56px, 5vw, 86px) var(--page-gutter) clamp(42px, 4vw, 68px);
   scroll-margin-top: var(--header-height);
   color: #10171c;
   font-family: "Noto Sans KR", sans-serif;
 }
 
 .digital-putting-content {
-  width: 100%;
+  width: min(100%, var(--page-content-width));
   margin: 0 auto;
 }
 
@@ -864,14 +870,14 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 
 .digital-putting-design {
   min-height: calc(100svh - var(--header-height));
-  padding: clamp(56px, 5vw, 86px) clamp(32px, 5vw, 80px) clamp(48px, 4vw, 72px);
+  padding: clamp(56px, 5vw, 86px) var(--page-gutter) clamp(48px, 4vw, 72px);
   scroll-margin-top: var(--header-height);
   color: #10171c;
   font-family: "Noto Sans KR", sans-serif;
 }
 
 .digital-putting-design-inner {
-  width: 100%;
+  width: min(100%, var(--page-content-width));
   margin: 0 auto;
 }
 
@@ -909,14 +915,14 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .digital-putting-ui {
   display: block;
   min-height: calc(100svh - var(--header-height));
-  padding: clamp(56px, 5vw, 86px) clamp(32px, 5vw, 80px) clamp(48px, 4vw, 72px);
+  padding: clamp(56px, 5vw, 86px) var(--page-gutter) clamp(48px, 4vw, 72px);
   scroll-margin-top: var(--header-height);
   color: #10171c;
   font-family: "Noto Sans KR", sans-serif;
 }
 
 .digital-putting-ui-inner {
-  width: 100%;
+  width: min(100%, var(--page-content-width));
   margin: 0 auto;
   background: #f1ece3;
 }
@@ -959,14 +965,14 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .digital-putting-app-ui {
   display: block;
   min-height: calc(100svh - var(--header-height));
-  padding: clamp(56px, 5vw, 86px) clamp(32px, 5vw, 80px) clamp(48px, 4vw, 72px);
+  padding: clamp(56px, 5vw, 86px) var(--page-gutter) clamp(48px, 4vw, 72px);
   scroll-margin-top: var(--header-height);
   color: #10171c;
   font-family: "Noto Sans KR", sans-serif;
 }
 
 .digital-putting-app-ui-inner {
-  width: 100%;
+  width: min(100%, var(--page-content-width));
   margin: 0 auto;
   background: #f1ece3;
 }
@@ -1021,7 +1027,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 
 .digital-putting-videos {
   min-height: calc(100svh - var(--header-height));
-  padding: clamp(56px, 5vw, 86px) clamp(32px, 5vw, 80px) clamp(52px, 5vw, 80px);
+  padding: clamp(56px, 5vw, 86px) var(--page-gutter) clamp(52px, 5vw, 80px);
   scroll-margin-top: var(--header-height);
   color: #10171c;
   font-family: "Noto Sans KR", sans-serif;
@@ -1029,7 +1035,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 
 .putting-dynamics-page {
   min-height: calc(100svh - var(--header-height));
-  padding: clamp(56px, 5vw, 86px) clamp(32px, 5vw, 80px) clamp(42px, 4vw, 68px);
+  padding: clamp(56px, 5vw, 86px) var(--page-gutter) clamp(42px, 4vw, 68px);
   scroll-margin-top: var(--header-height);
   background: #eef3f6;
   color: #10171c;
@@ -1051,7 +1057,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 }
 
 .digital-putting-videos-inner {
-  width: 100%;
+  width: min(100%, var(--page-content-width));
   margin: 0 auto;
 }
 
@@ -1337,7 +1343,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 
 .press-page {
   min-height: calc(100svh - var(--header-height));
-  padding: clamp(72px, 7vw, 116px) clamp(24px, 6vw, 96px);
+  padding: clamp(72px, 7vw, 116px) var(--page-gutter);
   background:
     radial-gradient(circle at 92% 5%, rgba(170, 225, 111, 0.16), transparent 28%),
     linear-gradient(145deg, #f8fbfa 0%, #eef5f2 100%);
@@ -1345,7 +1351,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 }
 
 .press-heading {
-  max-width: 1320px;
+  max-width: var(--page-content-width);
   margin: 0 auto clamp(28px, 3vw, 46px);
 }
 
@@ -1374,7 +1380,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   grid-template-columns: repeat(3, minmax(0, 1fr));
   column-gap: 18px;
   row-gap: 34px;
-  max-width: 1040px;
+  max-width: var(--page-content-width);
   margin: 0 auto;
 }
 
@@ -1468,7 +1474,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .research-development-intro,
 .ip-overview {
   min-height: calc(100svh - var(--header-height));
-  padding: clamp(62px, 6vw, 96px) clamp(22px, 5vw, 80px);
+  padding: clamp(62px, 6vw, 96px) var(--page-gutter);
   background:
     radial-gradient(circle at 92% 8%, rgba(72, 151, 191, 0.13), transparent 28%),
     linear-gradient(145deg, #eef6fb 0%, #f8fbfd 58%, #edf4f7 100%);
@@ -1618,7 +1624,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 
 .rnd-capability-page {
   min-height: calc(100svh - var(--header-height));
-  padding: clamp(62px, 6vw, 96px) clamp(22px, 5vw, 80px);
+  padding: clamp(62px, 6vw, 96px) var(--page-gutter);
   scroll-margin-top: var(--header-height);
   background:
     radial-gradient(circle at 92% 8%, rgba(170, 225, 111, 0.14), transparent 28%),
