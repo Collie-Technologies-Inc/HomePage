@@ -201,7 +201,7 @@ export default function Page() {
                   />
                 </div>
                 <p className="robot-platform-heading robot-platform-heading--secondary">
-                  캐디 보다 더 똑똑하게 움직이는 핵심 기술
+                  캐디 보다 더 똑똑한 Physical AI Robot Caddie 핵심 기술
                 </p>
                 <div className="robot-platform-diagram robot-platform-diagram--technology">
                   <Image
@@ -369,7 +369,7 @@ export default function Page() {
             <section className="putting-dynamics-page" id="putting-dynamics" aria-labelledby="putting-dynamics-title">
               <div className="putting-dynamics-inner">
                 <h2 className="page-title" id="putting-dynamics-title">
-                  골프 동역학으로 검증된 Putting 거리∙방향을 예측하는 동역학 모델
+                  골프 다이나믹스로 검증된 Putting 거리 및 방향
                 </h2>
                 <Image
                   unoptimized
