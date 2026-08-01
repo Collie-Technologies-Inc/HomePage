@@ -346,6 +346,21 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   mix-blend-mode: multiply;
   transform: none;
 }
+
+.robot-platform-diagram--platform {
+  aspect-ratio: auto;
+  overflow: hidden;
+}
+
+.robot-platform-diagram--platform img {
+  position: static !important;
+  display: block;
+  width: 104.5% !important;
+  max-width: none;
+  height: auto !important;
+  max-height: none;
+  transform: translateX(-4.3%);
+}
 .robot-platform-diagram--technology { aspect-ratio: 16 / 9; }
 .robot-platform-diagram--technology img {
   object-position: left top;
@@ -1172,6 +1187,14 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
     width: 100%;
     aspect-ratio: 16 / 9;
     border-radius: 0;
+  }
+
+  .robot-platform-diagram--platform {
+    aspect-ratio: auto;
+  }
+  .robot-platform-diagram--platform img {
+    width: 105.5% !important;
+    transform: translateX(-5.2%);
   }
   .robot-platform-diagram img { object-position: left top; }
   .robot-platform-diagram--technology { aspect-ratio: 16 / 9; }

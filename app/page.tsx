@@ -208,12 +208,13 @@ export default function Page() {
                 <p className="robot-platform-heading">
                   단순한 로봇을 넘어, 골퍼와 골프장을 연결하는 데이터 플랫폼으로
                 </p>
-                <div className="robot-platform-diagram">
+                <div className="robot-platform-diagram robot-platform-diagram--platform">
                   <Image
                     unoptimized
                     src="/assets/robot-caddie-data-platform-v2.png"
                     alt="골퍼와 골프장을 연결하는 Physical AI Robot Caddie 데이터 플랫폼"
-                    fill
+                    width={3840}
+                    height={2160}
                     loading="lazy"
                     sizes="(max-width: 860px) 92vw, 1200px"
                   />
