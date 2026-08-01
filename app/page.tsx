@@ -43,25 +43,6 @@ const pressArticles = [
   },
 ] as const;
 
-const intellectualPropertyRows = [
-  ["국내 특허", "스마트 트롤리의 정밀 추적 제어 기법", "10-2447176", "2022/09/21", "등록 완료", "KOR"],
-  ["국내 특허", "골프 스코어를 제공하는 스마트 트롤리 시스템", "10-2613676", "2023/12/11", "등록 완료", "KOR"],
-  ["국내 특허", "골프 트롤리 이송 카트 및 골프 트롤리 이송 카트 운영 시스템", "10-2777215", "2025/02/28", "등록 완료", "KOR"],
-  ["국내 특허", "정밀 위치 추적이 가능한 추종형 골프 트롤리 및 이를 이용한 스마트 관제 시스템", "10-2776834", "2025/02/28", "등록 완료", "KOR"],
-  ["국내 특허", "골프 트롤리", "10-2913842", "2026/01/13", "등록 완료", "KOR"],
-  ["국내 특허", "자율 주행 및 장애물 회피 기동이 가능한 골프 트롤리", "10-2024-0085127", "2024/06/28", "출원 중", "KOR"],
-  ["국내 특허", "정밀 거리 측정이 가능한 골프 트롤리", "10-2024-0085128", "2024/06/28", "출원 중", "KOR"],
-  ["국내 특허", "골프 퍼팅 연습 장치", "10-2025-0027282", "2025/03/04", "출원 중", "KOR"],
-  ["해외 특허", "Precision Tracking Control Techniques for Smart Trolley", "17994410 (미국)", "2023/10/12", "출원 중", "US"],
-  ["해외 특허", "Precision Tracking Control Techniques for Smart Trolley", "GB2617891 (영국)", "2025/03/26", "등록 완료", "UK"],
-  ["상표권", "제 28류 모터 구동식 골프 트롤리 등 20건", "40-1933731", "2022/11/11", "등록 완료", "KOR"],
-  ["디자인권", "서비스용 로봇", "30-1232013", "2023/09/13", "등록 완료", "KOR"],
-  ["벤처인증", "벤처 기업 확인서", "20250429020014", "2025/05/23", "확인", ""],
-  ["연구소 인정", "기업부설 연구소 인정서", "2022113144", "2025/04/30", "인정", ""],
-  ["인증", "ISO 9001 (품질 경영 시스템)", "QI705423", "2023/12/05", "인증", ""],
-  ["인증", "ISO 14001 (환경 경영 시스템)", "EI395823", "2023/12/05", "인증", ""],
-] as const;
-
 export default function Page() {
   return (
     <div className="document" aria-label="(주)콜리테크놀로지 회사소개서">
@@ -278,7 +259,8 @@ export default function Page() {
                     unoptimized
                     src="/assets/ai-personal-coach-platform-v2.jpg"
                     alt="현재의 AI 캐디 로봇 데이터 수집에서 미래의 AI 개인 코칭 서비스로 진화하는 골프 플랫폼"
-                    fill
+                    width={1280}
+                    height={720}
                     loading="lazy"
                     sizes="(max-width: 860px) 92vw, 1420px"
                   />
@@ -478,34 +460,19 @@ export default function Page() {
                 </div>
               </div>
             </section>
-            <section className="ip-overview" id="ip-list" aria-label="지식재산권 인정·인증서">
+            <section className="ip-overview" id="ip-list" aria-label="지식 재산권 - 국내외 특허·디자인·상표">
               <div className="ip-overview-inner">
-                <h2 className="page-title">지식재산권 인정·인증서</h2>
-                <div className="ip-table-wrap">
-                  <table className="ip-table">
-                    <thead>
-                      <tr>
-                        <th>구분</th>
-                        <th>기술 명칭 / 권리 명칭</th>
-                        <th>출원 / 등록 번호</th>
-                        <th>등록일</th>
-                        <th>상태</th>
-                        <th>국가</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {intellectualPropertyRows.map((row) => (
-                        <tr key={`${row[0]}-${row[2]}`}>
-                          <td>{row[0]}</td>
-                          <td>{row[1]}</td>
-                          <td>{row[2]}</td>
-                          <td>{row[3]}</td>
-                          <td><span className={`ip-status${row[4] === "출원 중" ? " is-pending" : ""}`}>{row[4]}</span></td>
-                          <td>{row[5]}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                <h2 className="page-title">지식 재산권 - 국내외 특허∙디자인∙상표</h2>
+                <div className="ip-overview-visual">
+                  <Image
+                    unoptimized
+                    src="/assets/intellectual-property.jpg"
+                    alt="정밀 추종 및 제어 기술, 플랫폼 운영 및 디자인, 자율주행 및 코스 정보 시스템, 브랜드 지식 재산권 현황"
+                    width={1280}
+                    height={720}
+                    loading="lazy"
+                    sizes="(max-width: 860px) 92vw, 1420px"
+                  />
                 </div>
               </div>
             </section>

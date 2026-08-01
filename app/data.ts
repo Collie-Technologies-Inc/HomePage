@@ -6,7 +6,7 @@ export const sections = [
   { id: "putting-simulator", title: "기술 개발 실적 - Digital Putting Simulator" },
   { id: "analyzers", title: "기술 개발 실적 - 스윙분석단말기 & 비거리 탄도 분석기" },
   { id: "sales", title: "제품 판매 실적" },
-  { id: "ip-list", title: "지식재산권 인정·인증서" },
+  { id: "ip-list", title: "지식 재산권 - 국내외 특허∙디자인∙상표" },
   { id: "press", title: "홍보 기사" },
 ] as const;
 
