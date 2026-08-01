@@ -267,20 +267,22 @@ export default function Page() {
                 </div>
               </div>
             </section>
-            <section className="pdf-page ax-detail-page" id="ax-experience" aria-label="AI 기반 차세대 골프 경험">
-              <Image
-                unoptimized
-                src="/assets/ax-ai-golf-experience.jpg"
-                alt="AI 기반 차세대 골프 경험"
-                width={1280}
-                height={720}
-                loading="lazy"
-                sizes="100vw"
-              />
-              <div className="pdf-title-mask" aria-hidden="true" />
-              <h2 className="pdf-rebuilt-title page-title">AI 기반 차세대 골프 경험</h2>
-              <div className="ax-detail-line-mask" aria-hidden="true" />
-              <div className="ax-page-number-mask" aria-hidden="true" />
+            <section className="ai-coach-page" id="ax-experience" aria-labelledby="ai-coach-title">
+              <div className="ai-coach-inner">
+                <h2 className="page-title" id="ai-coach-title">
+                  데이터 기반 &apos;AI 개인 코치&apos;로 진화하는 골프 플랫폼
+                </h2>
+                <div className="ai-coach-visual">
+                  <Image
+                    unoptimized
+                    src="/assets/ai-personal-coach-platform.jpg"
+                    alt="현재의 AI 캐디 로봇 데이터 수집에서 미래의 AI 개인 코칭 서비스로 진화하는 골프 플랫폼"
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 860px) 92vw, 1420px"
+                  />
+                </div>
+              </div>
             </section>
             <section className="field-experience-page" id="field-experience" aria-label="필드 경험">
               <div className="field-experience-copy">
