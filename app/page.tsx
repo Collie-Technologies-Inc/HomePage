@@ -373,7 +373,7 @@ export default function Page() {
                 </h2>
                 <Image
                   unoptimized
-                  src="/assets/golf-dynamics.png"
+                  src="/assets/golf-dynamics-lavender.png"
                   alt="비행 운동과 미끄럼 및 구름 운동을 분석해 퍼팅 거리와 방향을 예측하는 골프 동역학 모델"
                   width={1185}
                   height={625}
