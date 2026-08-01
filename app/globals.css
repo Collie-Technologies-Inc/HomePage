@@ -1579,21 +1579,17 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .ip-overview-visual {
   position: relative;
   width: 100%;
-  aspect-ratio: 1256 / 641;
+  aspect-ratio: 1256 / 588;
   overflow: hidden;
 }
 
 .ip-overview-visual img {
-  position: absolute !important;
-  inset: 0 !important;
+  position: static !important;
   display: block;
   width: 100% !important;
   max-width: none;
-  height: 100% !important;
-  object-fit: cover;
-  object-position: center 32%;
-  transform: scale(1.02);
-  transform-origin: center;
+  height: auto !important;
+  transform: none;
 }
 
 @media (max-width: 700px) {

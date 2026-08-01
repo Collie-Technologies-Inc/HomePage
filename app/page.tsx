@@ -469,9 +469,10 @@ export default function Page() {
                 <div className="ip-overview-visual">
                   <Image
                     unoptimized
-                    src="/assets/intellectual-property.jpg"
+                    src="/assets/intellectual-property-cropped.jpg"
                     alt="정밀 추종 및 제어 기술, 플랫폼 운영 및 디자인, 자율주행 및 코스 정보 시스템, 브랜드 지식 재산권 현황"
-                    fill
+                    width={1256}
+                    height={588}
                     loading="lazy"
                     sizes="(max-width: 860px) 92vw, 1420px"
                   />
