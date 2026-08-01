@@ -211,7 +211,7 @@ export default function Page() {
                 <div className="robot-platform-diagram">
                   <Image
                     unoptimized
-                    src="/assets/robot-caddie-data-platform.jpg"
+                    src="/assets/robot-caddie-data-platform-v2.png"
                     alt="골퍼와 골프장을 연결하는 Physical AI Robot Caddie 데이터 플랫폼"
                     fill
                     loading="lazy"
@@ -275,7 +275,7 @@ export default function Page() {
                 <div className="ai-coach-visual">
                   <Image
                     unoptimized
-                    src="/assets/ai-personal-coach-platform.jpg"
+                    src="/assets/ai-personal-coach-platform-v2.jpg"
                     alt="현재의 AI 캐디 로봇 데이터 수집에서 미래의 AI 개인 코칭 서비스로 진화하는 골프 플랫폼"
                     fill
                     loading="lazy"
