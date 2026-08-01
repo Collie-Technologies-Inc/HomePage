@@ -479,6 +479,22 @@ export default function Page() {
                 </div>
               </div>
             </section>
+            <section className="rnd-capability-page" id="rnd-capability" aria-labelledby="rnd-capability-title">
+              <div className="rnd-capability-inner">
+                <h2 className="page-title" id="rnd-capability-title">
+                  객관적으로 검증된 R&amp;D 역량과 경영 시스템
+                </h2>
+                <Image
+                  unoptimized
+                  src="/assets/rnd-capabilities.jpg"
+                  alt="벤처기업 확인서, 기업부설 연구소 인정서, ISO 9001 품질경영시스템 및 ISO 14001 환경경영시스템 인증"
+                  width={1664}
+                  height={774}
+                  loading="lazy"
+                  sizes="(max-width: 860px) 92vw, 1420px"
+                />
+              </div>
+            </section>
             </>
           ) : section.id === "press" ? (
             <section className="press-page" id="press" aria-label="홍보 기사">

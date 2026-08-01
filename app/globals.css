@@ -1592,6 +1592,31 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   transform: none;
 }
 
+.rnd-capability-page {
+  min-height: calc(100svh - var(--header-height));
+  padding: clamp(62px, 6vw, 96px) clamp(22px, 5vw, 80px);
+  scroll-margin-top: var(--header-height);
+  background:
+    radial-gradient(circle at 92% 8%, rgba(170, 225, 111, 0.14), transparent 28%),
+    linear-gradient(145deg, #f8fbfa 0%, #eef5f2 100%);
+  color: #12283a;
+}
+
+.rnd-capability-inner {
+  width: min(100%, 1420px);
+  margin: 0 auto;
+}
+
+.rnd-capability-page .page-title {
+  margin: 0 0 clamp(32px, 3.4vw, 52px);
+}
+
+.rnd-capability-page img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 @media (max-width: 700px) {
   .research-development-intro { min-height: auto; padding: 48px 18px 60px; }
   .research-device-grid { grid-template-columns: 1fr; }
@@ -1604,6 +1629,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   .research-results-details { margin-left: 22px; }
   .research-results-details div { grid-template-columns: 1fr; gap: 6px; }
   .ip-overview { min-height: auto; padding: 52px 18px 64px; }
+  .rnd-capability-page { min-height: auto; padding: 52px 18px 64px; }
 }
 
 .digital-putting-intro ul,
