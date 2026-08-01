@@ -326,16 +326,24 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .robot-platform-diagram {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1.7 / 1;
   overflow: hidden;
-  border-radius: clamp(10px, 1vw, 16px);
-  border: 1px solid rgba(19, 55, 78, .1);
-  background: rgba(255, 255, 255, .48);
-  box-shadow: 0 18px 44px rgba(20, 55, 75, .09);
+  border-radius: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
-.robot-platform-diagram img { object-fit: contain; object-position: center; mix-blend-mode: multiply; }
-.robot-platform-diagram--technology { aspect-ratio: 2.65 / 1; }
-.robot-platform-diagram--technology img { object-position: center; }
+.robot-platform-diagram img {
+  object-fit: contain;
+  object-position: left top;
+  mix-blend-mode: multiply;
+  transform: none;
+}
+.robot-platform-diagram--technology { aspect-ratio: 16 / 9; }
+.robot-platform-diagram--technology img {
+  object-position: left top;
+  transform: none;
+}
 .ai-coach-page {
   scroll-margin-top: 72px;
   padding: clamp(40px, 5vw, 76px) clamp(28px, 5vw, 78px);
@@ -355,7 +363,13 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   background: rgba(255, 255, 255, .62);
   box-shadow: 0 22px 54px rgba(20, 55, 75, .1);
 }
-.ai-coach-visual img { object-fit: contain; mix-blend-mode: multiply; }
+.ai-coach-visual img {
+  object-fit: contain;
+  object-position: center top;
+  mix-blend-mode: multiply;
+  transform: scale(1.04);
+  transform-origin: center top;
+}
 .field-experience-page {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -1146,12 +1160,12 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   .robot-platform-heading--secondary { margin-top: 32px; }
   .robot-platform-diagram {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 14px;
+    aspect-ratio: 1.7 / 1;
+    border-radius: 0;
   }
-  .robot-platform-diagram img { object-position: center; }
-  .robot-platform-diagram--technology { aspect-ratio: 2.4 / 1; }
-  .robot-platform-diagram--technology img { object-position: center; }
+  .robot-platform-diagram img { object-position: left top; }
+  .robot-platform-diagram--technology { aspect-ratio: 16 / 9; }
+  .robot-platform-diagram--technology img { object-position: left top; transform: none; }
   .ai-coach-page {
     scroll-margin-top: 60px;
     padding: 34px 22px 38px;

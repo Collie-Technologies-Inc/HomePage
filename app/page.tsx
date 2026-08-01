@@ -224,7 +224,7 @@ export default function Page() {
                 <div className="robot-platform-diagram robot-platform-diagram--technology">
                   <Image
                     unoptimized
-                    src="/assets/robot-caddie-core-technology.jpg"
+                    src="/assets/core-technology-0801.jpg"
                     alt="3D 지도 기반 자율주행과 지능형 장애물 회피 등 Robot Caddie 핵심 기술"
                     fill
                     loading="lazy"
