@@ -366,17 +366,6 @@ export default function Page() {
                 />
               </div>
             </section>
-            <section className="digital-putting-design" id="putting-design" aria-label="Digital Putting 연습기 디자인">
-              <div className="digital-putting-design-inner">
-                <h2 className="page-title">디자인</h2>
-                <div className="digital-putting-design-grid" aria-label="Digital Putting 연습기 디자인 이미지">
-                  <div className="putting-design-photo putting-design-photo-1" role="img" aria-label="디스플레이와 함께 구성된 Digital Putting 연습기" />
-                  <div className="putting-design-photo putting-design-photo-2" role="img" aria-label="Digital Putting 연습기 본체와 센서" />
-                  <div className="putting-design-photo putting-design-photo-3" role="img" aria-label="Digital Putting 연습기 후면 연결부" />
-                  <div className="putting-design-photo putting-design-photo-4" role="img" aria-label="퍼팅 매트와 결합된 Digital Putting 연습기 전체 디자인" />
-                </div>
-              </div>
-            </section>
             <section className="putting-dynamics-page" id="putting-dynamics" aria-labelledby="putting-dynamics-title">
               <div className="putting-dynamics-inner">
                 <h2 className="page-title" id="putting-dynamics-title">
@@ -391,6 +380,17 @@ export default function Page() {
                   loading="lazy"
                   sizes="(max-width: 860px) 92vw, 1420px"
                 />
+              </div>
+            </section>
+            <section className="digital-putting-design" id="putting-design" aria-label="Digital Putting 연습기 디자인">
+              <div className="digital-putting-design-inner">
+                <h2 className="page-title">디자인</h2>
+                <div className="digital-putting-design-grid" aria-label="Digital Putting 연습기 디자인 이미지">
+                  <div className="putting-design-photo putting-design-photo-1" role="img" aria-label="디스플레이와 함께 구성된 Digital Putting 연습기" />
+                  <div className="putting-design-photo putting-design-photo-2" role="img" aria-label="Digital Putting 연습기 본체와 센서" />
+                  <div className="putting-design-photo putting-design-photo-3" role="img" aria-label="Digital Putting 연습기 후면 연결부" />
+                  <div className="putting-design-photo putting-design-photo-4" role="img" aria-label="퍼팅 매트와 결합된 Digital Putting 연습기 전체 디자인" />
+                </div>
               </div>
             </section>
             <section className="digital-putting-ui" id="putting-device-ui" aria-label="Device User Interface">
