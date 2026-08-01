@@ -377,6 +377,22 @@ export default function Page() {
                 </div>
               </div>
             </section>
+            <section className="putting-dynamics-page" id="putting-dynamics" aria-labelledby="putting-dynamics-title">
+              <div className="putting-dynamics-inner">
+                <h2 className="page-title" id="putting-dynamics-title">
+                  골프 동역학으로 검증된 Putting 거리∙방향을 예측하는 동역학 모델
+                </h2>
+                <Image
+                  unoptimized
+                  src="/assets/golf-dynamics.png"
+                  alt="비행 운동과 미끄럼 및 구름 운동을 분석해 퍼팅 거리와 방향을 예측하는 골프 동역학 모델"
+                  width={1185}
+                  height={625}
+                  loading="lazy"
+                  sizes="(max-width: 860px) 92vw, 1420px"
+                />
+              </div>
+            </section>
             <section className="digital-putting-ui" id="putting-device-ui" aria-label="Device User Interface">
               <div className="digital-putting-ui-inner">
                 <h2 className="page-title">Device User Interface</h2>
