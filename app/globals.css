@@ -1636,6 +1636,27 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   font-family: "Noto Sans KR", sans-serif;
 }
 
+/* Keep the complete Physical AI sequence on the same uploaded mint backdrop. */
+.ax-control-page,
+.ax-detail-page,
+.robot-platform-page,
+.golf-control-page,
+.ai-coach-page,
+.field-experience-page,
+.field-experience-photo,
+.core-technology-roadmap-page {
+  background: #eef5f2;
+}
+
+.ax-control-page .pdf-title-mask,
+.ax-detail-page .pdf-title-mask {
+  background: #eef5f2;
+}
+
+.putting-dynamics-page {
+  background: #f1ece3;
+}
+
 .rnd-capability-page .page-title {
   margin: 0 0 clamp(32px, 3.4vw, 52px);
 }
