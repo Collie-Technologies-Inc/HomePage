@@ -168,11 +168,11 @@ export default function Page() {
           )}
           {section.id === "robot-caddie" && (
             <>
-            <section className="pdf-page ax-control-page" id="ax-control" aria-label="Physical AI Robot Caddie 기반 골프 AX Solution">
+            <section className="pdf-page ax-control-page" id="ax-control" aria-label="Physical AI 로봇 캐디 기반 골프장 AX 관제 Solution">
               <Image
                 unoptimized
                 src="/assets/ax-control-course-layout.jpg"
-                alt="Physical AI Robot Caddie 기반 골프 AX Solution"
+                alt="Physical AI 로봇 캐디 기반 골프장 AX 관제 Solution"
                 width={1280}
                 height={720}
                 loading="lazy"
@@ -180,12 +180,12 @@ export default function Page() {
               />
               <div className="pdf-title-mask" aria-hidden="true" />
               <h2 className="pdf-rebuilt-title page-title ax-control-rebuilt-title">
-                Physical AI Robot Caddie 기반 골프 AX Solution
+                Physical AI 로봇 캐디 기반 골프장 AX 관제 Solution
               </h2>
             </section>
             <section className="robot-platform-page" id="ax-sensor" aria-labelledby="robot-platform-title">
               <div className="robot-platform-inner">
-                <h2 className="page-title" id="robot-platform-title">Physical AI Robot Caddie</h2>
+                <h2 className="page-title" id="robot-platform-title">Physical AI 로봇 캐디</h2>
                 <p className="robot-platform-heading">
                   단순한 로봇을 넘어, 골퍼와 골프장을 연결하는 데이터 플랫폼으로
                 </p>
@@ -201,7 +201,7 @@ export default function Page() {
                   />
                 </div>
                 <p className="robot-platform-heading robot-platform-heading--secondary">
-                  캐디 보다 더 똑똑한 Physical AI Robot Caddie 핵심 기술
+                  핵심 기술 - 캐디 보다 더 똑똑한 Physical AI 로봇 캐디
                 </p>
                 <div className="robot-platform-diagram robot-platform-diagram--technology">
                   <Image
@@ -252,15 +252,15 @@ export default function Page() {
             <section className="ai-coach-page" id="ax-experience" aria-labelledby="ai-coach-title">
               <div className="ai-coach-inner">
                 <h2 className="page-title" id="ai-coach-title">
-                  데이터 기반 &apos;AI 개인 코치&apos;로 진화하는 골프 플랫폼
+                  데이터 기반 &apos;AI 개인 코치&apos;로 진화
                 </h2>
                 <div className="ai-coach-visual">
                   <Image
                     unoptimized
-                    src="/assets/ai-personal-coach-platform-v2.jpg"
-                    alt="현재의 AI 캐디 로봇 데이터 수집에서 미래의 AI 개인 코칭 서비스로 진화하는 골프 플랫폼"
-                    width={1280}
-                    height={720}
+                    src="/assets/ai-personal-coach-platform-v3.png"
+                    alt="Physical AI 로봇 캐디를 통한 필드 데이터 수집에서 미래의 AI 개인 코칭 서비스로 진화"
+                    width={1680}
+                    height={896}
                     loading="lazy"
                     sizes="(max-width: 860px) 92vw, 1420px"
                   />
@@ -318,10 +318,10 @@ export default function Page() {
             <section className="core-technology-roadmap-page" id="core-technology-roadmap" aria-label="핵심 기술 개발 성과 및 고도화 로드맵">
               <Image
                 unoptimized
-                src="/assets/core-technology-roadmap.jpg"
+                src="/assets/core-technology-roadmap-v2.png"
                 alt="핵심 기술 개발 성과 및 고도화 로드맵"
-                width={1280}
-                height={720}
+                width={1680}
+                height={896}
                 loading="lazy"
                 sizes="100vw"
               />

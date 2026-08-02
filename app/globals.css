@@ -361,7 +361,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .robot-platform-diagram--platform img {
   position: static !important;
   display: block;
-  width: 104.5% !important;
+  width: 112% !important;
   max-width: none;
   height: auto !important;
   max-height: none;
@@ -370,7 +370,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .robot-platform-diagram--technology { aspect-ratio: 16 / 9; }
 .robot-platform-diagram--technology img {
   object-position: left top;
-  transform: none;
+  transform: translateX(-5.4%);
 }
 .ai-coach-page {
   scroll-margin-top: 72px;
@@ -1223,8 +1223,8 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
     aspect-ratio: auto;
   }
   .robot-platform-diagram--platform img {
-    width: 105.5% !important;
-    transform: translateX(-5.2%);
+    width: 112% !important;
+    transform: translateX(-5.4%);
   }
   .robot-platform-diagram img { object-position: left top; }
   .robot-platform-diagram--technology { aspect-ratio: 16 / 9; }
