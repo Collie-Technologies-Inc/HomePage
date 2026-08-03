@@ -66,7 +66,7 @@ export default function Page() {
         </div>
         <div className="hero-visual">
           <article className="hero-product robot-product">
-            <div className="hero-product-image"><Image src="/assets/hero-robot-caddie.webp" alt="Physical AI Robot Caddie 기반 골프장 AX Solution" fill priority sizes="(max-width: 860px) 100vw, 54vw" unoptimized /></div>
+            <div className="hero-product-image"><Image src="/assets/hero-robot-caddie-v2.png" alt="Physical AI Robot Caddie 기반 골프장 AX Solution" fill priority sizes="(max-width: 860px) 100vw, 54vw" unoptimized /></div>
             <div className="hero-product-label"><span>01</span><strong>Physical AI Robot Caddie<br />Golf Course AX Solution</strong></div>
           </article>
           <article className="hero-product putting-product">

@@ -361,7 +361,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .robot-platform-diagram--platform img {
   position: static !important;
   display: block;
-  width: 112% !important;
+  width: 114% !important;
   max-width: none;
   height: auto !important;
   max-height: none;
@@ -1223,7 +1223,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
     aspect-ratio: auto;
   }
   .robot-platform-diagram--platform img {
-    width: 112% !important;
+    width: 114% !important;
     transform: translateX(-5.4%);
   }
   .robot-platform-diagram img { object-position: left top; }
