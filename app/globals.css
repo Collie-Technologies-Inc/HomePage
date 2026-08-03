@@ -108,7 +108,10 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   width: 43%;
 }
 .ax-control-page .pdf-rebuilt-title,
-.ax-detail-page .pdf-rebuilt-title { top: 3.2%; left: 4.2%; }
+.ax-detail-page .pdf-rebuilt-title {
+  top: 3.2%;
+  left: var(--page-gutter);
+}
 .ax-control-page {
   /* Crop the unused lower canvas while preserving the complete page artwork. */
   aspect-ratio: 16 / 7.3;
@@ -361,11 +364,11 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .robot-platform-diagram--platform img {
   position: static !important;
   display: block;
-  width: 108% !important;
-  max-width: none;
+  width: 100% !important;
+  max-width: 100%;
   height: auto !important;
   max-height: none;
-  transform: translateX(-6%);
+  transform: none;
 }
 .robot-platform-diagram--technology { aspect-ratio: 16 / 9; }
 .robot-platform-diagram--technology img {
@@ -1223,8 +1226,8 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
     aspect-ratio: auto;
   }
   .robot-platform-diagram--platform img {
-    width: 108% !important;
-    transform: translateX(-6%);
+    width: 100% !important;
+    transform: none;
   }
   .robot-platform-diagram img { object-position: left top; }
   .robot-platform-diagram--technology { aspect-ratio: 16 / 9; }
