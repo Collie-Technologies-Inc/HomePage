@@ -4,6 +4,7 @@
   --line: #dfe4e8;
   --page-gutter: clamp(28px, 5vw, 80px);
   --page-content-width: 1420px;
+  --page-content-inset: max(var(--page-gutter), calc((100% - var(--page-content-width)) / 2));
 }
 * { box-sizing: border-box; }
 html, body { scroll-behavior: auto !important; }
@@ -56,7 +57,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .site-header .download { padding: 10px 13px; color: white; background: var(--navy); }
 .document { width: min(100%, 1754px); margin: 0 auto; background: white; box-shadow: 0 16px 50px rgba(24,35,48,.1); }
 .home-hero { min-height: calc(100vh - 72px); position: relative; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); overflow: hidden; scroll-margin-top: 72px; background: #102234; color: white; }
-.hero-copy { position: relative; z-index: 2; align-self: center; padding: clamp(52px, 7vw, 118px); padding-right: clamp(32px, 5vw, 80px); }
+.hero-copy { position: relative; z-index: 2; align-self: center; padding: clamp(52px, 7vw, 118px); padding-left: var(--page-content-inset); padding-right: clamp(32px, 5vw, 80px); }
 .hero-kicker { margin: 0 0 26px; color: #b7df75; font-size: 12px; font-weight: 800; letter-spacing: .16em; }
 .hero-copy h1 { margin: 0; font-size: clamp(36px, 4vw, 64px); line-height: 1.08; letter-spacing: -.055em; }
 .hero-copy h1 > span,
@@ -110,7 +111,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .ax-control-page .pdf-rebuilt-title,
 .ax-detail-page .pdf-rebuilt-title {
   top: 3.2%;
-  left: var(--page-gutter);
+  left: var(--page-content-inset);
 }
 .ax-control-page {
   /* Crop the unused lower canvas while preserving the complete page artwork. */
@@ -418,7 +419,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .field-experience-copy {
   display: flex;
   flex-direction: column;
-  padding: 4.3% 5.2% 4% 8.35%;
+  padding: 4.3% 5.2% 4% var(--page-content-inset);
   color: #0d2027;
   font-family: "Noto Sans KR", sans-serif;
 }
@@ -688,7 +689,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   font-family: "Noto Sans KR", sans-serif;
 }
 .ceo-message-inner {
-  width: min(100%, 1440px);
+  width: min(100%, var(--page-content-width));
   margin: 0 auto;
 }
 .ceo-message-heading { padding-top: 0; }
@@ -760,7 +761,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
   font-family: "Noto Sans KR", sans-serif;
 }
 
-.company-overview-inner { width: min(100%, 1440px); margin: 0 auto; }
+.company-overview-inner { width: min(100%, var(--page-content-width)); margin: 0 auto; }
 .company-overview-heading { margin-bottom: clamp(24px, 2.5vw, 38px); }
 .company-overview-heading h2 {
   margin: 0 0 16px;
@@ -1706,6 +1707,47 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 
 @media (max-width: 700px) {
   .field-experience-copy { padding-left: 28px; }
+}
+
+/*
+ * Wide-screen alignment grid
+ * Use the AX control title's left edge as the single desktop baseline.
+ * Inner blocks stay 1420px wide, but no longer add a second centering inset.
+ */
+@media (min-width: 861px) {
+  .ax-control-page .pdf-rebuilt-title,
+  .ax-detail-page .pdf-rebuilt-title {
+    left: var(--page-gutter);
+  }
+
+  .ceo-message,
+  .company-overview {
+    padding-inline: var(--page-gutter);
+  }
+
+  .field-experience-copy {
+    padding-left: var(--page-gutter);
+  }
+
+  .ceo-message-inner,
+  .company-overview-inner,
+  .golf-control-page-inner,
+  .robot-platform-inner,
+  .ai-coach-inner,
+  .digital-putting-content,
+  .putting-dynamics-inner,
+  .digital-putting-design-inner,
+  .digital-putting-ui-inner,
+  .digital-putting-app-ui-inner,
+  .digital-putting-videos-inner,
+  .research-development-inner,
+  .ip-overview-inner,
+  .rnd-capability-inner,
+  .press-heading,
+  .press-grid {
+    margin-left: 0;
+    margin-right: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
