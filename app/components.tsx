@@ -1,13 +1,30 @@
 import Image from "next/image";
-import { HeaderActions } from "./kakao-auth-controls";
+import { isAdminKakaoId, readSession } from "./kakao-auth";
+import { HeaderActions, type User } from "./kakao-auth-controls";
 
-export function Header() {
+export async function Header() {
+  let initialUser: User | null = null;
+
+  try {
+    const session = await readSession();
+    if (session?.nickname) {
+      initialUser = {
+        email: session.email || null,
+        isAdmin: isAdminKakaoId(session.kakaoId),
+        nickname: session.nickname,
+        profileImageUrl: session.profileImageUrl || null,
+      };
+    }
+  } catch {
+    initialUser = null;
+  }
+
   return (
     <header className="site-header">
-      <a className="brand" href="#cover" aria-label="(주)콜리테크놀로지 처음으로">
+      <a className="brand" href="/" aria-label="(주)콜리테크놀로지 처음으로">
         <Image src="/assets/logo.jpg" alt="Collie Technologies" width={156} height={54} priority unoptimized />
       </a>
-      <HeaderActions />
+      <HeaderActions initialUser={initialUser} />
     </header>
   );
 }

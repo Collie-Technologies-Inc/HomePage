@@ -55,6 +55,17 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .site-header nav a { padding: 11px clamp(8px, 1vw, 16px); border-radius: 8px; color: #273443; text-decoration: none; font-size: 14px; font-weight: 800; white-space: nowrap; }
 .site-header nav a:hover, .site-header nav a:focus-visible { color: var(--green); }
 .site-header .download { padding: 10px 13px; color: white; background: var(--navy); }
+.mini-green-story-page { width: 100%; min-height: calc(100vh - 72px); background: #ecefe9; }
+.mini-green-story-frame { display: block; width: 100%; min-height: calc(100vh - 72px); border: 0; background: #ecefe9; }
+
+@media (min-width: 861px) and (max-width: 1280px) {
+  .brand img { width: 156px; }
+  .site-header { padding-inline: 18px; gap: 10px; }
+  .site-header nav a { padding-inline: 7px; font-size: 13px; }
+  .kakao-user { gap: 6px; }
+  .admin-link,
+  .kakao-user button { padding-inline: 8px; }
+}
 .document { width: min(100%, 1754px); margin: 0 auto; background: white; box-shadow: 0 16px 50px rgba(24,35,48,.1); }
 .home-hero { min-height: calc(100vh - 72px); position: relative; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); overflow: hidden; scroll-margin-top: 72px; background: #102234; color: white; }
 .hero-copy { position: relative; z-index: 2; align-self: center; padding: clamp(52px, 7vw, 118px); padding-left: var(--page-content-inset); padding-right: clamp(32px, 5vw, 80px); }
@@ -63,7 +74,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .hero-copy h1 > span,
 .hero-copy h1 em,
 .hero-copy h1 em span { display: block; white-space: nowrap; }
-.hero-copy h1 em { color: #b7df75; font-style: normal; }
+.hero-copy h1 em { padding-top: .14em; color: #b7df75; font-style: normal; }
 .hero-description { max-width: 660px; margin: 30px 0 0; color: #d2dce2; font-size: clamp(16px, 1.35vw, 20px); line-height: 1.8; letter-spacing: -.02em; }
 .hero-links { display: flex; gap: 10px; margin-top: 34px; }
 .hero-links a { padding: 14px 20px; border: 1px solid rgba(255,255,255,.55); color: white; font-size: 13px; font-weight: 800; text-decoration: none; }
@@ -75,13 +86,13 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .hero-tech li:last-child { flex-basis: 100%; margin-top: 12px; padding-left: 0; border: 0; }
 .hero-tech .hero-tech-primary { flex-basis: 100%; padding: 0; border: 0; font-size: clamp(8px, .78vw, 11px); white-space: nowrap; }
 .hero-visual { position: relative; min-height: 650px; display: grid; grid-template-rows: 1fr 1fr; gap: 0; background: #bdcac2; }
-.hero-product { position: relative; min-width: 0; overflow: hidden; background: radial-gradient(circle at 50% 36%, #fff 0%, #e5ece7 62%, #cbd8d0 100%); }
+.hero-product { position: relative; min-width: 0; min-height: 0; overflow: hidden; background: radial-gradient(circle at 50% 36%, #fff 0%, #e5ece7 62%, #cbd8d0 100%); }
 .hero-product-image { position: absolute; inset: 0; }
 .hero-product-image img { object-fit: cover; object-position: center; }
 .hero-product-label { position: absolute; left: auto; right: 4%; top: 7%; bottom: auto; padding: 10px 12px; display: flex; align-items: flex-start; gap: 10px; color: white; background: rgba(16,34,52,.82); backdrop-filter: blur(8px); }
 .robot-product .hero-product-label { left: 44% !important; right: auto !important; top: 18px !important; bottom: auto !important; gap: 7px; padding: 8px 10px; transform: translateX(-50%); }
 .robot-product .hero-product-label strong { font-size: 13px; line-height: 1.3; white-space: nowrap; }
-.putting-product .hero-product-label { left: 50% !important; right: auto !important; top: 18px !important; bottom: auto !important; transform: translateX(-50%); }
+.putting-product .hero-product-label { left: 4% !important; right: auto !important; top: 18px !important; bottom: auto !important; transform: none; }
 .hero-product-label span { color: #4e8f55; font-size: 11px; font-weight: 800; }
 .hero-product-label strong { font-size: 15px; line-height: 1.35; }
 .pdf-page { position: relative; width: 100%; aspect-ratio: 1754 / 1240; scroll-margin-top: 72px; background: white; border-bottom: 1px solid #edf0f2; }
@@ -1751,3 +1762,81 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Menu-based content split: each route exposes only its own section group. */
+.split-view--home > section:not(#cover),
+.split-view--company > section:not(#ceo-message):not(#company),
+.split-view--technology > section:not(#ax-control):not(#ax-sensor):not(#ax-operation):not(#ax-experience):not(#field-experience):not(#core-technology-roadmap):not(#putting-simulator):not(#putting-dynamics):not(#putting-design):not(#putting-device-ui):not(#putting-app-ui):not(#putting-videos):not(#research-development),
+.split-view--research > section:not(#ip-list):not(#rnd-capability),
+.split-view--news > section:not(#press) { display: none; }
+
+/* Desktop landing composition matched to the supplied reference image. */
+@media (min-width: 861px) {
+  .split-view--home .home-hero {
+    width: 100%;
+    min-height: calc(100svh - 72px);
+    height: auto;
+    grid-template-columns: minmax(0, 45%) minmax(0, 55%);
+  }
+
+  .split-view--home .hero-copy {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(48px, 5.2vw, 104px) clamp(42px, 5vw, 96px);
+  }
+
+  .split-view--home .hero-copy h1 {
+    font-size: clamp(48px, 4.15vw, 78px);
+    line-height: 1.03;
+  }
+
+  .split-view--home .hero-description {
+    max-width: 760px;
+    margin-top: clamp(24px, 2.2vw, 42px);
+    font-size: clamp(17px, 1.22vw, 24px);
+    line-height: 1.78;
+  }
+
+  .split-view--home .hero-links {
+    margin-top: clamp(24px, 2.4vw, 44px);
+  }
+
+  .split-view--home .hero-links a {
+    padding: 16px 24px;
+    font-size: clamp(13px, .9vw, 17px);
+  }
+
+  .split-view--home .hero-tech {
+    margin-top: clamp(34px, 3.7vw, 70px);
+  }
+
+  .split-view--home .hero-visual {
+    min-height: 0;
+    height: auto;
+    align-self: start;
+    grid-template-rows: max-content max-content;
+    overflow: hidden;
+  }
+
+  .split-view--home .hero-product {
+    height: auto;
+    min-height: 0;
+    isolation: isolate;
+  }
+
+  .split-view--home .robot-product {
+    aspect-ratio: 1264 / 843;
+  }
+
+  .split-view--home .putting-product {
+    aspect-ratio: 1280 / 766;
+  }
+
+  /* Each panel follows its source image ratio, so no edge is cropped. */
+  .split-view--home .hero-product-image img {
+    object-fit: contain;
+    object-position: center;
+  }
+}

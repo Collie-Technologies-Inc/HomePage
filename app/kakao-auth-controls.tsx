@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useState } from "react";
 
-type User = {
+export type User = {
   email: string | null;
   nickname: string;
   profileImageUrl: string | null;
@@ -10,15 +10,16 @@ type User = {
 };
 
 const menuItems = [
-  { href: "/#ceo-message", protected: true, title: "기업현황" },
-  { href: "/#ax-control", protected: true, title: "기술개발" },
-  { href: "/#research-development", protected: true, title: "연구개발" },
-  { href: "/#press", protected: true, title: "뉴스 및 소식" },
-  { href: "/contact", protected: true, title: "문의하기" },
+  { href: "/mini-green", protected: false, title: "미니그린 소개" },
+  { href: "/company", protected: false, title: "기업현황" },
+  { href: "/technology", protected: true, title: "기술개발" },
+  { href: "/research", protected: true, title: "연구개발" },
+  { href: "/news", protected: false, title: "뉴스 및 소식" },
+  { href: "/contact", protected: false, title: "문의하기" },
 ] as const;
 
-export function HeaderActions() {
-  const [user, setUser] = useState<User | null | undefined>(undefined);
+export function HeaderActions({ initialUser }: { initialUser: User | null }) {
+  const [user, setUser] = useState<User | null | undefined>(initialUser);
   const [showLoginNotice, setShowLoginNotice] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -58,16 +59,6 @@ export function HeaderActions() {
     window.addEventListener("keydown", closeOnEscape);
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, [mobileMenuOpen]);
-
-  useEffect(() => {
-    if (user !== null || window.location.pathname !== "/") return;
-    const previousOverflow = document.body.style.overflow;
-    window.scrollTo({ behavior: "auto", top: 0 });
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [user]);
 
   async function logout(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -109,7 +100,7 @@ export function HeaderActions() {
             href={item.href}
             key={item.href}
             onClick={(event) => {
-              if (user) {
+              if (user || !item.protected) {
                 setMobileMenuOpen(false);
                 if (item.href.startsWith("/#") && window.location.pathname === "/") {
                   event.preventDefault();

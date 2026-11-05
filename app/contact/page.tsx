@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { redirect } from "next/navigation";
-import { readSession } from "@/app/kakao-auth";
 import { ContactForm } from "./contact-form";
 
 export const dynamic = "force-dynamic";
@@ -11,10 +9,7 @@ export const metadata: Metadata = {
   description: "콜리테크놀로지의 제품, 기술, 사업 제휴 및 기업 관련 문의를 접수합니다.",
 };
 
-export default async function ContactPage() {
-  const session = await readSession();
-  if (!session) redirect("/?contact=login-required");
-
+export default function ContactPage() {
   return (
     <section className="contact-page">
       <div className="contact-shell">
