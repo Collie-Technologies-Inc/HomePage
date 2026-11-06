@@ -556,6 +556,21 @@ export function LegacyPage({ view }: { view: SiteView }) {
                     </div>
                   </a>
                 ))}
+                <article className="press-card">
+                  <div className="press-card-image">
+                    <Image
+                      unoptimized
+                      src="/assets/news/dmts-mini-green-2026.jpg"
+                      alt="킨텍스 DMTS 전시회의 콜리테크놀로지 mini green 전시 부스"
+                      fill
+                      loading="lazy"
+                      sizes="(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="press-card-body">
+                    <h3>2026.11.4~6 킨텍스 DMTS mini green 전시 참가</h3>
+                  </div>
+                </article>
               </div>
             </section>
           ) : null}
