@@ -802,6 +802,7 @@ body { margin: 0; background: #eef1f3; color: var(--navy); font-family: Pretenda
 .company-history li { display: grid; grid-template-columns: 74px 1fr; gap: 10px; align-items: start; font-size: clamp(11px, .82vw, 13px); line-height: 1.45; }
 .company-history time { color: #9ed3f4; font-weight: 900; }
 .company-history span { font-weight: 650; }
+.company-history .company-history-mockup { white-space: nowrap; font-size: .94em; letter-spacing: -.04em; }
 
 .digital-putting-intro,
 .digital-putting-design,

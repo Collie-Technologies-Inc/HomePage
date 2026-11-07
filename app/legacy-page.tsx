@@ -162,7 +162,7 @@ export function LegacyPage({ view }: { view: SiteView }) {
                           <li><time>2023.03</time><span>2020뉴스포츠그로쓰 사모투자 5억 투자 유치</span></li>
                           <li><time>2023.08</time><span>2024년 성장단계 스케일업 기술 사업화 선정</span></li>
                           <li><time>2023.12</time><span>위치정보 우수 비즈니스 모델 발굴 “장려상” 수상</span></li>
-                          <li><time>2024.07</time><span>초정밀 GPS 사물인지 인공지능로봇캐디 워킹목업</span></li>
+                          <li><time>2024.07</time><span className="company-history-mockup">초정밀 GPS 사물인지 인공지능로봇캐디 워킹목업</span></li>
                           <li><time>2025.03</time><span>벤처기업확인 (연구개발유형)</span></li>
                           <li><time>2025.04</time><span>기업부설연구소 인정</span></li>
                           <li><time>2025.10</time><span>신용보증기금 3억 약정 (2억기보 대출 상환)</span></li>
