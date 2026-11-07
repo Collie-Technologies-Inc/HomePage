@@ -8,6 +8,13 @@
       "when": 1785304177686,
       "tag": "0000_watery_shriek",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794053802828,
+      "tag": "0001_graceful_leopardon",
+      "breakpoints": true
     }
   ]
 }

@@ -1,4 +1,10 @@
-import { pgTable, serial, text, timestamp, uniqueIndex } from "drizzle-orm/pg-core";
+import { date, integer, pgTable, primaryKey, serial, text, timestamp, uniqueIndex } from "drizzle-orm/pg-core";
+
+export const pageViews = pgTable("page_views", {
+  day: date("day", { mode: "string" }).notNull(),
+  path: text("path").notNull(),
+  views: integer("views").notNull().default(0),
+}, (table) => [primaryKey({ columns: [table.day, table.path] })]);
 
 export const users = pgTable(
   "users",

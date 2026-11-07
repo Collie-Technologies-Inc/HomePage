@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Footer, Header } from "./components";
 import "./globals.css";
+import { PageViewTracker } from "./page-view-tracker";
 
 const title = "(주)콜리테크놀로지 | Physical AI Robot Caddie";
 const description =
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <body>
+        <PageViewTracker />
         <Header />
         <main>{children}</main>
         <Footer />

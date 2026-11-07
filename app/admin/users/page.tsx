@@ -35,6 +35,7 @@ export default async function AdminUsersPage() {
             <p>가입 정보와 최근 로그인 기록을 확인할 수 있습니다.</p>
           </div>
           <div className="admin-actions">
+            <Link className="admin-home-link" href="/admin/analytics">방문 통계</Link>
             <Link className="admin-home-link" href="/">홈페이지로 돌아가기</Link>
             <div className="admin-count">전체 {memberList.length}명</div>
           </div>
