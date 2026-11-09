@@ -6,9 +6,9 @@ import { spawn } from "node:child_process";
 const origin = "http://127.0.0.1:3101";
 const secret = "local-analytics-test-secret-not-for-production";
 let server;
-function cookie(kakaoId) {
+function cookie(kakaoId, email) {
   const payload = Buffer.from(JSON.stringify({
-    userId: 1, kakaoId, exp: Math.floor(Date.now() / 1000) + 60,
+    userId: 1, kakaoId, email, exp: Math.floor(Date.now() / 1000) + 60,
   })).toString("base64url");
   const signature = createHmac("sha256", secret).update(payload).digest("base64url");
   return `collie_kakao_session=${payload}.${signature}`;
@@ -51,4 +51,16 @@ test("collection rejects cross-origin, malformed and unlisted page requests", as
   assert.equal((await post('{"path":"toString"}')).status, 400);
   assert.equal((await post("x".repeat(300))).status, 413);
   assert.equal((await post('{"path":"/news"}')).status, 503);
+});
+
+test("collection excludes only the owner authenticated by a signed session", async () => {
+  const post = (sessionCookie) => fetch(`${origin}/api/analytics/view`, {
+    method: "POST",
+    headers: { origin, "content-type": "application/json", cookie: sessionCookie },
+    body: JSON.stringify({ path: "/" }),
+  });
+  assert.equal((await post(cookie("owner", "inhwan.park@kakao.com"))).status, 204);
+  assert.equal((await post(cookie("owner", " INHWAN.PARK@KAKAO.COM "))).status, 204);
+  assert.equal((await post(cookie("member", "member@example.com"))).status, 503);
+  assert.equal((await post(`${cookie("owner", "inhwan.park@kakao.com")}invalid`)).status, 503);
 });

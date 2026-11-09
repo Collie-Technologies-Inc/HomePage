@@ -1,6 +1,7 @@
 import { sql } from "drizzle-orm";
 import { NextResponse } from "next/server";
 import { analyticsPages, koreaDate } from "@/app/analytics-paths";
+import { readSession } from "@/app/kakao-auth";
 import { getDb } from "@/db";
 import { pageViews } from "@/db/schema";
 
@@ -32,6 +33,10 @@ export async function POST(request: Request) {
     return new NextResponse(null, { status: 400 });
   }
   try {
+    const session = await readSession();
+    if (session?.email?.trim().toLowerCase() === "inhwan.park@kakao.com") {
+      return new NextResponse(null, { status: 204 });
+    }
     await getDb().insert(pageViews).values({ day: koreaDate(), path, views: 1 })
       .onConflictDoUpdate({
         target: [pageViews.day, pageViews.path],
